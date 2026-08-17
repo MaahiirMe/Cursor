@@ -27,11 +27,11 @@ export function Waveform({ data, progress, unlocked, maxDuration, playing }: Pro
             className="flex-1 origin-bottom"
             style={{
               height: `${h}%`,
-              background: !known
-                ? "rgba(243,240,232,0.08)"
-                : active
-                  ? "#C8FF00"
-                  : "rgba(243,240,232,0.45)",
+                  background: !known
+                    ? "rgba(246,239,227,0.08)"
+                    : active
+                      ? "#FF6A00"
+                      : "rgba(245,197,24,0.55)",
               opacity: known ? 1 : 0.35,
               transform: playing && active ? `scaleY(${1 + (i % 3) * 0.04})` : undefined,
             }}

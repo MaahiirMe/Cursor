@@ -21,14 +21,14 @@ export function waveformFromSeed(seed: number, bars = 96): number[] {
 }
 
 const PALETTES = [
-  ["#1c1408", "#c8ff00", "#f3f0e8"],
-  ["#140808", "#ff4d3d", "#f3f0e8"],
-  ["#081414", "#8d8d86", "#c8ff00"],
-  ["#10100a", "#ffb800", "#f3f0e8"],
-  ["#0c0c14", "#f3f0e8", "#c8ff00"],
-  ["#1a1008", "#ff4d3d", "#ffb800"],
-  ["#0a120a", "#c8ff00", "#8d8d86"],
-  ["#12100c", "#f3f0e8", "#ff4d3d"],
+  ["#1a0c06", "#ff6a00", "#f5c518"],
+  ["#140808", "#1ec8c8", "#f6efe3"],
+  ["#1c1008", "#f5c518", "#ff6a00"],
+  ["#10100a", "#1ec8c8", "#f5c518"],
+  ["#0c0c14", "#f6efe3", "#ff6a00"],
+  ["#1a1008", "#ff3b30", "#f5c518"],
+  ["#0a120a", "#1ec8c8", "#a89880"],
+  ["#12100c", "#f6efe3", "#ff6a00"],
 ];
 
 export function artworkSvg(slug: string, title: string): string {

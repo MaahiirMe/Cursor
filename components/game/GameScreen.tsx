@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BeatPlayer } from "@/components/audio/BeatPlayer";
 import { AttemptPips } from "@/components/game/AttemptPips";
 import { ClaimName } from "@/components/game/ClaimName";
@@ -149,6 +149,19 @@ export function GameScreen({
     if (n) setUnlock(n);
   };
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA") return;
+      if (e.key === "g" || e.key === "G") {
+        e.preventDefault();
+        void lock();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
+
   if (finished?.correct && finished.reveal && finished.result) {
     return (
       <div className="space-y-8">
@@ -193,8 +206,9 @@ export function GameScreen({
   return (
     <div className="space-y-6">
       <div>
-        <p className="mono text-[11px] tracking-[0.22em] text-mute">{eyebrow}</p>
-        <h1 className="display mt-3 max-w-xl text-[34px] sm:text-6xl">{headline}</h1>
+        <p className="mono text-[11px] tracking-[0.22em] text-gold">{eyebrow}</p>
+        <p className="devanagari mt-2 text-2xl text-gold sm:text-4xl">पहचान बे से.</p>
+        <h1 className="display mt-2 max-w-xl text-[34px] sm:text-6xl">{headline}</h1>
       </div>
 
       <BeatPlayer
@@ -247,11 +261,11 @@ export function GameScreen({
           </div>
         ) : null}
 
-        <div className="sticky bottom-0 z-10 -mx-4 flex flex-col gap-2 border-t border-ink/10 bg-bg/95 px-4 py-3 backdrop-blur-sm sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-0">
+        <div className="sticky bottom-0 z-10 -mx-4 flex flex-col gap-2 border-t border-gold/20 bg-bg/95 px-4 py-3 sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:p-0">
           <button
             type="submit"
             disabled={busy}
-            className="h-12 w-full bg-ink text-[13px] tracking-[0.18em] text-bg disabled:opacity-50"
+            className="h-12 w-full bg-acid text-[13px] tracking-[0.18em] text-bg disabled:opacity-50"
           >
             LOCK GUESS
           </button>
@@ -259,13 +273,19 @@ export function GameScreen({
             <button
               type="button"
               onClick={more}
-              className="h-11 w-full border border-ink/20 text-[12px] tracking-[0.16em]"
+              className="h-11 w-full border border-gold/40 text-[12px] tracking-[0.16em] text-gold"
             >
               SUNNA AUR HAI
             </button>
           ) : null}
         </div>
       </form>
+
+      <div className="keys flex flex-wrap gap-2 text-mute">
+        <kbd>SPACE</kbd> PLAY
+        <kbd>G</kbd> GUESS
+        <kbd>↑↓</kbd> SEARCH
+      </div>
 
       <div className="flex items-center justify-between">
         <AttemptPips max={maxAttempts} used={attemptsUsed} />

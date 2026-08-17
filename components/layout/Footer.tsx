@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const LINKS = [
   { href: "/about", label: "About" },
-  { href: "/how-it-works", label: "How It Works" },
+  { href: "/how-it-works", label: "Kaise khele" },
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
   { href: "/contact", label: "Contact" },
@@ -12,8 +12,9 @@ const LINKS = [
 
 export function Footer() {
   return (
-    <footer className="relative z-10 mt-16 border-t border-ink/10">
+    <footer className="relative z-10 mt-16 border-t-2 border-gold/30 bg-bg2">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8">
+        <p className="horn-pill w-fit">HORN OK PLEASE</p>
         <p className="max-w-lg text-[13px] text-mute">
           Made for people who say “bhai beat se hi pata chal gaya tha.”
         </p>

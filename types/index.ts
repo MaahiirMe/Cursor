@@ -45,6 +45,7 @@ export interface Track {
   difficulty: Difficulty;
   active: boolean;
   audioSeed: number;
+  searchQuery: string;
 }
 
 export interface DailyChallenge {

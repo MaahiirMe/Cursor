@@ -93,7 +93,7 @@ export function SearchField({ kind, label, value, selectedId, onChange }: Props)
             pick(shown[active]);
           }
         }}
-        className="h-12 w-full border border-ink/20 bg-bg2 px-3 text-[16px] outline-none placeholder:text-mute/60 focus:border-acid"
+        className="h-12 w-full border border-gold/30 bg-bg2 px-3 text-[16px] outline-none placeholder:text-mute/60 focus:border-acid"
       />
       {selectedId ? (
         <span className="mono absolute right-2 top-8 text-[9px] text-acid">LOCKED</span>

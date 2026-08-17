@@ -18,9 +18,9 @@ export function AttemptPips({
             style={{
               background: spent
                 ? lastCorrect && i === used - 1
-                  ? "#C8FF00"
-                  : "#FF4D3D"
-                : "rgba(243,240,232,0.2)",
+                  ? "#F5C518"
+                  : "#FF3B30"
+                : "rgba(246,239,227,0.2)",
             }}
           />
         );

@@ -29,4 +29,4 @@ Copy `.env.example` and set URL + anon key. Apply `lib/supabase/schema.sql`. Wit
 
 ## Audio
 
-Do not drop copyrighted files into the repo. Swap `lib/audio/mock-provider.ts` for a licensed preview provider that implements `AudioProvider`.
+Live playback uses **official 30-second previews** from Apple Music Search / Deezer — not ripped files, not full songs. The game clips that preview to 2–16 seconds. If a preview is missing, a generated placeholder beat is used.

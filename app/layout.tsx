@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo_Black, Geist, IBM_Plex_Mono } from "next/font/google";
+import { Archivo_Black, Geist, IBM_Plex_Mono, Tiro_Devanagari_Hindi } from "next/font/google";
 import { SiteShell } from "@/components/layout/SiteShell";
 import "./globals.css";
 
@@ -23,6 +23,13 @@ const plex = IBM_Plex_Mono({
   display: "swap",
 });
 
+const tiro = Tiro_Devanagari_Hindi({
+  weight: "400",
+  subsets: ["devanagari", "latin"],
+  variable: "--font-devanagari",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Beat Pehchaan — Pehchaan beat se.",
   description: "Lyrics ke bina gaana pehchaan ke dikha. Desi hip-hop beat guessing.",
@@ -35,7 +42,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0A0A0A",
+  themeColor: "#0C0907",
   width: "device-width",
   initialScale: 1,
 };
@@ -43,8 +50,8 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
-      className={`${archivo.variable} ${geist.variable} ${plex.variable} h-full antialiased`}
+      lang="hi"
+      className={`${archivo.variable} ${geist.variable} ${plex.variable} ${tiro.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-bg text-ink">
         <SiteShell>{children}</SiteShell>

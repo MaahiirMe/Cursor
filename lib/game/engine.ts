@@ -1,5 +1,6 @@
 import { ARTISTS } from "@/data/artists";
 import { catalogArtists, catalogSongs, publicBeat, revealTrack } from "@/data/catalog";
+import { lookupLicensedPreview } from "@/lib/audio/catalog-preview";
 import { TRACKS, tracksById } from "@/data/tracks";
 import { buildDailyChallenge, calendarDateInZone, msUntilNextReset } from "@/lib/game/daily";
 import { evaluateGuess } from "@/lib/game/matching";
@@ -34,7 +35,7 @@ export async function getDailyPayload(userId: string) {
     track: publicBeat(challenge.trackId, playId),
     resetMs: msUntilNextReset(),
     completed: existing ?? null,
-    reveal: existing ? revealTrack(challenge.trackId) : null,
+    reveal: existing ? await revealTrackWithArt(challenge.trackId) : null,
     profileHint: {
       username: player.username,
       claimed: player.claimed,
@@ -156,7 +157,7 @@ export async function submitGuess(params: {
     finished,
     correct,
     result,
-    reveal: finished ? revealTrack(track.id) : null,
+    reveal: finished ? await revealTrackWithArt(track.id) : null,
     newAchievements,
     streak: player.currentStreak,
     showClaim: finished && !player.claimed && player.results.length === 1,
@@ -172,6 +173,16 @@ function fasterThan(reveal: number) {
 
 function failStat() {
   return { pool: 16428, missPct: 38 };
+}
+
+async function revealTrackWithArt(trackId: string) {
+  const base = revealTrack(trackId);
+  if (!base) return null;
+  const full = tracksById.get(trackId);
+  if (!full) return base;
+  const licensed = await lookupLicensedPreview(full);
+  if (licensed?.artworkUrl) return { ...base, artworkUrl: licensed.artworkUrl };
+  return base;
 }
 
 export function pickRandomTrack(exclude: string[] = [], artistId?: string, scene?: string) {
