@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #0b0806;
+  --color-bg2: #14100c;
+  --color-ink: #f7f1e6;
+  --color-mute: #b7a48a;
+  --color-acid: #ff6a00;
+  --color-gold: #f5c518;
+  --color-teal: #1ec8c8;
+  --color-err: #ff3b30;
+  --color-warn: #f5c518;
+  --font-display: var(--font-anton);
+  --font-sans: var(--font-geist);
+  --font-mono: var(--font-plex);
+  --font-dev: var(--font-devanagari);
+}
+
+html, body {
+  background: #0b0806;
+  color: var(--color-ink);
+  min-height: 100dvh;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  background:
+    radial-gradient(900px 420px at 50% 18%, rgba(255, 106, 0, 0.16), transparent 60%),
+    linear-gradient(180deg, #1a120c 0%, #0b0806 46%, #070504 100%);
+}
+
+.rain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  opacity: 0.18;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0 12px,
+    rgba(255, 255, 255, 0.08) 12px 13px
+  );
+  animation: rain 0.9s linear infinite;
+}
+
+@keyframes rain {
+  to { transform: translateY(13px); }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--color-acid);
+  color: #1a0d04;
+}
+
+.display {
+  font-family: var(--font-display), Impact, sans-serif;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.devanagari {
+  font-family: var(--font-dev), "Noto Sans Devanagari", sans-serif;
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.55);
+}
+
+.mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.marquee-shell {
+  position: relative;
+  padding: 18px 14px 14px;
+  background: rgba(12, 9, 7, 0.55);
+  border: 12px solid #6b2414;
+  box-shadow: inset 0 0 0 3px #f5c518, 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.bulbs {
+  position: absolute;
+  inset: 6px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle, #f5c518 2.2px, transparent 2.4px) 0 0 / 16px 16px,
+    radial-gradient(circle, #f5c518 2.2px, transparent 2.4px) 8px 8px / 16px 16px;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  padding: 7px;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: bulbs 1.2s steps(2) infinite;
+  opacity: 0.95;
+}
+
+@keyframes bulbs {
+  50% { filter: brightness(0.65); }
+}
+
+.horn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #f5c518;
+  background: #111;
+  color: #f5c518;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  padding: 6px 10px;
+  text-transform: uppercase;
+  animation: horn 2.4s ease-in-out infinite;
+}
+
+@keyframes horn {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1.4deg) scale(1.03); }
+}
+
+.bus-ride {
+  animation: ride 1.1s ease-in-out infinite;
+  transform-origin: 50% 80%;
+}
+
+@keyframes ride {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+.headlight {
+  animation: beam 1.6s ease-in-out infinite;
+}
+
+@keyframes beam {
+  50% { opacity: 0.55; }
+}
+
+.player-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(8, 6, 5, 0.82);
+  border: 1px solid rgba(245, 197, 24, 0.25);
+  padding: 10px 12px;
+}
+
+.play-orb {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  background: #f7f1e6;
+  color: #0b0806;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  flex: none;
+}
+
+.keys kbd {
+  border: 1px solid rgba(247, 241, 230, 0.22);
+  background: #111;
+  padding: 5px 8px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  border-radius: 999px;
+}
+
+.punch { animation: punch 280ms ease-out; }
+@keyframes punch {
+  0% { transform: scale(1.03); }
+  40% { background-color: #2a1408; }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rain, .bus-ride, .headlight, .horn-pill, .bulbs {
+    animation: none !important;
+  }
+}
