@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo_Black, Geist, IBM_Plex_Mono, Tiro_Devanagari_Hindi } from "next/font/google";
+import { Anton, Geist, IBM_Plex_Mono, Noto_Sans_Devanagari } from "next/font/google";
 import { SiteShell } from "@/components/layout/SiteShell";
 import "./globals.css";
 
-const archivo = Archivo_Black({
+const anton = Anton({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-archivo",
+  variable: "--font-anton",
   display: "swap",
 });
 
@@ -23,8 +23,8 @@ const plex = IBM_Plex_Mono({
   display: "swap",
 });
 
-const tiro = Tiro_Devanagari_Hindi({
-  weight: "400",
+const notoDev = Noto_Sans_Devanagari({
+  weight: ["700", "900"],
   subsets: ["devanagari", "latin"],
   variable: "--font-devanagari",
   display: "swap",
@@ -32,17 +32,12 @@ const tiro = Tiro_Devanagari_Hindi({
 
 export const metadata: Metadata = {
   title: "Beat Pehchaan — Pehchaan beat se.",
-  description: "Lyrics ke bina gaana pehchaan ke dikha. Desi hip-hop beat guessing.",
+  description: "2 second ka beat. Lyrics nahi. DHH pehchaan.",
   metadataBase: new URL("https://beatpehchaan.in"),
-  openGraph: {
-    title: "Beat Pehchaan",
-    description: "2 sec. Pehchaan sakta hai?",
-    type: "website",
-  },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0C0907",
+  themeColor: "#0B0806",
   width: "device-width",
   initialScale: 1,
 };
@@ -51,7 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="hi"
-      className={`${archivo.variable} ${geist.variable} ${plex.variable} ${tiro.variable} h-full antialiased`}
+      className={`${anton.variable} ${geist.variable} ${plex.variable} ${notoDev.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-bg text-ink">
         <SiteShell>{children}</SiteShell>

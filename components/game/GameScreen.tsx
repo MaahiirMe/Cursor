@@ -8,6 +8,8 @@ import { FailPanel } from "@/components/game/FailPanel";
 import { ResultPanel } from "@/components/game/ResultPanel";
 import { SearchField } from "@/components/search/SearchField";
 import { ShareActions } from "@/components/share/ShareActions";
+import { NightBus } from "@/components/visual/NightBus";
+import { MarqueeFrame } from "@/components/visual/MarqueeFrame";
 import { api } from "@/lib/guest-client";
 import { nextReveal } from "@/lib/scoring";
 import { shareText } from "@/lib/share";
@@ -204,93 +206,98 @@ export function GameScreen({
   }
 
   return (
-    <div className="space-y-6">
-      <div>
-        <p className="mono text-[11px] tracking-[0.22em] text-gold">{eyebrow}</p>
-        <p className="devanagari mt-2 text-2xl text-gold sm:text-4xl">पहचान बे से.</p>
-        <h1 className="display mt-2 max-w-xl text-[34px] sm:text-6xl">{headline}</h1>
-      </div>
-
-      <BeatPlayer
-        key={track.id}
-        trackId={track.id}
-        audioSeed={track.audioSeed}
-        waveform={track.waveformData}
-        unlocked={unlock}
-      />
-
-      <form
-        className="space-y-3"
-        onSubmit={(e) => {
-          e.preventDefault();
-          void lock();
-        }}
-      >
-        <SearchField
-          kind="song"
-          label="SONG"
-          value={song}
-          selectedId={songId}
-          onChange={(t, id) => {
-            setSong(t);
-            setSongId(id);
-          }}
-        />
-        <SearchField
-          kind="artist"
-          label="ARTIST"
-          value={artist}
-          selectedId={artistId}
-          onChange={(t, id) => {
-            setArtist(t);
-            setArtistId(id);
-          }}
-        />
-
-        {feedback ? (
-          <p className="text-sm" role="status">
-            {feedback}
-          </p>
-        ) : null}
-        {err ? (
-          <div className="space-y-2">
-            <p className="text-sm text-err">{err}</p>
-            <button type="button" className="text-xs tracking-widest" onClick={() => void lock()}>
-              TRY AGAIN
-            </button>
-          </div>
-        ) : null}
-
-        <div className="sticky bottom-0 z-10 -mx-4 flex flex-col gap-2 border-t border-gold/20 bg-bg/95 px-4 py-3 sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:p-0">
-          <button
-            type="submit"
-            disabled={busy}
-            className="h-12 w-full bg-acid text-[13px] tracking-[0.18em] text-bg disabled:opacity-50"
-          >
-            LOCK GUESS
-          </button>
-          {allowExtend && nextReveal(unlock) ? (
-            <button
-              type="button"
-              onClick={more}
-              className="h-11 w-full border border-gold/40 text-[12px] tracking-[0.16em] text-gold"
-            >
-              SUNNA AUR HAI
-            </button>
-          ) : null}
+    <MarqueeFrame>
+      <div className="space-y-5">
+        <div className="flex items-start justify-between gap-3">
+          <p className="mono text-[11px] tracking-[0.18em] text-gold">{eyebrow}</p>
+          <span className="horn-pill">हॉर्न ओके प्लीज</span>
         </div>
-      </form>
+        <h1 className="devanagari text-center text-[52px] text-ink sm:text-[72px]">बीट पहचान</h1>
+        <p className="display text-center text-xl text-gold sm:text-3xl">{headline}</p>
+        <NightBus />
+        <p className="display text-center text-xs text-mute">ALL NIGHT · NO LYRICS · START 0:00</p>
 
-      <div className="keys flex flex-wrap gap-2 text-mute">
-        <kbd>SPACE</kbd> PLAY
-        <kbd>G</kbd> GUESS
-        <kbd>↑↓</kbd> SEARCH
-      </div>
+        <BeatPlayer
+          key={track.id}
+          trackId={track.id}
+          audioSeed={track.audioSeed}
+          waveform={track.waveformData}
+          unlocked={unlock}
+        />
 
-      <div className="flex items-center justify-between">
-        <AttemptPips max={maxAttempts} used={attemptsUsed} />
-        <p className="mono text-[11px] text-mute">{attemptsLeft} attempts left</p>
+        <form
+          className="space-y-3"
+          onSubmit={(e) => {
+            e.preventDefault();
+            void lock();
+          }}
+        >
+          <SearchField
+            kind="song"
+            label="GAANA"
+            value={song}
+            selectedId={songId}
+            onChange={(t, id, meta) => {
+              setSong(t);
+              setSongId(id);
+              if (meta?.artistName && !artist.trim()) setArtist(meta.artistName);
+            }}
+          />
+          <SearchField
+            kind="artist"
+            label="ARTIST"
+            value={artist}
+            selectedId={artistId}
+            onChange={(t, id) => {
+              setArtist(t);
+              setArtistId(id?.startsWith("live-") ? undefined : id);
+            }}
+          />
+
+          {feedback ? (
+            <p className="text-sm" role="status">
+              {feedback}
+            </p>
+          ) : null}
+          {err ? (
+            <div className="space-y-2">
+              <p className="text-sm text-err">{err}</p>
+              <button type="button" className="text-xs tracking-widest" onClick={() => void lock()}>
+                TRY AGAIN
+              </button>
+            </div>
+          ) : null}
+
+          <div className="flex flex-col gap-2">
+            <button
+              type="submit"
+              disabled={busy}
+              className="h-12 w-full bg-acid text-[13px] tracking-[0.18em] text-bg disabled:opacity-50"
+            >
+              LOCK KAR
+            </button>
+            {allowExtend && nextReveal(unlock) ? (
+              <button
+                type="button"
+                onClick={more}
+                className="h-11 w-full border border-gold/40 text-[12px] tracking-[0.16em] text-gold"
+              >
+                THODA AUR SUN
+              </button>
+            ) : null}
+          </div>
+        </form>
+
+        <div className="keys flex flex-wrap items-center justify-center gap-2 text-[11px] text-mute">
+          <kbd>SPACE</kbd> PLAY
+          <kbd>G</kbd> GUESS
+          <kbd>↑↓</kbd> SEARCH
+        </div>
+        <div className="flex items-center justify-between">
+          <AttemptPips max={maxAttempts} used={attemptsUsed} />
+          <p className="mono text-[11px] text-mute">{attemptsLeft} left</p>
+        </div>
       </div>
-    </div>
+    </MarqueeFrame>
   );
 }

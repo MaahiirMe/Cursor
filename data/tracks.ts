@@ -1,4 +1,7 @@
 import { artworkDataUrl, hashString, waveformFromSeed } from "@/lib/art";
+import { ARTISTS } from "@/data/artists";
+import { SAAVN_DESI_HIP_HOP } from "@/data/saavn-desi-hip-hop";
+import { compact } from "@/lib/game/normalize";
 import type { Track } from "@/types";
 
 function t(
@@ -19,7 +22,7 @@ function t(
   };
 }
 
-export const TRACKS: Track[] = [
+export const CORE_TRACKS: Track[] = [
   t({ id: "namastute", title: "Namastute", slug: "namastute", artists: ["seedhe-maut"], primaryArtist: "seedhe-maut", featuredArtists: [], aliases: ["namaste", "namastute sm"], album: "Namastute", releaseYear: 2021, sceneTags: ["Delhi", "Underground", "New Wave"], languageTags: ["Hinglish"], difficulty: 2, searchQuery: "Namastute Seedhe Maut" }),
   t({ id: "11-11", title: "11:11", slug: "11-11", artists: ["seedhe-maut"], primaryArtist: "seedhe-maut", featuredArtists: [], aliases: ["1111", "eleven eleven"], album: "Lunch Break", releaseYear: 2023, sceneTags: ["Delhi", "Underground"], languageTags: ["Hinglish"], difficulty: 2, searchQuery: "11:11 Seedhe Maut" }),
   t({ id: "khatta-flow", title: "Khatta Flow", slug: "khatta-flow", artists: ["seedhe-maut", "krsna"], primaryArtist: "seedhe-maut", featuredArtists: ["krsna"], aliases: ["khattaflow"], album: "Lunch Break", releaseYear: 2023, sceneTags: ["Delhi", "Mainstream"], languageTags: ["Hinglish"], difficulty: 3, searchQuery: "Khatta Flow Seedhe Maut KR$NA" }),
@@ -66,6 +69,45 @@ export const TRACKS: Track[] = [
   t({ id: "nanchaku-wait", title: "No Cap", slug: "no-cap", artists: ["rawal"], primaryArtist: "rawal", featuredArtists: [], aliases: ["nocap"], album: "No Cap", releaseYear: 2022, sceneTags: ["Delhi", "New Wave"], languageTags: ["Hinglish"], difficulty: 4, searchQuery: "No Cap Rawal" }),
   t({ id: "woh", title: "Woh", slug: "woh", artists: ["ikka"], primaryArtist: "ikka", featuredArtists: [], aliases: ["wo"], album: "Woh", releaseYear: 2021, sceneTags: ["Delhi", "Mainstream"], languageTags: ["Hindi"], difficulty: 3, searchQuery: "Woh Ikka" }),
 ];
+
+function artistIdFor(name: string) {
+  const slug = name
+    .toLowerCase()
+    .replace(/\$/g, "s")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+  return (
+    ARTISTS.find(
+      (x) =>
+        x.id === slug ||
+        compact(x.name) === compact(name) ||
+        x.aliases.some((al) => compact(al) === compact(name)),
+    )?.id ?? slug
+  );
+}
+
+const seenTitles = new Set(CORE_TRACKS.map((x) => compact(x.title)));
+const playlistTracks: Track[] = SAAVN_DESI_HIP_HOP.filter((row) => !seenTitles.has(compact(row.title))).map((row) => {
+  const ids = row.artists.map(artistIdFor);
+  const slug = compact(row.title) || "track";
+  return t({
+    id: `saavn-${slug}`,
+    title: row.title,
+    slug,
+    artists: ids,
+    primaryArtist: ids[0],
+    featuredArtists: ids.slice(1),
+    aliases: [row.title.replace(/\s+/g, "")],
+    album: "Desi Hip Hop",
+    releaseYear: row.year,
+    sceneTags: ["New Wave"],
+    languageTags: ["Hinglish"],
+    difficulty: 3,
+    searchQuery: `${row.title} ${row.artists[0]}`,
+  });
+});
+
+export const TRACKS: Track[] = [...CORE_TRACKS, ...playlistTracks];
 
 export const tracksById = new Map(TRACKS.map((x) => [x.id, x]));
 export const tracksBySlug = new Map(TRACKS.map((x) => [x.slug, x]));

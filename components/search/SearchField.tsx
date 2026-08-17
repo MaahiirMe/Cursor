@@ -10,10 +10,11 @@ type Props = {
   label: string;
   value: string;
   selectedId?: string;
-  onChange: (text: string, id?: string) => void;
+  placeholder?: string;
+  onChange: (text: string, id?: string, meta?: { artistName?: string }) => void;
 };
 
-export function SearchField({ kind, label, value, selectedId, onChange }: Props) {
+export function SearchField({ kind, label, value, selectedId, placeholder, onChange }: Props) {
   const boxId = useId();
   const listId = `${boxId}-list`;
   const [open, setOpen] = useState(false);
@@ -46,7 +47,9 @@ export function SearchField({ kind, label, value, selectedId, onChange }: Props)
   }, []);
 
   const pick = (item: Item) => {
-    onChange(item.title ?? item.name ?? "", item.id);
+    onChange(item.title ?? item.name ?? "", item.id?.startsWith("live-") ? undefined : item.id, {
+      artistName: item.primaryArtistName,
+    });
     setOpen(false);
   };
 
@@ -69,7 +72,7 @@ export function SearchField({ kind, label, value, selectedId, onChange }: Props)
         autoCorrect="off"
         spellCheck={false}
         value={value}
-        placeholder={kind === "song" ? "Track name" : "Artist"}
+        placeholder={placeholder ?? (kind === "song" ? "Gaana likh..." : "Artist likh...")}
         onChange={(e) => {
           onChange(e.target.value, undefined);
           setOpen(true);

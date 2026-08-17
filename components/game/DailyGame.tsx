@@ -86,8 +86,8 @@ export function DailyGame() {
             mode="daily"
             daily
             practice={practice}
-            eyebrow={`DAILY BEAT #${n}`}
-            headline="2 SEC. PEHCHAAN SAKTA HAI?"
+            eyebrow={`DAILY #${n} · 2 SEC`}
+            headline="PEHCHAAN SAKTA HAI?"
             track={data.track}
             challengeId={data.challenge.id}
             challengeNumber={data.challenge.challengeNumber}

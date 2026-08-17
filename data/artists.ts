@@ -1,5 +1,7 @@
 import type { Artist } from "@/types";
+import { extraArtist, SAAVN_DESI_HIP_HOP } from "@/data/saavn-desi-hip-hop";
 import { artworkDataUrl } from "@/lib/art";
+import { compact } from "@/lib/game/normalize";
 
 function a(
   id: string,
@@ -18,7 +20,7 @@ function a(
   };
 }
 
-export const ARTISTS: Artist[] = [
+export const CORE_ARTISTS: Artist[] = [
   a("seedhe-maut", "Seedhe Maut", "seedhe-maut", ["SM", "seedhemaut", "seedhe maut", "S M"], ["Delhi", "Underground", "New Wave"]),
   a("krsna", "KR$NA", "krsna", ["Krsna", "KR$NA", "KRSNA", "KrSna", "Young Galib"], ["Delhi", "Mainstream"]),
   a("divine", "DIVINE", "divine", ["Divine", "divyne"], ["Mumbai", "Mainstream"]),
@@ -46,6 +48,27 @@ export const ARTISTS: Artist[] = [
   a("jani", "Jani", "jani", ["jani pk"], ["Pakistan", "Underground"]),
   a("panther", "Panther", "panther", ["panther delhi"], ["Delhi", "Underground"]),
 ];
+
+function knownArtist(name: string) {
+  const slug = name
+    .toLowerCase()
+    .replace(/\$/g, "s")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+  return CORE_ARTISTS.find(
+    (x) =>
+      compact(x.name) === compact(name) ||
+      x.aliases.some((al) => compact(al) === compact(name)) ||
+      x.id === slug,
+  );
+}
+
+const extraFromPlaylist = SAAVN_DESI_HIP_HOP.flatMap((row) => row.artists)
+  .filter((name, i, arr) => arr.findIndex((n) => compact(n) === compact(name)) === i)
+  .filter((name) => !knownArtist(name))
+  .map((name) => extraArtist(name));
+
+export const ARTISTS: Artist[] = [...CORE_ARTISTS, ...extraFromPlaylist];
 
 export const artistsById = new Map(ARTISTS.map((x) => [x.id, x]));
 export const artistsBySlug = new Map(ARTISTS.map((x) => [x.slug, x]));
