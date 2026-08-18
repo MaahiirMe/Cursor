@@ -1,11 +1,14 @@
 import { cookies } from "next/headers";
 import crypto from "crypto";
+import { getAuthUser } from "./auth";
 import { getProfile } from "./db/store";
 
 const PLAYER = "dhhuh_player";
 const SESSION = "dhhuh_session";
 
 export async function getPlayerId(): Promise<string> {
+  const user = await getAuthUser();
+  if (user) return user.id;
   const jar = await cookies();
   let id = jar.get(PLAYER)?.value;
   if (!id) {

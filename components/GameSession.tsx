@@ -2,14 +2,16 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { COPY } from "@/lib/copy";
+import type { Identity } from "@/lib/identity";
 import { LISTEN_PENALTY } from "@/lib/scoring";
 import type { GameMode, SearchHit, SessionPublic } from "@/lib/types";
-import { AudioExperience } from "./AudioExperience";
+import { AudioExperience, type AudioHandle } from "./AudioExperience";
 import { AudioStrip } from "./AudioStrip";
 import { CorrectReveal } from "./CorrectReveal";
 import { CustomCursor } from "./CustomCursor";
 import { EditorialNav } from "./EditorialNav";
 import { EditorialSearch } from "./EditorialSearch";
+import { IdentityGate } from "./IdentityGate";
 import { PlayControl } from "./PlayControl";
 import { AttemptIndicator, SessionProgress } from "./Progress";
 import { SessionResult } from "./SessionResult";
@@ -25,6 +27,8 @@ type RevealState = {
 };
 
 export function GameSession({ mode }: { mode: GameMode }) {
+  const [identity, setIdentity] = useState<Identity | null>(null);
+  const [gateReady, setGateReady] = useState(false);
   const [session, setSession] = useState<SessionPublic | null>(null);
   const [booting, setBooting] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -40,9 +44,8 @@ export function GameSession({ mode }: { mode: GameMode }) {
   const [flash, setFlash] = useState<string | null>(null);
   const [skipAsk, setSkipAsk] = useState(false);
   const [reveal, setReveal] = useState<RevealState | null>(null);
-  const [name, setName] = useState("GUEST");
-  const [replayKey, setReplayKey] = useState(0);
   const tick = useRef<number | null>(null);
+  const audioRef = useRef<AudioHandle>(null);
 
   const start = useCallback(async () => {
     setError(null);
@@ -73,6 +76,40 @@ export function GameSession({ mode }: { mode: GameMode }) {
   }, [mode]);
 
   useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("/api/auth/me");
+        const json = (await res.json()) as { identity: Identity | null };
+        if (cancelled) return;
+        if (json.identity) {
+          setIdentity(json.identity);
+          setGateReady(true);
+          return;
+        }
+        const local = localStorage.getItem("dhhuh_guest_name");
+        if (local) {
+          const g = await fetch("/api/auth/guest", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name: local }),
+          });
+          const saved = (await g.json()) as { identity?: Identity };
+          if (saved.identity) setIdentity(saved.identity);
+        }
+      } catch {
+        /* guest gate */
+      } finally {
+        if (!cancelled) setGateReady(true);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!identity) return;
     start();
     const seen = sessionStorage.getItem("dhhuh-seen");
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -82,7 +119,7 @@ export function GameSession({ mode }: { mode: GameMode }) {
       const t = setTimeout(() => setIntro(false), 900);
       return () => clearTimeout(t);
     }
-  }, [start]);
+  }, [identity, start]);
 
   useEffect(() => {
     const vv = window.visualViewport;
@@ -92,15 +129,6 @@ export function GameSession({ mode }: { mode: GameMode }) {
     };
     vv?.addEventListener("resize", onResize);
     return () => vv?.removeEventListener("resize", onResize);
-  }, []);
-
-  useEffect(() => {
-    fetch("/api/profile")
-      .then((r) => r.json())
-      .then((p: { username?: string }) => {
-        if (p.username) setName(p.username);
-      })
-      .catch(() => undefined);
   }, []);
 
   const round = session?.rounds[session.currentIndex];
@@ -135,6 +163,7 @@ export function GameSession({ mode }: { mode: GameMode }) {
         error?: string;
       };
       if (!json.session) throw new Error(json.error);
+      audioRef.current?.pause();
       setPlaying(false);
       setSession(json.session);
       const r = json.session.rounds[json.session.currentIndex];
@@ -187,6 +216,18 @@ export function GameSession({ mode }: { mode: GameMode }) {
     }
   }, []);
 
+  async function sun(seconds: number) {
+    setElapsed(0);
+    setPlaying(true);
+    try {
+      await audioRef.current?.play(seconds);
+      window.setTimeout(() => setPlaying(false), seconds * 1000 + 80);
+    } catch {
+      setPlaying(false);
+      setFlash("Track nahi chala. Naya try.");
+    }
+  }
+
   async function more() {
     if (!round?.canAddTime || busy) return;
     setBusy(true);
@@ -195,8 +236,8 @@ export function GameSession({ mode }: { mode: GameMode }) {
       const json = (await res.json()) as { session: SessionPublic };
       setSession(json.session);
       setElapsed(0);
-      setReplayKey((k) => k + 1);
       setPlaying(true);
+      await audioRef.current?.play(json.session.rounds[json.session.currentIndex].revealSeconds);
     } catch {
       setFlash(COPY.error);
     } finally {
@@ -224,6 +265,7 @@ export function GameSession({ mode }: { mode: GameMode }) {
     try {
       const res = await fetch("/api/game/skip", { method: "POST" });
       const json = (await res.json()) as { session: SessionPublic; copy: string };
+      audioRef.current?.pause();
       setPlaying(false);
       setSession(json.session);
       const r = json.session.rounds[json.session.currentIndex];
@@ -254,6 +296,25 @@ export function GameSession({ mode }: { mode: GameMode }) {
   const clock = useMemo(() => format(elapsed), [elapsed]);
   const endClock = format(round?.revealSeconds ?? 2);
 
+  async function logout() {
+    await fetch("/api/auth/logout", { method: "POST" });
+    localStorage.removeItem("dhhuh_guest_name");
+    setIdentity(null);
+    setSession(null);
+  }
+
+  if (!gateReady) {
+    return (
+      <main className="grid min-h-screen place-items-center">
+        <p className="mono text-smoke">INDIAN DESI HIP-HOP</p>
+      </main>
+    );
+  }
+
+  if (!identity) {
+    return <IdentityGate onReady={setIdentity} />;
+  }
+
   if (error && !session) {
     return (
       <main className="grid min-h-screen place-items-center px-6 text-center">
@@ -279,17 +340,23 @@ export function GameSession({ mode }: { mode: GameMode }) {
     return (
       <>
         <CustomCursor />
-        <EditorialNav sessionLabel={`SESSION ${String(session.number).padStart(4, "0")}`} name={name} />
+        <EditorialNav
+          sessionLabel={`SESSION ${String(session.number).padStart(4, "0")}`}
+          identity={identity}
+          score={session.totalScore}
+          onLogout={logout}
+        />
         <SessionResult
           session={session}
           onReplay={start}
           onName={async (n) => {
-            await fetch("/api/profile", {
+            await fetch("/api/auth/guest", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ username: n }),
+              body: JSON.stringify({ name: n }),
             });
-            setName(n.toUpperCase());
+            setIdentity({ kind: "guest", displayName: n });
+            localStorage.setItem("dhhuh_guest_name", n);
           }}
         />
       </>
@@ -300,8 +367,10 @@ export function GameSession({ mode }: { mode: GameMode }) {
     <>
       <CustomCursor />
       <EditorialNav
-        sessionLabel={`${mode === "daily" ? "DAILY" : "SESSION"} ${String(session.number).padStart(4, "0")}`}
-        name={name}
+        identity={identity}
+        score={session.totalScore}
+        roundIndex={session.currentIndex}
+        onLogout={logout}
       />
       {intro ? <Intro /> : null}
 
@@ -328,15 +397,14 @@ export function GameSession({ mode }: { mode: GameMode }) {
               playing={playing}
               seconds={round.revealSeconds}
               onPlay={() => {
-                setElapsed(0);
-                setReplayKey((k) => k + 1);
-                setPlaying(true);
+                void sun(round.revealSeconds);
               }}
-              onPause={() => setPlaying(false)}
+              onPause={() => {
+                audioRef.current?.pause();
+                setPlaying(false);
+              }}
               onReplay={() => {
-                setElapsed(0);
-                setReplayKey((k) => k + 1);
-                setPlaying(true);
+                void sun(round.revealSeconds);
               }}
               onHover={setHoverPlay}
             />
@@ -408,6 +476,8 @@ export function GameSession({ mode }: { mode: GameMode }) {
               onPick={(hit: SearchHit) => {
                 setTrackQ(hit.title);
                 setTrackId(hit.id);
+                setArtistQ(hit.subtitle);
+                setArtistId(hit.artistId ?? hit.artistIds?.[0] ?? null);
               }}
             />
           </div>
@@ -473,11 +543,8 @@ export function GameSession({ mode }: { mode: GameMode }) {
 
       {round.playback ? (
         <AudioExperience
+          ref={audioRef}
           playback={round.playback}
-          duration={round.revealSeconds}
-          playing={playing}
-          replayKey={replayKey}
-          onStopped={() => setPlaying(false)}
           onUnplayable={async () => {
             try {
               const res = await fetch("/api/game/replace", { method: "POST" });
@@ -486,7 +553,7 @@ export function GameSession({ mode }: { mode: GameMode }) {
                 setSession(json.session);
                 setPlaying(false);
                 setElapsed(0);
-                setFlash("Naya track. Phir se PLAY.");
+                setFlash("Naya track. Phir se SUN.");
                 return true;
               }
             } catch {

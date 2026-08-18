@@ -42,5 +42,5 @@ export function creditArtistIds(track: Track): Set<string> {
 export function artistLine(track: Track): string {
   const names = track.artists.map((a) => a.name);
   if (names.length === 1) return names[0];
-  return names.join(" × ");
+  return names.join(", ");
 }

@@ -73,9 +73,25 @@ create table if not exists daily_session_tracks (
 
 create table if not exists users (
   id uuid primary key,
-  username text unique,
-  email text unique,
-  created_at timestamptz default now()
+  username text not null,
+  normalized_username text not null,
+  password_hash text not null,
+  created_at timestamptz not null default now(),
+  unique (normalized_username)
+);
+
+create table if not exists player_stats (
+  player_id uuid primary key references users(id) on delete cascade,
+  sessions int not null default 0,
+  tracks_attempted int not null default 0,
+  correct int not null default 0,
+  accuracy int not null default 0,
+  total_score int not null default 0,
+  best_score int not null default 0,
+  average_listen int,
+  perfect_two_second int not null default 0,
+  streak int not null default 0,
+  best_streak int not null default 0
 );
 
 create table if not exists game_sessions (
@@ -107,12 +123,6 @@ create table if not exists guesses (
   selected_artist_id text,
   verdict text not null,
   created_at timestamptz default now()
-);
-
-create table if not exists player_stats (
-  player_id uuid primary key,
-  sessions int not null default 0,
-  best_score int not null default 0
 );
 
 create table if not exists leaderboard_entries (

@@ -123,6 +123,8 @@ export async function hybridSearchArtists(query: string, limit = 8): Promise<Sea
       subtitle: hit.subtitle,
       meta: hit.meta,
       local: hit.local,
+      artistId: hit.artistId,
+      artistIds: hit.artistIds,
       highlight: hit.highlight,
     }));
 }
@@ -157,6 +159,7 @@ export async function hybridSearchTracks(query: string, limit = 8): Promise<Sear
       title: t.title,
       subtitle: t.artistName,
       meta,
+      artistId: t.artistId,
       highlight: highlight(q, t.title),
       local: false,
       rank: rankName(q, t.title) + t.popularity,
@@ -171,6 +174,8 @@ export async function hybridSearchTracks(query: string, limit = 8): Promise<Sear
       subtitle: hit.subtitle,
       meta: hit.meta,
       local: hit.local,
+      artistId: hit.artistId,
+      artistIds: hit.artistIds,
       highlight: hit.highlight,
     }));
 }

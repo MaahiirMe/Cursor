@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import { resolveLivePlayback } from "./audio/live";
 import { resolveAudioProvider } from "./audio/resolver";
 import { signPlayback } from "./audio/mock";
 import { hintsFor } from "./catalogue/hints";
@@ -10,9 +11,11 @@ import {
   claimDaily,
   getProfile,
   getSession,
+  getUser,
   mutateSession,
   nextSessionNumber,
   saveSession,
+  updateUserStats,
 } from "./db/store";
 import {
   HINT_COSTS,
@@ -57,7 +60,7 @@ function initialSeconds(mode: GameMode): number {
   return mode === "hard" ? 1 : 2;
 }
 
-function pickTracks(mode: GameMode, key?: string, exclude: string[] = []): Track[] {
+async function pickValidatedTracks(mode: GameMode, key?: string, exclude: string[] = []) {
   const pool = playableTracks().filter((t) => !exclude.includes(t.id));
   const seed =
     mode === "daily" && key
@@ -65,14 +68,13 @@ function pickTracks(mode: GameMode, key?: string, exclude: string[] = []): Track
       : crypto.randomInt(1, 1_000_000_000);
   const rand = mulberry32(seed);
   const shuffled = [...pool].sort(() => rand() - 0.5);
-  const chosen: Track[] = [];
-  const used = new Set<string>();
-  for (const t of shuffled) {
-    if (used.has(t.id)) continue;
-    chosen.push(t);
-    used.add(t.id);
-    if (chosen.length === 5) break;
-  }
+  const checks = await Promise.all(
+    shuffled.map(async (t) => {
+      const prepared = await resolveLivePlayback(t);
+      return prepared ? { track: t, prepared } : null;
+    }),
+  );
+  const chosen = checks.filter((x): x is NonNullable<typeof x> => Boolean(x)).slice(0, 5);
   if (chosen.length < 5) {
     throw new Error("Not enough playable tracks from 00:00");
   }
@@ -111,7 +113,7 @@ function toPublic(session: StoredSession): SessionPublic {
   const rounds: RevealedRound[] = session.rounds.map((raw, index) => {
     const r = hydrate(raw, session.mode);
     const track = getTrack(r.trackId)!;
-    const prepared = resolveAudioProvider(track);
+    const prepared = r.prepared ?? resolveAudioProvider(track);
     const token = signPlayback(session.id, index);
     const isCurrent =
       session.status === "playing" && index === session.currentIndex && r.outcome === "pending";
@@ -120,7 +122,9 @@ function toPublic(session: StoredSession): SessionPublic {
           providerId: prepared.providerId,
           youtubeVideoId: prepared.youtubeVideoId,
           audioUrl:
-            prepared.providerId === "licensed" ? prepared.audioUrl : `/api/audio/${token}`,
+            prepared.providerId === "licensed"
+              ? prepared.audioUrl
+              : prepared.audioUrl ?? `/api/audio/${token}`,
           startSeconds: 0 as const,
         }
       : { providerId: prepared.providerId, startSeconds: 0 as const };
@@ -189,7 +193,7 @@ function computeStats(session: StoredSession): SessionStats {
 
 export async function startSession(playerId: string, mode: GameMode): Promise<SessionPublic> {
   const key = mode === "daily" ? dailyKey() : undefined;
-  const tracks = pickTracks(mode, key);
+  const picked = await pickValidatedTracks(mode, key);
   const number = mode === "daily" && key ? dailyNumber(key) : await nextSessionNumber();
   const id = crypto.randomUUID();
   let replay = false;
@@ -198,7 +202,7 @@ export async function startSession(playerId: string, mode: GameMode): Promise<Se
     replay = claim.replay;
   }
   const startAt = initialSeconds(mode);
-  const rounds: StoredRound[] = tracks.map((t) => ({
+  const rounds: StoredRound[] = picked.map(({ track: t, prepared }) => ({
     trackId: t.id,
     attemptsUsed: 0,
     revealSeconds: startAt,
@@ -208,6 +212,7 @@ export async function startSession(playerId: string, mode: GameMode): Promise<Se
     outcome: "pending",
     score: 0,
     guesses: [],
+    prepared,
   }));
   const session: StoredSession = {
     id,
@@ -290,7 +295,7 @@ export async function submitGuess(
 }
 
 export async function replaceUnplayableRound(sessionId: string, playerId: string) {
-  return mutateSession(sessionId, (session) => {
+  return mutateSession(sessionId, async (session) => {
     if (session.playerId !== playerId) throw new Error("Session not found");
     if (session.status !== "playing") throw new Error("Session complete");
     const round = hydrate(session.rounds[session.currentIndex], session.mode);
@@ -301,12 +306,19 @@ export async function replaceUnplayableRound(sessionId: string, playerId: string
       return { session: toPublic(session), replaced: false };
     }
     const used = new Set(session.rounds.map((r) => r.trackId));
-    const next = playableTracks().find((t) => !used.has(t.id));
+    const next = await (async () => {
+      for (const t of playableTracks()) {
+        if (used.has(t.id)) continue;
+        const prepared = await resolveLivePlayback(t);
+        if (prepared) return { track: t, prepared };
+      }
+      return null;
+    })();
     if (!next) {
       return { session: toPublic(session), replaced: false };
     }
     session.rounds[session.currentIndex] = {
-      trackId: next.id,
+      trackId: next.track.id,
       attemptsUsed: 0,
       revealSeconds: round.initialSeconds,
       initialSeconds: round.initialSeconds,
@@ -315,6 +327,7 @@ export async function replaceUnplayableRound(sessionId: string, playerId: string
       outcome: "pending",
       score: 0,
       guesses: [],
+      prepared: next.prepared,
     };
     return { session: toPublic(session), replaced: true };
   });
@@ -362,19 +375,55 @@ export async function advanceRound(sessionId: string, playerId: string) {
     return s;
   });
   if (session.status === "complete" && !session.replay) {
-    const profile = await getProfile(playerId);
     const stats = computeStats(session);
-    await addLeaderboard({
-      id: crypto.randomUUID(),
-      playerId,
-      username: profile.username ?? "GUEST",
-      score: session.rounds.reduce((sum: number, r: StoredRound) => sum + r.score, 0),
-      solved: stats.solved,
-      mode: session.mode,
-      dailyKey: session.dailyKey,
-      createdAt: Date.now(),
-      verified: true,
-    });
+    const total = session.rounds.reduce((sum: number, r: StoredRound) => sum + r.score, 0);
+    const user = await getUser(playerId);
+    if (user) {
+      await addLeaderboard({
+        id: crypto.randomUUID(),
+        playerId,
+        username: user.username,
+        score: total,
+        solved: stats.solved,
+        mode: session.mode,
+        dailyKey: session.dailyKey,
+        createdAt: Date.now(),
+        verified: true,
+      });
+      let streak = user.stats.streak;
+      let bestStreak = user.stats.bestStreak;
+      let perfect = user.stats.perfectTwoSecond;
+      const listen = session.rounds.map((r) => r.revealSeconds);
+      for (const r of session.rounds) {
+        if (r.outcome === "correct") {
+          streak += 1;
+          if (r.revealSeconds <= 2 && r.attemptsUsed === 1) perfect += 1;
+        } else {
+          streak = 0;
+        }
+        bestStreak = Math.max(bestStreak, streak);
+      }
+      const tracksAttempted = user.stats.tracksAttempted + session.rounds.length;
+      const correct = user.stats.correct + stats.solved;
+      const prevListenTotal =
+        user.stats.averageListen != null ? user.stats.averageListen * user.stats.tracksAttempted : 0;
+      const averageListen =
+        tracksAttempted > 0
+          ? Math.round((prevListenTotal + listen.reduce((a, b) => a + b, 0)) / tracksAttempted)
+          : null;
+      await updateUserStats(playerId, {
+        sessions: user.stats.sessions + 1,
+        tracksAttempted,
+        correct,
+        accuracy: tracksAttempted ? Math.round((correct / tracksAttempted) * 100) : 0,
+        totalScore: user.stats.totalScore + total,
+        bestScore: Math.max(user.stats.bestScore, total),
+        averageListen,
+        perfectTwoSecond: perfect,
+        streak,
+        bestStreak,
+      });
+    }
   }
   return toPublic(session);
 }

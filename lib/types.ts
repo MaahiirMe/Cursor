@@ -118,6 +118,12 @@ export type StoredRound = {
   outcome: RoundOutcome;
   score: number;
   guesses: StoredGuess[];
+  prepared?: {
+    providerId: string;
+    youtubeVideoId?: string;
+    audioUrl?: string;
+    startSeconds: 0;
+  };
 };
 
 export type StoredGuess = {
@@ -146,5 +152,7 @@ export type SearchHit = {
   subtitle: string;
   meta?: string;
   local?: boolean;
+  artistId?: string;
+  artistIds?: string[];
   highlight: [number, number] | null;
 };

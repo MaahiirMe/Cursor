@@ -76,7 +76,13 @@ export function searchTracks(query: string, limit = 8): SearchHit[] {
       const popularity = 6 - t.difficulty;
       return { t, score: boost + fuzzy + popularity, boost, fuzzy };
     })
-    .filter((x) => x.boost >= 70 || (x.boost >= 40 && x.fuzzy >= 18) || (q.length >= 4 && x.fuzzy >= 42))
+    .filter(
+      (x) =>
+        x.boost >= 70 ||
+        (q.length <= 2 && x.boost >= 90) ||
+        (x.boost >= 40 && x.fuzzy >= 18) ||
+        (q.length >= 4 && x.fuzzy >= 42),
+    )
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
 
@@ -85,6 +91,8 @@ export function searchTracks(query: string, limit = 8): SearchHit[] {
     title: t.title,
     subtitle: artistLine(t),
     meta: [t.album, t.releaseYear].filter(Boolean).join(" · ") || undefined,
+    artistId: t.primaryArtistId,
+    artistIds: t.artists.map((a) => a.id),
     highlight: highlightRange(q, t.title),
   }));
 }

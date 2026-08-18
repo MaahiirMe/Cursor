@@ -209,6 +209,20 @@ input {
   opacity: 0.4;
 }
 
+.yt-mask {
+  pointer-events: none;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 8;
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #1a1916;
+  opacity: 0.18;
+}
+
 .skip-link {
   font-family: var(--font-mono), ui-monospace, monospace;
   font-size: 0.85rem;

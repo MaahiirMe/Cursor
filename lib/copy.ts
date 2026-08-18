@@ -5,7 +5,7 @@ export const COPY = {
   tagline: "SUNKE BATA.",
   loop: "SUN → PEHCHAAN → SELECT → LOCK KAR.",
   supporting: "5 gaane. 5 chances each. Kitna DHH jaanta hai?",
-  play: "PLAY",
+  play: "SUN.",
   pause: "PAUSE",
   submit: "LOCK KAR.",
   plus2: "+2 SEC",

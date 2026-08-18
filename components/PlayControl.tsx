@@ -26,7 +26,7 @@ export function PlayControl({
         aria-label={`Play ${seconds} seconds from the beginning`}
       >
         <span className="orbit" aria-hidden />
-        <span className="text-orange">▶</span> PLAY
+        <span className="text-orange">▶</span> SUN.
         <span className="ml-2 font-mono text-[0.32em] tracking-[0.14em] text-smoke">
           · {seconds} SEC
         </span>
