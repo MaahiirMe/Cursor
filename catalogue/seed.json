@@ -1,0 +1,1963 @@
+{
+  "artists": [
+    {
+      "id": "seedhe-maut",
+      "name": "Seedhe Maut",
+      "aliases": [
+        "SM",
+        "SeedheMaut",
+        "seedhe maut",
+        "Encore x Calm"
+      ],
+      "sceneTags": [
+        "delhi",
+        "azadi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "encore-abj",
+      "name": "Encore ABJ",
+      "aliases": [
+        "Encore",
+        "ABJ"
+      ],
+      "sceneTags": [
+        "delhi",
+        "seedhe-maut"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "calm",
+      "name": "Calm",
+      "aliases": [
+        "Calm Seedhe Maut"
+      ],
+      "sceneTags": [
+        "delhi",
+        "seedhe-maut"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "krsna",
+      "name": "KR$NA",
+      "aliases": [
+        "KRSNA",
+        "KrSna",
+        "Krsna",
+        "krna",
+        "KRNA",
+        "Youngest In Charge"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "mc-stan",
+      "name": "MC Stan",
+      "aliases": [
+        "Stan",
+        "MCSTAN",
+        "MC ST\u2206N"
+      ],
+      "sceneTags": [
+        "pune"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "divine",
+      "name": "DIVINE",
+      "aliases": [
+        "Divine",
+        "Vivian Fernandes"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "naezy",
+      "name": "Naezy",
+      "aliases": [
+        "Naezy Naved",
+        "Naved Shaikh"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "raftaar",
+      "name": "Raftaar",
+      "aliases": [
+        "Raftar"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "emiway",
+      "name": "Emiway Bantai",
+      "aliases": [
+        "Emiway",
+        "Bantai"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "prabh-deep",
+      "name": "Prabh Deep",
+      "aliases": [
+        "Prabhdeep",
+        "Prabh"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "brodha-v",
+      "name": "Brodha V",
+      "aliases": [
+        "BrodhaV",
+        "Broda V"
+      ],
+      "sceneTags": [
+        "bengaluru"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "dino-james",
+      "name": "Dino James",
+      "aliases": [
+        "Dino"
+      ],
+      "sceneTags": [
+        "bhopal"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "ikka",
+      "name": "Ikka",
+      "aliases": [
+        "Ikka Singh"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "fotty-seven",
+      "name": "Fotty Seven",
+      "aliases": [
+        "Fotty7",
+        "47"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "yashraj",
+      "name": "Yashraj",
+      "aliases": [
+        "Yash Raj"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "frappe-ash",
+      "name": "Frappe Ash",
+      "aliases": [
+        "Frappe"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "bharg",
+      "name": "Bharg",
+      "aliases": [],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "rawal",
+      "name": "Rawal",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "bhaskar",
+      "name": "Bhaskar",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "karma",
+      "name": "Karma",
+      "aliases": [],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "king",
+      "name": "King",
+      "aliases": [
+        "King MC"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "hanumankind",
+      "name": "Hanumankind",
+      "aliases": [
+        "Sooraj Cherukat"
+      ],
+      "sceneTags": [
+        "kochi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "panther",
+      "name": "PANTHER",
+      "aliases": [
+        "Panther"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "raga",
+      "name": "Raga",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "muhfaad",
+      "name": "Muhfaad",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "paradox",
+      "name": "Paradox",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "bella",
+      "name": "Bella",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "qaab",
+      "name": "Qaab",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "loka",
+      "name": "Loka",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "khayek",
+      "name": "Khayek",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "nazz",
+      "name": "Nazz",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "bandzo3rd",
+      "name": "Bandzo3rd",
+      "aliases": [
+        "Bandzo"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "spectra",
+      "name": "Spectra",
+      "aliases": [],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "udbhav",
+      "name": "Udbhav",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "chaar-diwaari",
+      "name": "Chaar Diwaari",
+      "aliases": [
+        "Chaar Diwari"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "tienas",
+      "name": "Tienas",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "sikander-kahlon",
+      "name": "Sikander Kahlon",
+      "aliases": [
+        "SK",
+        "Sikander"
+      ],
+      "sceneTags": [
+        "chandigarh"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "seven-bantai",
+      "name": "7Bantaiz",
+      "aliases": [
+        "Rebel 7",
+        "7 Bantai",
+        "7Bantai"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "shah-rule",
+      "name": "Shah Rule",
+      "aliases": [
+        "Shahrule"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "sez",
+      "name": "Sez On The Beat",
+      "aliases": [
+        "Sez",
+        "Sez on the Beat"
+      ],
+      "sceneTags": [
+        "delhi",
+        "azadi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "deep-kalsi",
+      "name": "Deep Kalsi",
+      "aliases": [
+        "Kalsi"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "j-trix",
+      "name": "J Trix",
+      "aliases": [
+        "JTrix"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "mc-altaf",
+      "name": "MC Altaf",
+      "aliases": [
+        "Altaf"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "gravity",
+      "name": "Gravity",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "ace",
+      "name": "Ace",
+      "aliases": [
+        "Ace DHH"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "dee-mc",
+      "name": "Dee MC",
+      "aliases": [
+        "DeeMC"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "mojojojo",
+      "name": "MojoJojo",
+      "aliases": [
+        "Mojo Jojo"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "smokey",
+      "name": "Smokey",
+      "aliases": [
+        "Smokey the Ghost"
+      ],
+      "sceneTags": [
+        "bengaluru"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "karan-kanchan",
+      "name": "Karan Kanchan",
+      "aliases": [
+        "KK"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "stunnah",
+      "name": "Stunnah Beatz",
+      "aliases": [
+        "Stunnah"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "phenom",
+      "name": "Phenom",
+      "aliases": [],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "byg-byrd",
+      "name": "Byg Byrd",
+      "aliases": [
+        "Big Byrd"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "country": "IN",
+      "active": true
+    },
+    {
+      "id": "kalmi",
+      "name": "Kalmi",
+      "aliases": [],
+      "sceneTags": [
+        "kochi"
+      ],
+      "country": "IN",
+      "active": true
+    }
+  ],
+  "tracks": [
+    {
+      "id": "namastute",
+      "title": "Namastute",
+      "artistIds": [
+        "seedhe-maut"
+      ],
+      "primaryArtistId": "seedhe-maut",
+      "aliases": [
+        "namaste"
+      ],
+      "releaseYear": 2021,
+      "youtubeVideoId": "YuWUJg3Kdks",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "azadi"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "101",
+      "title": "101",
+      "artistIds": [
+        "seedhe-maut"
+      ],
+      "primaryArtistId": "seedhe-maut",
+      "aliases": [
+        "one oh one"
+      ],
+      "releaseYear": 2019,
+      "youtubeVideoId": "IUFPs3j341k",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "azadi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "nanchaku",
+      "title": "Nanchaku",
+      "artistIds": [
+        "seedhe-maut",
+        "mc-stan"
+      ],
+      "primaryArtistId": "seedhe-maut",
+      "aliases": [
+        "nunchaku"
+      ],
+      "releaseYear": 2021,
+      "youtubeVideoId": "VjJtH7xM8G4",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "azadi"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "khatta-flow",
+      "title": "Khatta Flow",
+      "artistIds": [
+        "seedhe-maut",
+        "krsna"
+      ],
+      "primaryArtistId": "seedhe-maut",
+      "aliases": [
+        "khattaflow",
+        "khata flow"
+      ],
+      "releaseYear": 2023,
+      "youtubeVideoId": "qVcHlaFZf6A",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "azadi"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "kohra",
+      "title": "Kohra",
+      "artistIds": [
+        "seedhe-maut",
+        "sez"
+      ],
+      "primaryArtistId": "seedhe-maut",
+      "aliases": [
+        "kohraa"
+      ],
+      "releaseYear": 2023,
+      "youtubeVideoId": "Dj2cCoSNovo",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "azadi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "shaktimaan",
+      "title": "Shaktimaan",
+      "artistIds": [
+        "seedhe-maut",
+        "sez"
+      ],
+      "primaryArtistId": "seedhe-maut",
+      "aliases": [
+        "shaktiman"
+      ],
+      "releaseYear": 2023,
+      "youtubeVideoId": "ZEN3KMdIVZM",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "azadi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "11k",
+      "title": "11K",
+      "artistIds": [
+        "seedhe-maut"
+      ],
+      "primaryArtistId": "seedhe-maut",
+      "aliases": [
+        "11 k",
+        "eleven k"
+      ],
+      "releaseYear": 2022,
+      "youtubeVideoId": "VEQ-XJWiQMM",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "azadi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "nayaab",
+      "title": "Nayaab",
+      "artistIds": [
+        "seedhe-maut",
+        "sez"
+      ],
+      "primaryArtistId": "seedhe-maut",
+      "aliases": [
+        "nayab"
+      ],
+      "releaseYear": 2021,
+      "youtubeVideoId": "blJQvjUfDdg",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "azadi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "no-cap",
+      "title": "No Cap",
+      "artistIds": [
+        "krsna"
+      ],
+      "primaryArtistId": "krsna",
+      "aliases": [
+        "nocap"
+      ],
+      "releaseYear": 2021,
+      "youtubeVideoId": "PejQbGZraqg",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "hola-amigo",
+      "title": "Hola Amigo",
+      "artistIds": [
+        "krsna",
+        "seedhe-maut"
+      ],
+      "primaryArtistId": "krsna",
+      "aliases": [
+        "holaamigo",
+        "hola"
+      ],
+      "releaseYear": 2022,
+      "youtubeVideoId": "De9VIp37CjY",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "saza-e-maut",
+      "title": "Saza-E-Maut",
+      "artistIds": [
+        "krsna",
+        "raftaar"
+      ],
+      "primaryArtistId": "krsna",
+      "aliases": [
+        "saza e maut",
+        "saza"
+      ],
+      "releaseYear": 2020,
+      "youtubeVideoId": "o907r6NsK9s",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "joota-japani",
+      "title": "Joota Japani",
+      "artistIds": [
+        "krsna"
+      ],
+      "primaryArtistId": "krsna",
+      "aliases": [
+        "juta japani"
+      ],
+      "releaseYear": 2022,
+      "youtubeVideoId": "vR16Gu-Uq00",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "prarthana",
+      "title": "Prarthana",
+      "artistIds": [
+        "krsna",
+        "bharg"
+      ],
+      "primaryArtistId": "krsna",
+      "aliases": [
+        "prathana"
+      ],
+      "releaseYear": 2023,
+      "youtubeVideoId": "OKPAPX_fGVw",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "vyanjan",
+      "title": "Vyanjan",
+      "artistIds": [
+        "krsna"
+      ],
+      "primaryArtistId": "krsna",
+      "aliases": [
+        "vyanjan rap"
+      ],
+      "releaseYear": 2019,
+      "youtubeVideoId": "CDbeB2-UCcQ",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "blowing-up",
+      "title": "Blowing Up",
+      "artistIds": [
+        "krsna"
+      ],
+      "primaryArtistId": "krsna",
+      "aliases": [
+        "blowingup"
+      ],
+      "releaseYear": 2021,
+      "youtubeVideoId": "AwhyFo5N0cg",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "sellout",
+      "title": "Sellout",
+      "artistIds": [
+        "krsna"
+      ],
+      "primaryArtistId": "krsna",
+      "aliases": [
+        "sell out"
+      ],
+      "releaseYear": 2022,
+      "youtubeVideoId": "MEeup4aqi1I",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "seedha-makeover",
+      "title": "Seedha Makeover",
+      "artistIds": [
+        "krsna"
+      ],
+      "primaryArtistId": "krsna",
+      "aliases": [
+        "sidha makeover"
+      ],
+      "releaseYear": 2021,
+      "youtubeVideoId": "fHSo2cpyIas",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "mere-gully-mein",
+      "title": "Mere Gully Mein",
+      "artistIds": [
+        "divine",
+        "naezy"
+      ],
+      "primaryArtistId": "divine",
+      "aliases": [
+        "mere gali mein",
+        "meregullymein"
+      ],
+      "releaseYear": 2015,
+      "youtubeVideoId": "1bK5dzwhu-I",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 1,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "farak",
+      "title": "Farak",
+      "artistIds": [
+        "divine"
+      ],
+      "primaryArtistId": "divine",
+      "aliases": [
+        "farq",
+        "fark"
+      ],
+      "releaseYear": 2019,
+      "youtubeVideoId": "hqn0cxi2d0A",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "359-am",
+      "title": "3:59 AM",
+      "artistIds": [
+        "divine",
+        "stunnah"
+      ],
+      "primaryArtistId": "divine",
+      "aliases": [
+        "359 am",
+        "3 59"
+      ],
+      "releaseYear": 2018,
+      "youtubeVideoId": "eHyl9KG9RWA",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "jungli-sher",
+      "title": "Jungli Sher",
+      "artistIds": [
+        "divine"
+      ],
+      "primaryArtistId": "divine",
+      "aliases": [
+        "junglee sher"
+      ],
+      "releaseYear": 2016,
+      "youtubeVideoId": "9Wsi7YTI2nY",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "kaam-25",
+      "title": "Kaam 25",
+      "artistIds": [
+        "divine"
+      ],
+      "primaryArtistId": "divine",
+      "aliases": [
+        "kaam25"
+      ],
+      "releaseYear": 2018,
+      "youtubeVideoId": "ATf05n5LBHQ",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "mera-bhai",
+      "title": "Mera Bhai",
+      "artistIds": [
+        "divine",
+        "karan-kanchan"
+      ],
+      "primaryArtistId": "divine",
+      "aliases": [
+        "mera bhai divine"
+      ],
+      "releaseYear": 2020,
+      "youtubeVideoId": "hCVQoKwGwTo",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "teesri-manzil",
+      "title": "Teesri Manzil",
+      "artistIds": [
+        "divine"
+      ],
+      "primaryArtistId": "divine",
+      "aliases": [
+        "tisri manzil"
+      ],
+      "releaseYear": 2019,
+      "youtubeVideoId": "9emx__jxcTE",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "one-side",
+      "title": "One Side",
+      "artistIds": [
+        "divine",
+        "byg-byrd"
+      ],
+      "primaryArtistId": "divine",
+      "aliases": [
+        "oneside"
+      ],
+      "releaseYear": 2019,
+      "youtubeVideoId": "gBaKniqsEC0",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "punya-paap",
+      "title": "Punya Paap",
+      "artistIds": [
+        "divine"
+      ],
+      "primaryArtistId": "divine",
+      "aliases": [
+        "punya pap"
+      ],
+      "releaseYear": 2020,
+      "youtubeVideoId": "4wTTAWjNlDM",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "mirchi",
+      "title": "Mirchi",
+      "artistIds": [
+        "divine",
+        "mc-altaf"
+      ],
+      "primaryArtistId": "divine",
+      "aliases": [
+        "mirchi divine"
+      ],
+      "releaseYear": 2019,
+      "youtubeVideoId": "w5Aioq5VYF0",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "four-ten",
+      "title": "4.10",
+      "artistIds": [
+        "divine"
+      ],
+      "primaryArtistId": "divine",
+      "aliases": [
+        "4 10",
+        "410"
+      ],
+      "releaseYear": 2022,
+      "youtubeVideoId": "dOoVFyKNynY",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "chal-bombay",
+      "title": "Chal Bombay",
+      "artistIds": [
+        "divine"
+      ],
+      "primaryArtistId": "divine",
+      "aliases": [
+        "chal bombay divine"
+      ],
+      "releaseYear": 2019,
+      "youtubeVideoId": "FS9dkwhPypY",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "machayenge",
+      "title": "Machayenge",
+      "artistIds": [
+        "emiway"
+      ],
+      "primaryArtistId": "emiway",
+      "aliases": [
+        "machayenge 1"
+      ],
+      "releaseYear": 2018,
+      "youtubeVideoId": "7tNPxY_ntEA",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 1,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "company",
+      "title": "Company",
+      "artistIds": [
+        "emiway"
+      ],
+      "primaryArtistId": "emiway",
+      "aliases": [
+        "compeny"
+      ],
+      "releaseYear": 2022,
+      "youtubeVideoId": "GuGYYdwcPYw",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "machayenge-4",
+      "title": "Machayenge 4",
+      "artistIds": [
+        "emiway"
+      ],
+      "primaryArtistId": "emiway",
+      "aliases": [
+        "machayenge4"
+      ],
+      "releaseYear": 2023,
+      "youtubeVideoId": "XrMR14y8Mi8",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "khatam",
+      "title": "Khatam",
+      "artistIds": [
+        "emiway"
+      ],
+      "primaryArtistId": "emiway",
+      "aliases": [
+        "khatam emiway"
+      ],
+      "releaseYear": 2019,
+      "youtubeVideoId": "1iinjrFu2T0",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "round-one",
+      "title": "Round One",
+      "artistIds": [
+        "emiway"
+      ],
+      "primaryArtistId": "emiway",
+      "aliases": [
+        "round 1"
+      ],
+      "releaseYear": 2020,
+      "youtubeVideoId": "9ZExHfTExCU",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "basti-ka-hasti",
+      "title": "Basti Ka Hasti",
+      "artistIds": [
+        "mc-stan"
+      ],
+      "primaryArtistId": "mc-stan",
+      "aliases": [
+        "bastikahasti"
+      ],
+      "releaseYear": 2022,
+      "youtubeVideoId": "GbXtCRCT0Ig",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "pune"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "insaan",
+      "title": "Insaan",
+      "artistIds": [
+        "mc-stan"
+      ],
+      "primaryArtistId": "mc-stan",
+      "aliases": [
+        "insan"
+      ],
+      "releaseYear": 2022,
+      "youtubeVideoId": "_luvbjUrwLI",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "pune"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "tadipaar",
+      "title": "Tadipaar",
+      "artistIds": [
+        "mc-stan"
+      ],
+      "primaryArtistId": "mc-stan",
+      "aliases": [
+        "tadi paar"
+      ],
+      "releaseYear": 2020,
+      "youtubeVideoId": "AKd-3Asq60M",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "pune"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "aathma-rama",
+      "title": "Aathma Rama",
+      "artistIds": [
+        "brodha-v"
+      ],
+      "primaryArtistId": "brodha-v",
+      "aliases": [
+        "atma rama",
+        "aathmarama"
+      ],
+      "releaseYear": 2017,
+      "youtubeVideoId": "pxCWiYFkvTg",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "bengaluru"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "indian-flava",
+      "title": "Indian Flava",
+      "artistIds": [
+        "brodha-v"
+      ],
+      "primaryArtistId": "brodha-v",
+      "aliases": [
+        "indian flavor"
+      ],
+      "releaseYear": 2015,
+      "youtubeVideoId": "dVQgFACjs3c",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "bengaluru"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "sheikh-chilli",
+      "title": "Sheikh Chilli",
+      "artistIds": [
+        "raftaar"
+      ],
+      "primaryArtistId": "raftaar",
+      "aliases": [
+        "sheikh chili"
+      ],
+      "releaseYear": 2018,
+      "youtubeVideoId": "uykOHAhId0Q",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "damn",
+      "title": "Damn",
+      "artistIds": [
+        "raftaar",
+        "krsna"
+      ],
+      "primaryArtistId": "raftaar",
+      "aliases": [
+        "damn raftaar"
+      ],
+      "releaseYear": 2018,
+      "youtubeVideoId": "yBRKqRc-vyQ",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "woh-raat",
+      "title": "Woh Raat",
+      "artistIds": [
+        "raftaar",
+        "krsna"
+      ],
+      "primaryArtistId": "raftaar",
+      "aliases": [
+        "wo raat"
+      ],
+      "releaseYear": 2020,
+      "youtubeVideoId": "bvAS1avuOpY",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "big-dawgs",
+      "title": "Big Dawgs",
+      "artistIds": [
+        "hanumankind",
+        "kalmi"
+      ],
+      "primaryArtistId": "hanumankind",
+      "aliases": [
+        "big dogs",
+        "bigdawgs"
+      ],
+      "releaseYear": 2024,
+      "youtubeVideoId": "hOHKltAiKXQ",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "kochi"
+      ],
+      "difficulty": 1,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "class-sikh",
+      "title": "Class-Sikh",
+      "artistIds": [
+        "prabh-deep",
+        "seedhe-maut"
+      ],
+      "primaryArtistId": "prabh-deep",
+      "aliases": [
+        "classsikh",
+        "class sikh"
+      ],
+      "releaseYear": 2017,
+      "youtubeVideoId": "zN38VR5Fr8I",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "amar",
+      "title": "Amar",
+      "artistIds": [
+        "prabh-deep"
+      ],
+      "primaryArtistId": "prabh-deep",
+      "aliases": [
+        "amar prabh"
+      ],
+      "releaseYear": 2019,
+      "youtubeVideoId": "OM7ow6VR7JY",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "kala",
+      "title": "Kala",
+      "artistIds": [
+        "prabh-deep"
+      ],
+      "primaryArtistId": "prabh-deep",
+      "aliases": [
+        "kala cosmic"
+      ],
+      "releaseYear": 2019,
+      "youtubeVideoId": "SfKAoDBO9aI",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "asal-hustle",
+      "title": "Asal Hustle",
+      "artistIds": [
+        "naezy"
+      ],
+      "primaryArtistId": "naezy",
+      "aliases": [
+        "asal gully",
+        "asal hustle"
+      ],
+      "releaseYear": 2015,
+      "youtubeVideoId": "Mre56rwF6Y8",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "aafat",
+      "title": "Aafat",
+      "artistIds": [
+        "naezy"
+      ],
+      "primaryArtistId": "naezy",
+      "aliases": [
+        "aafat naezy"
+      ],
+      "releaseYear": 2014,
+      "youtubeVideoId": "Wwo36tHg2bw",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "tu-aake-dekhle",
+      "title": "Tu Aake Dekhle",
+      "artistIds": [
+        "king"
+      ],
+      "primaryArtistId": "king",
+      "aliases": [
+        "tu aake dekh le"
+      ],
+      "releaseYear": 2020,
+      "youtubeVideoId": "A66TYFdz8YA",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 2,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "bhai-hai",
+      "title": "Bhai Hai",
+      "artistIds": [
+        "fotty-seven"
+      ],
+      "primaryArtistId": "fotty-seven",
+      "aliases": [
+        "bhai hai fotty"
+      ],
+      "releaseYear": 2021,
+      "youtubeVideoId": "3XzyfAJgowk",
+      "youtubeStartFaithful": true,
+      "sourcePlaylists": [
+        "ytm-dhh-1"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    }
+  ],
+  "playlists": [
+    {
+      "id": "ytm-dhh-1",
+      "name": "YouTube Music / Official DHH videos",
+      "kind": "youtube",
+      "note": "Metadata + official IDs. Audio via YouTube IFrame API from 00:00."
+    },
+    {
+      "id": "jiosaavn-dhh",
+      "name": "JioSaavn Desi Hip-Hop",
+      "kind": "metadata",
+      "note": "Curation reference only."
+    }
+  ]
+}

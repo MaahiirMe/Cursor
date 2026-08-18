@@ -84,9 +84,8 @@ export async function hybridSearchArtists(query: string, limit = 8): Promise<Sea
   const q = query.trim();
   if (!q) return [];
   const local = searchLocalArtists(q);
-  let cached = await searchCachedArtists(q);
-  await fillExternal("artists", q);
-  cached = await searchCachedArtists(q);
+  const cached = await searchCachedArtists(q);
+  if (q.length >= 4) void fillExternal("artists", q);
   const seen = new Set<string>();
   const merged: Array<SearchHit & { rank: number }> = [];
   for (const hit of local) {
@@ -133,9 +132,8 @@ export async function hybridSearchTracks(query: string, limit = 8): Promise<Sear
   const q = query.trim();
   if (!q) return [];
   const local = searchLocalTracks(q);
-  let cached = await searchCachedTracks(q);
-  await fillExternal("tracks", q);
-  cached = await searchCachedTracks(q);
+  const cached = await searchCachedTracks(q);
+  if (q.length >= 4) void fillExternal("tracks", q);
   const seen = new Set<string>();
   const merged: Array<SearchHit & { rank: number }> = [];
   for (const hit of local) {

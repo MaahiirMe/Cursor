@@ -3,7 +3,8 @@ import { resolveLivePlayback } from "./audio/live";
 import { resolveAudioProvider } from "./audio/resolver";
 import { signPlayback } from "./audio/mock";
 import { hintsFor } from "./catalogue/hints";
-import { getTrack, playableTracks } from "./catalogue";
+import { getTrack, playableTracks, loadCatalogue } from "./catalogue";
+import { resetSearchIndex } from "./search";
 import { resolveLocalArtistId, resolveLocalTrackId } from "./metadata/cache";
 import { COPY, correctCopy, resultHeadline, wrongCopy } from "./copy";
 import {
@@ -68,13 +69,19 @@ async function pickValidatedTracks(mode: GameMode, key?: string, exclude: string
       : crypto.randomInt(1, 1_000_000_000);
   const rand = mulberry32(seed);
   const shuffled = [...pool].sort(() => rand() - 0.5);
-  const checks = await Promise.all(
-    shuffled.map(async (t) => {
-      const prepared = await resolveLivePlayback(t);
-      return prepared ? { track: t, prepared } : null;
-    }),
-  );
-  const chosen = checks.filter((x): x is NonNullable<typeof x> => Boolean(x)).slice(0, 5);
+  const chosen: Array<{ track: Track; prepared: NonNullable<Awaited<ReturnType<typeof resolveLivePlayback>>> }> = [];
+  for (let i = 0; i < shuffled.length && chosen.length < 5; i += 6) {
+    const batch = shuffled.slice(i, i + 6);
+    const checks = await Promise.all(
+      batch.map(async (t) => {
+        const prepared = await resolveLivePlayback(t);
+        return prepared ? { track: t, prepared } : null;
+      }),
+    );
+    for (const row of checks) {
+      if (row && chosen.length < 5) chosen.push(row);
+    }
+  }
   if (chosen.length < 5) {
     throw new Error("Not enough playable tracks from 00:00");
   }
@@ -192,6 +199,8 @@ function computeStats(session: StoredSession): SessionStats {
 }
 
 export async function startSession(playerId: string, mode: GameMode): Promise<SessionPublic> {
+  await loadCatalogue();
+  resetSearchIndex();
   const key = mode === "daily" ? dailyKey() : undefined;
   const picked = await pickValidatedTracks(mode, key);
   const number = mode === "daily" && key ? dailyNumber(key) : await nextSessionNumber();

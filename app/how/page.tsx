@@ -14,7 +14,7 @@ export default function HowPage() {
         </h1>
         <div className="mt-16 max-w-xl space-y-3 text-xl leading-snug">
           <p>5 gaane. Har gaane ke 5 chances.</p>
-          <p>▶ PLAY the intro from 00:00.</p>
+          <p>▶ SUN. the intro from 00:00.</p>
           <p>+2 SEC if you need more. HINT if you’re stuck. Both cost points.</p>
           <p>Search the song and artist, then LOCK KAR.</p>
           <p className="pt-6 text-smoke">

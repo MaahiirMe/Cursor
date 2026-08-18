@@ -139,6 +139,8 @@ export function EditorialSearch({
             </button>
           ))}
         </div>
+      ) : value.trim().length > 0 && !picked && !loading ? (
+        <p className="mono mt-2 text-smoke">Kuch nahi mila.</p>
       ) : null}
     </div>
   );
