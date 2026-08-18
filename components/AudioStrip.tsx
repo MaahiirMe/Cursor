@@ -26,10 +26,20 @@ export function AudioStrip({
         return (
           <div key={label} className="blob" data-shape={i} data-state={state}>
             <div className="tex" />
+            {state === "solved" || state === "miss" ? (
+              round.artworkUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={round.artworkUrl}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover opacity-80"
+                />
+              ) : null
+            ) : null}
             <div className="absolute inset-x-3 top-3 flex justify-between font-mono text-[0.58rem] tracking-[0.14em] text-paper/80">
               <span>{label}</span>
               <span>
-                {state === "now" ? "NOW PLAYING" : state === "solved" ? round.title : state === "miss" ? "—" : "LOCKED"}
+                {state === "now" ? "NOW PLAYING" : state === "solved" || state === "miss" ? round.title : "LOCKED"}
               </span>
             </div>
             {state === "wait" || state === "now" ? (

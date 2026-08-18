@@ -1,16 +1,13 @@
 import type { Track } from "../types";
 import type { PreparedTrack } from "./types";
+import { resolvedGameStart } from "./onset";
 
 export function canUseLicensed(track: Track): boolean {
-  return Boolean(track.licensedPreviewUrl);
+  return Boolean(track.licensedPreviewUrl && track.startVerified);
 }
 
 export function canUseYouTube(track: Track): boolean {
-  return Boolean(
-    track.youtubeVideoId &&
-      track.youtubeStartFaithful &&
-      track.introQuality === "faithful",
-  );
+  return Boolean(track.youtubeVideoId);
 }
 
 export function resolveAudioProvider(track: Track): PreparedTrack {
@@ -19,19 +16,11 @@ export function resolveAudioProvider(track: Track): PreparedTrack {
       providerId: "licensed",
       trackId: track.id,
       audioUrl: track.licensedPreviewUrl,
-      startSeconds: 0,
-    };
-  }
-  if (canUseYouTube(track) && track.youtubeVideoId) {
-    return {
-      providerId: "youtube",
-      trackId: track.id,
-      youtubeVideoId: track.youtubeVideoId,
-      startSeconds: 0,
+      startSeconds: resolvedGameStart(track),
     };
   }
   return {
-    providerId: "mock",
+    providerId: "none",
     trackId: track.id,
     startSeconds: 0,
   };

@@ -1,5 +1,7 @@
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 
+export type ArtistTier = "mainstream" | "established" | "rising" | "underground" | "new";
+
 export type Artist = {
   id: string;
   name: string;
@@ -8,6 +10,7 @@ export type Artist = {
   country: "IN" | "PK";
   sceneTags: string[];
   active: boolean;
+  tier: ArtistTier;
 };
 
 export type ArtistReference = {
@@ -30,6 +33,10 @@ export type Track = {
   youtubeStartFaithful?: boolean;
   licensedPreviewUrl?: string;
   licensedPreviewStart?: number;
+  detectedStartSeconds?: number;
+  gameStartSeconds?: number;
+  startVerified?: boolean;
+  recognitionScore?: number;
   sourcePlaylists: string[];
   country: "IN";
   genre: "DHH";
@@ -37,11 +44,10 @@ export type Track = {
   difficulty: Difficulty;
   active: boolean;
   introQuality: "faithful" | "uncertain" | "unusable";
+  hints?: [string, string, string];
 };
 
 export type GameMode = "standard" | "daily" | "hard";
-
-export type RevealSeconds = 1 | 2 | 4 | 7 | 11 | 16;
 
 export type RoundOutcome = "pending" | "correct" | "failed" | "skipped";
 
@@ -53,9 +59,10 @@ export type GuessVerdict =
 
 export type SafePlayback = {
   providerId: string;
-  youtubeVideoId?: string;
   audioUrl?: string;
+  /** Always 0 in the UI clock. Actual source seek is clipStartSeconds. */
   startSeconds: 0;
+  clipStartSeconds?: number;
 };
 
 export type SafeRound = {
@@ -63,16 +70,28 @@ export type SafeRound = {
   attemptsLeft: number;
   attemptsUsed: number;
   maxAttempts: 5;
-  revealSeconds: RevealSeconds;
+  revealSeconds: number;
+  initialSeconds: number;
+  possibleScore: number;
   outcome: RoundOutcome;
   playback: SafePlayback;
   score?: number;
   copy?: string;
+  purchasedHints: PurchasedHint[];
+  nextHintCost: number | null;
+  canAddTime: boolean;
+};
+
+export type PurchasedHint = {
+  index: number;
+  text: string;
+  cost: number;
 };
 
 export type RevealedRound = SafeRound & {
   title?: string;
   artistNames?: string[];
+  artworkUrl?: string;
   artworkSeed?: string;
 };
 
@@ -100,10 +119,18 @@ export type SessionStats = {
 export type StoredRound = {
   trackId: string;
   attemptsUsed: number;
-  revealSeconds: RevealSeconds;
+  revealSeconds: number;
+  initialSeconds: number;
+  hintsPurchased: number;
+  replacements: number;
   outcome: RoundOutcome;
   score: number;
   guesses: StoredGuess[];
+  prepared?: {
+    providerId: string;
+    audioUrl?: string;
+    startSeconds: number;
+  };
 };
 
 export type StoredGuess = {
@@ -130,5 +157,9 @@ export type SearchHit = {
   id: string;
   title: string;
   subtitle: string;
+  meta?: string;
+  local?: boolean;
+  artistId?: string;
+  artistIds?: string[];
   highlight: [number, number] | null;
 };

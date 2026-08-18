@@ -38,11 +38,51 @@ export class JsonPlaylistImporter implements PlaylistImporter {
   }
 }
 
+export class YoutubePlaylistImporter implements PlaylistImporter {
+  async parse(source: string): Promise<ImportedTrack[]> {
+    const list = source.match(/[?&]list=([a-zA-Z0-9_-]+)/)?.[1] ?? source.trim();
+    if (!list) return [];
+    const url = `https://www.youtube.com/playlist?list=${list}`;
+    const res = await fetch(url, { headers: { "User-Agent": "DHHUH/1.0" } });
+    if (!res.ok) return [];
+    const html = await res.text();
+    const ids = [...html.matchAll(/videoId":"([a-zA-Z0-9_-]{11})"/g)].map((m) => m[1]);
+    const titles = [...html.matchAll(/"title":\{"runs":\[\{"text":"([^"]+)"\}\]/g)].map((m) => m[1]);
+    const unique: ImportedTrack[] = [];
+    const seen = new Set<string>();
+    ids.forEach((id, i) => {
+      if (seen.has(id)) return;
+      seen.add(id);
+      const rawTitle = (titles[i] ?? "Untitled").replace(/\\u0026/g, "&");
+      unique.push({
+        rawTitle,
+        rawArtists: [],
+        sourcePlaylist: list,
+        youtubeVideoId: id,
+        certainty: "uncertain",
+      });
+    });
+    return unique.slice(0, 80);
+  }
+}
+
+export async function parsePlaylistSource(source: string): Promise<ImportedTrack[]> {
+  const trimmed = source.trim();
+  if (trimmed.includes("youtube.com") || trimmed.includes("list=")) {
+    return dedupeImported(await new YoutubePlaylistImporter().parse(trimmed));
+  }
+  try {
+    return dedupeImported(await new JsonPlaylistImporter().parse(trimmed));
+  } catch {
+    return [];
+  }
+}
+
 export function dedupeImported(items: ImportedTrack[]): ImportedTrack[] {
   const seen = new Set<string>();
   const out: ImportedTrack[] = [];
   for (const item of items) {
-    const key = `${item.rawTitle.toLowerCase()}::${item.rawArtists.join(",").toLowerCase()}`;
+    const key = `${item.rawTitle.toLowerCase()}::${item.rawArtists.join(",").toLowerCase()}::${item.youtubeVideoId ?? ""}`;
     if (seen.has(key)) continue;
     seen.add(key);
     out.push(item);

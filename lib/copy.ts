@@ -3,27 +3,27 @@ import type { GameMode } from "./types";
 export const COPY = {
   brand: "DHHUH?",
   tagline: "SUNKE BATA.",
+  loop: "SUN → PEHCHAAN → SELECT → LOCK KAR.",
   supporting: "5 gaane. 5 chances each. Kitna DHH jaanta hai?",
   play: "SUN.",
-  pause: "RUK.",
+  pause: "PAUSE",
   submit: "LOCK KAR.",
-  more: "AUR SUNNA HAI?",
+  plus2: "+2 SEC",
+  hint: "HINT",
   skip: "NO CLUE →",
   skipConfirm: "PAKKA?",
-  skipYes: "HAAN",
+  skipYes: "SKIP",
   skipNo: "EK BAAR AUR SUN",
+  searchSong: "Search song...",
+  searchArtist: "Search artist...",
   correct: "HAAN BHAI.",
   correctLate: "CHALO, YAAD AA GAYA.",
-  wrong: "NAH.",
-  artistOnly: "ARTIST MIL GAYA. GAANA NAHI.",
+  artistOnly: "ARTIST SAHI. GAANA NAHI.",
   last: "LAST HAI.",
   skipped: "YEH THA BHAI.",
   introEnough: "INTRO HI KAAFI THA.",
-  perfectSession: "TU REHNE DE. AUX TERA.",
-  zeroSession: "PLAYLIST UPDATE KAR BHAI.",
-  tip: "Sahi jawaab pe freeze. Galat pe next try. Khelte raho.",
-  moreNote: "Zyada sunoge, zyada aasaan hoga.",
   only: "INDIAN DESI HIP-HOP ONLY",
+  error: "Kuch toot gaya. Phir se try kar.",
 } as const;
 
 export function resultHeadline(solved: number): string {
@@ -47,9 +47,15 @@ export function correctCopy(opts: {
   attemptsUsed: number;
   revealSeconds: number;
 }): string {
-  if (opts.revealSeconds <= 2 && opts.attemptsUsed <= 1) return COPY.introEnough;
+  if (opts.revealSeconds <= 4 && opts.attemptsUsed <= 1) return COPY.introEnough;
   if (opts.attemptsUsed >= 3) return COPY.correctLate;
   return COPY.correct;
+}
+
+export function wrongCopy(attemptsLeft: number): string {
+  if (attemptsLeft <= 0) return COPY.skipped;
+  if (attemptsLeft === 1) return `NAH. LAST CHANCE.`;
+  return `NAH. ${attemptsLeft} CHANCES LEFT.`;
 }
 
 export function modeLabel(mode: GameMode): string {

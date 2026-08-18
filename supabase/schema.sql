@@ -8,6 +8,7 @@ create table if not exists artists (
   aliases text[] not null default '{}',
   country text not null default 'IN',
   scene_tags text[] not null default '{}',
+  tier text not null default 'new',
   active boolean not null default true
 );
 
@@ -22,6 +23,10 @@ create table if not exists tracks (
   artwork_url text,
   youtube_video_id text,
   licensed_preview_url text,
+  detected_start_seconds numeric,
+  game_start_seconds numeric,
+  start_verified boolean not null default false,
+  recognition_score int not null default 50,
   source_playlists text[] not null default '{}',
   country text not null default 'IN',
   genre text not null default 'DHH',
@@ -73,9 +78,25 @@ create table if not exists daily_session_tracks (
 
 create table if not exists users (
   id uuid primary key,
-  username text unique,
-  email text unique,
-  created_at timestamptz default now()
+  username text not null,
+  normalized_username text not null,
+  password_hash text not null,
+  created_at timestamptz not null default now(),
+  unique (normalized_username)
+);
+
+create table if not exists player_stats (
+  player_id uuid primary key references users(id) on delete cascade,
+  sessions int not null default 0,
+  tracks_attempted int not null default 0,
+  correct int not null default 0,
+  accuracy int not null default 0,
+  total_score int not null default 0,
+  best_score int not null default 0,
+  average_listen int,
+  perfect_two_second int not null default 0,
+  streak int not null default 0,
+  best_streak int not null default 0
 );
 
 create table if not exists game_sessions (
@@ -107,12 +128,6 @@ create table if not exists guesses (
   selected_artist_id text,
   verdict text not null,
   created_at timestamptz default now()
-);
-
-create table if not exists player_stats (
-  player_id uuid primary key,
-  sessions int not null default 0,
-  best_score int not null default 0
 );
 
 create table if not exists leaderboard_entries (

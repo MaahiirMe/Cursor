@@ -1,96 +1,81 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import {
-  HtmlAudioProvider,
-  MockAudioProvider,
-  YouTubeAudioProvider,
-} from "@/lib/audio/client";
+import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
+import { HtmlAudioProvider } from "@/lib/audio/client";
 import type { SafePlayback } from "@/lib/types";
 
-type AnyProvider = YouTubeAudioProvider | HtmlAudioProvider | MockAudioProvider;
+export type AudioHandle = {
+  play: (duration: number) => Promise<void>;
+  pause: () => void;
+};
 
-export function AudioExperience({
-  playback,
-  duration,
-  playing,
-  onStopped,
-}: {
-  playback: SafePlayback;
-  duration: number;
-  playing: boolean;
-  onStopped: () => void;
-}) {
-  const host = useRef<HTMLDivElement>(null);
-  const provider = useRef<AnyProvider | null>(null);
-  const stopRef = useRef(onStopped);
-  stopRef.current = onStopped;
-
-  useEffect(() => {
-    provider.current?.destroy();
-    if (playback.providerId === "youtube") {
-      const yt = new YouTubeAudioProvider();
-      if (host.current) yt.attach(host.current);
-      provider.current = yt;
-    } else {
-      provider.current =
-        playback.providerId === "licensed" ? new HtmlAudioProvider() : new MockAudioProvider();
-    }
-    return () => provider.current?.destroy();
-  }, [playback.providerId, playback.youtubeVideoId, playback.audioUrl]);
+export const AudioExperience = forwardRef<
+  AudioHandle,
+  {
+    playback: SafePlayback;
+    onUnplayable?: () => Promise<boolean>;
+    onReady?: () => void;
+    onEnded?: () => void;
+  }
+>(function AudioExperience({ playback, onUnplayable, onReady, onEnded }, ref) {
+  const html = useRef<HtmlAudioProvider | null>(null);
+  const unplayableRef = useRef(onUnplayable);
+  const onEndedRef = useRef(onEnded);
+  unplayableRef.current = onUnplayable;
+  onEndedRef.current = onEnded;
 
   useEffect(() => {
-    const p = provider.current;
-    if (!p || !playing) {
-      p?.pause();
-      return;
+    html.current?.destroy();
+    html.current = null;
+    if (playback.providerId !== "licensed" || !playback.audioUrl) {
+      onReady?.();
+      return () => undefined;
     }
-    const prepared = {
-      providerId: playback.providerId,
-      trackId: "hidden",
-      youtubeVideoId: playback.youtubeVideoId,
-      audioUrl: playback.audioUrl,
-      startSeconds: 0 as const,
-    };
-    let cancelled = false;
-    (async () => {
-      try {
-        await p.prepare(prepared);
-        await p.playFromStart(prepared, duration);
-        window.setTimeout(() => {
-          if (!cancelled) {
-            p.pause();
-            stopRef.current();
-          }
-        }, duration * 1000 + 40);
-      } catch {
-        if (playback.audioUrl && playback.providerId === "youtube") {
-          const fallback = new MockAudioProvider();
-          provider.current = fallback;
-          await fallback.playFromStart(
-            { ...prepared, audioUrl: playback.audioUrl },
-            duration,
-          );
-          window.setTimeout(() => {
-            if (!cancelled) {
-              fallback.pause();
-              stopRef.current();
-            }
-          }, duration * 1000 + 40);
-        } else {
-          stopRef.current();
-        }
-      }
-    })();
+    const provider = new HtmlAudioProvider();
+    html.current = provider;
+    provider
+      .prepare({
+        providerId: "licensed",
+        trackId: "hidden",
+        audioUrl: playback.audioUrl,
+        startSeconds: playback.clipStartSeconds ?? 0,
+      })
+      .then(() => onReady?.())
+      .catch(() => undefined);
     return () => {
-      cancelled = true;
-      p.pause();
+      provider.destroy();
+      html.current = null;
     };
-  }, [playing, duration, playback]);
+  }, [playback.providerId, playback.audioUrl, playback.clipStartSeconds, onReady]);
 
-  return (
-    <div className="pointer-events-none fixed bottom-4 right-4 z-10 h-[220px] w-[220px] overflow-hidden rounded-full opacity-[0.04]">
-      <div ref={host} className="h-full w-full" />
-    </div>
-  );
-}
+  useImperativeHandle(ref, () => ({
+    async play(duration: number) {
+      const p = html.current;
+      if (!p || !playback.audioUrl) {
+        const swapped = unplayableRef.current ? await unplayableRef.current() : false;
+        if (!swapped) throw new Error("No player");
+        return;
+      }
+      try {
+        await p.playFromStart(
+          {
+            providerId: "licensed",
+            trackId: "hidden",
+            audioUrl: playback.audioUrl,
+            startSeconds: playback.clipStartSeconds ?? 0,
+          },
+          duration,
+        );
+        window.setTimeout(() => onEndedRef.current?.(), duration * 1000 + 40);
+      } catch {
+        const swapped = unplayableRef.current ? await unplayableRef.current() : false;
+        if (!swapped) throw new Error("Playback failed");
+      }
+    },
+    pause() {
+      html.current?.pause();
+    },
+  }));
+
+  return null;
+});

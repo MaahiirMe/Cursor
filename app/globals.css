@@ -181,8 +181,12 @@ input {
   border-bottom: 1px solid color-mix(in srgb, var(--paper) 28%, transparent);
   padding: 0.85rem 0 0.55rem;
   width: 100%;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.field::placeholder {
+  color: var(--smoke);
+  opacity: 0.75;
 }
 
 .field:focus {
@@ -203,6 +207,24 @@ input {
 
 .lock:disabled {
   opacity: 0.4;
+}
+
+.yt-mask {
+  display: none;
+}
+
+.skip-link {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 0.28em;
+}
+
+.skip-confirm {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
 }
 
 .hits {
