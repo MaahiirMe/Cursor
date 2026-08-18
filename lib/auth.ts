@@ -87,6 +87,7 @@ export async function setGuestCookie(name: string) {
 export async function clearAuth() {
   const jar = await cookies();
   jar.delete(AUTH);
+  jar.delete(GUEST);
 }
 
 export async function getAuthUser(): Promise<UserRecord | null> {
