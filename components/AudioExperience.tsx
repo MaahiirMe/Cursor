@@ -14,17 +14,23 @@ export function AudioExperience({
   playback,
   duration,
   playing,
+  replayKey,
   onStopped,
+  onUnplayable,
 }: {
   playback: SafePlayback;
   duration: number;
   playing: boolean;
+  replayKey: number;
   onStopped: () => void;
+  onUnplayable?: () => Promise<boolean>;
 }) {
   const host = useRef<HTMLDivElement>(null);
   const provider = useRef<AnyProvider | null>(null);
   const stopRef = useRef(onStopped);
+  const unplayableRef = useRef(onUnplayable);
   stopRef.current = onStopped;
+  unplayableRef.current = onUnplayable;
 
   useEffect(() => {
     provider.current?.destroy();
@@ -64,29 +70,36 @@ export function AudioExperience({
           }
         }, duration * 1000 + 40);
       } catch {
-        if (playback.audioUrl && playback.providerId === "youtube") {
+        if (cancelled) return;
+        const swapped = unplayableRef.current ? await unplayableRef.current() : false;
+        if (swapped || cancelled) return;
+        if (playback.audioUrl) {
           const fallback = new MockAudioProvider();
           provider.current = fallback;
-          await fallback.playFromStart(
-            { ...prepared, audioUrl: playback.audioUrl },
-            duration,
-          );
-          window.setTimeout(() => {
-            if (!cancelled) {
-              fallback.pause();
-              stopRef.current();
-            }
-          }, duration * 1000 + 40);
-        } else {
-          stopRef.current();
+          try {
+            await fallback.playFromStart(
+              { ...prepared, providerId: "mock", audioUrl: playback.audioUrl },
+              duration,
+            );
+            window.setTimeout(() => {
+              if (!cancelled) {
+                fallback.pause();
+                stopRef.current();
+              }
+            }, duration * 1000 + 40);
+            return;
+          } catch {
+            /* keep going */
+          }
         }
+        stopRef.current();
       }
     })();
     return () => {
       cancelled = true;
       p.pause();
     };
-  }, [playing, duration, playback]);
+  }, [playing, duration, playback, replayKey]);
 
   return (
     <div className="pointer-events-none fixed bottom-4 right-4 z-10 h-[220px] w-[220px] overflow-hidden rounded-full opacity-[0.04]">

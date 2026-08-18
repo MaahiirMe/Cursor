@@ -24,6 +24,7 @@ export function EditorialSearch({
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
   const [picked, setPicked] = useState(false);
+  const [loading, setLoading] = useState(false);
   const box = useRef<HTMLDivElement>(null);
   const listId = useId();
 
@@ -36,6 +37,7 @@ export function EditorialSearch({
     }
     const ctrl = new AbortController();
     const t = setTimeout(async () => {
+      setLoading(true);
       try {
         const res = await fetch(`/api/search?kind=${kind}&q=${encodeURIComponent(q)}`, {
           signal: ctrl.signal,
@@ -46,8 +48,10 @@ export function EditorialSearch({
         setActive(0);
       } catch {
         /* aborted */
+      } finally {
+        setLoading(false);
       }
-    }, 20);
+    }, 90);
     return () => {
       clearTimeout(t);
       ctrl.abort();
@@ -72,6 +76,7 @@ export function EditorialSearch({
     <div ref={box} className="relative">
       <label className="mono text-smoke" htmlFor={listId + "-input"}>
         {label}
+        {loading ? <span> …</span> : null}
       </label>
       <input
         id={listId + "-input"}
@@ -127,6 +132,9 @@ export function EditorialSearch({
               <span>
                 <span className="t">{renderHighlight(hit.title, hit.highlight)}</span>
                 <span className="s block">{hit.subtitle}</span>
+                {hit.meta && hit.meta !== hit.subtitle ? (
+                  <span className="s block opacity-70">{hit.meta}</span>
+                ) : null}
               </span>
             </button>
           ))}

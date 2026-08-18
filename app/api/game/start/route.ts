@@ -8,7 +8,11 @@ export async function POST(request: Request) {
   const mode: GameMode =
     body.mode === "daily" || body.mode === "hard" ? body.mode : "standard";
   const playerId = await getPlayerId();
-  const session = await startSession(playerId, mode);
-  await setSessionCookie(session.id);
-  return NextResponse.json(session);
+  try {
+    const session = await startSession(playerId, mode);
+    await setSessionCookie(session.id);
+    return NextResponse.json(session);
+  } catch (err) {
+    return NextResponse.json({ error: (err as Error).message }, { status: 500 });
+  }
 }

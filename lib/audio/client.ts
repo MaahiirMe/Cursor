@@ -94,6 +94,9 @@ export class YouTubeAudioProvider {
               resolve();
             },
             onError: () => reject(new Error("YouTube playback failed")),
+            onStateChange: (e: { data: number }) => {
+              if (e.data === window.YT?.PlayerState.ENDED) this.pause();
+            },
           },
         });
       } catch (err) {

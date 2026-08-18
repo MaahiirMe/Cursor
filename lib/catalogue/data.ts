@@ -100,6 +100,8 @@ export const TRACKS: Track[] = [
     aliases: ["khattaflow", "khata flow"],
     album: "Lunch Break",
     releaseYear: 2023,
+    youtubeVideoId: "qVcHlaFZf6A",
+    youtubeStartFaithful: true,
     sourcePlaylists: ["ytm-dhh-1", "jiosaavn-dhh"],
     sceneTags: ["delhi"],
     hints: [
@@ -109,7 +111,7 @@ export const TRACKS: Track[] = [
     ],
     difficulty: 2,
     active: true,
-    introQuality: "unusable",
+    introQuality: "faithful",
   }),
   track({
     id: "kohra",

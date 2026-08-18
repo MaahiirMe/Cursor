@@ -84,6 +84,7 @@ export function searchTracks(query: string, limit = 8): SearchHit[] {
     id: t.id,
     title: t.title,
     subtitle: artistLine(t),
+    meta: [t.album, t.releaseYear].filter(Boolean).join(" · ") || undefined,
     highlight: highlightRange(q, t.title),
   }));
 }
@@ -110,7 +111,7 @@ export function searchArtists(query: string, limit = 8): SearchHit[] {
     hits.push({
       id: a.id,
       title: a.name,
-      subtitle: a.aliases[0] ?? a.sceneTags.join(" · "),
+      subtitle: ["DHH", a.country].filter(Boolean).join(" · "),
       highlight: highlightRange(q, a.name),
     });
     if (hits.length >= limit) break;

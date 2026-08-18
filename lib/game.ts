@@ -3,6 +3,7 @@ import { resolveAudioProvider } from "./audio/resolver";
 import { signPlayback } from "./audio/mock";
 import { hintsFor } from "./catalogue/hints";
 import { getTrack, playableTracks } from "./catalogue";
+import { resolveLocalArtistId, resolveLocalTrackId } from "./metadata/cache";
 import { COPY, correctCopy, resultHeadline, wrongCopy } from "./copy";
 import {
   addLeaderboard,
@@ -83,6 +84,7 @@ function hydrate(round: StoredRound, mode: GameMode): StoredRound {
     ...round,
     initialSeconds: round.initialSeconds ?? initialSeconds(mode),
     hintsPurchased: round.hintsPurchased ?? 0,
+    replacements: round.replacements ?? 0,
   };
 }
 
@@ -202,6 +204,7 @@ export async function startSession(playerId: string, mode: GameMode): Promise<Se
     revealSeconds: startAt,
     initialSeconds: startAt,
     hintsPurchased: 0,
+    replacements: 0,
     outcome: "pending",
     score: 0,
     guesses: [],
@@ -234,6 +237,8 @@ export async function submitGuess(
   selectedTrackId: string,
   selectedArtistId: string,
 ): Promise<{ session: SessionPublic; verdict: GuessVerdict; copy: string }> {
+  const trackId = await resolveLocalTrackId(selectedTrackId);
+  const artistId = await resolveLocalArtistId(selectedArtistId);
   return mutateSession(sessionId, (session) => {
     if (session.playerId !== playerId) throw new Error("Session not found");
     if (session.status !== "playing") throw new Error("Session complete");
@@ -244,16 +249,16 @@ export async function submitGuess(
 
     const track = getTrack(round.trackId)!;
     const credited = new Set(track.artists.map((a) => a.id));
-    const songOk = selectedTrackId === track.id;
-    const artistOk = credited.has(selectedArtistId);
+    const songOk = trackId === track.id;
+    const artistOk = credited.has(artistId);
     let verdict: GuessVerdict = "WRONG";
     if (songOk && artistOk) verdict = "FULL_CORRECT";
     else if (!songOk && artistOk) verdict = "ARTIST_ONLY";
 
     round.attemptsUsed += 1;
     round.guesses.push({
-      trackId: selectedTrackId,
-      artistId: selectedArtistId,
+      trackId,
+      artistId,
       verdict,
       at: Date.now(),
     });
@@ -281,6 +286,37 @@ export async function submitGuess(
     }
 
     return { session: toPublic(session), verdict, copy };
+  });
+}
+
+export async function replaceUnplayableRound(sessionId: string, playerId: string) {
+  return mutateSession(sessionId, (session) => {
+    if (session.playerId !== playerId) throw new Error("Session not found");
+    if (session.status !== "playing") throw new Error("Session complete");
+    const round = hydrate(session.rounds[session.currentIndex], session.mode);
+    if (round.outcome !== "pending") {
+      return { session: toPublic(session), replaced: false };
+    }
+    if (round.replacements >= 3) {
+      return { session: toPublic(session), replaced: false };
+    }
+    const used = new Set(session.rounds.map((r) => r.trackId));
+    const next = playableTracks().find((t) => !used.has(t.id));
+    if (!next) {
+      return { session: toPublic(session), replaced: false };
+    }
+    session.rounds[session.currentIndex] = {
+      trackId: next.id,
+      attemptsUsed: 0,
+      revealSeconds: round.initialSeconds,
+      initialSeconds: round.initialSeconds,
+      hintsPurchased: 0,
+      replacements: round.replacements + 1,
+      outcome: "pending",
+      score: 0,
+      guesses: [],
+    };
+    return { session: toPublic(session), replaced: true };
   });
 }
 

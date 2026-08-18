@@ -209,6 +209,20 @@ input {
   opacity: 0.4;
 }
 
+.skip-link {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 0.28em;
+}
+
+.skip-confirm {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
 .hits {
   position: absolute;
   left: 0;

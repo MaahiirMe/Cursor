@@ -114,6 +114,7 @@ export type StoredRound = {
   revealSeconds: number;
   initialSeconds: number;
   hintsPurchased: number;
+  replacements: number;
   outcome: RoundOutcome;
   score: number;
   guesses: StoredGuess[];
@@ -143,5 +144,7 @@ export type SearchHit = {
   id: string;
   title: string;
   subtitle: string;
+  meta?: string;
+  local?: boolean;
   highlight: [number, number] | null;
 };

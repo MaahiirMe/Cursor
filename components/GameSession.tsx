@@ -41,6 +41,7 @@ export function GameSession({ mode }: { mode: GameMode }) {
   const [skipAsk, setSkipAsk] = useState(false);
   const [reveal, setReveal] = useState<RevealState | null>(null);
   const [name, setName] = useState("GUEST");
+  const [replayKey, setReplayKey] = useState(0);
   const tick = useRef<number | null>(null);
 
   const start = useCallback(async () => {
@@ -194,6 +195,7 @@ export function GameSession({ mode }: { mode: GameMode }) {
       const json = (await res.json()) as { session: SessionPublic };
       setSession(json.session);
       setElapsed(0);
+      setReplayKey((k) => k + 1);
       setPlaying(true);
     } catch {
       setFlash(COPY.error);
@@ -325,9 +327,16 @@ export function GameSession({ mode }: { mode: GameMode }) {
             <PlayControl
               playing={playing}
               seconds={round.revealSeconds}
-              onToggle={() => {
+              onPlay={() => {
                 setElapsed(0);
-                setPlaying((p) => !p);
+                setReplayKey((k) => k + 1);
+                setPlaying(true);
+              }}
+              onPause={() => setPlaying(false)}
+              onReplay={() => {
+                setElapsed(0);
+                setReplayKey((k) => k + 1);
+                setPlaying(true);
               }}
               onHover={setHoverPlay}
             />
@@ -356,27 +365,6 @@ export function GameSession({ mode }: { mode: GameMode }) {
                   <span className="mt-1 block text-[0.65rem] text-smoke">DONE</span>
                 )}
               </button>
-              {skipAsk ? (
-                <div className="mono">
-                  {COPY.skipConfirm}{" "}
-                  <button type="button" className="text-orange" onClick={doSkip}>
-                    {COPY.skipYes}
-                  </button>
-                  <span className="text-smoke"> / </span>
-                  <button type="button" onClick={() => setSkipAsk(false)}>
-                    {COPY.skipNo}
-                  </button>
-                </div>
-              ) : (
-                <button
-                  type="button"
-                  className="mono text-smoke"
-                  data-cursor="PAKKA?"
-                  onClick={() => setSkipAsk(true)}
-                >
-                  {COPY.skip}
-                </button>
-              )}
             </div>
           </div>
           <div className="col-span-12 md:col-span-8">
@@ -450,6 +438,27 @@ export function GameSession({ mode }: { mode: GameMode }) {
               {COPY.submit} →
             </button>
             <AttemptIndicator used={round.attemptsUsed} />
+            {skipAsk ? (
+              <div className="mono skip-confirm">
+                {COPY.skipConfirm}{" "}
+                <button type="button" className="text-orange" onClick={doSkip}>
+                  {COPY.skipYes}
+                </button>
+                <span className="text-smoke"> / </span>
+                <button type="button" onClick={() => setSkipAsk(false)}>
+                  {COPY.skipNo}
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                className="skip-link"
+                data-cursor="PAKKA?"
+                onClick={() => setSkipAsk(true)}
+              >
+                {COPY.skip}
+              </button>
+            )}
           </div>
         </form>
 
@@ -467,7 +476,24 @@ export function GameSession({ mode }: { mode: GameMode }) {
           playback={round.playback}
           duration={round.revealSeconds}
           playing={playing}
+          replayKey={replayKey}
           onStopped={() => setPlaying(false)}
+          onUnplayable={async () => {
+            try {
+              const res = await fetch("/api/game/replace", { method: "POST" });
+              const json = (await res.json()) as { session?: SessionPublic; replaced?: boolean };
+              if (json.replaced && json.session) {
+                setSession(json.session);
+                setPlaying(false);
+                setElapsed(0);
+                setFlash("Naya track. Phir se PLAY.");
+                return true;
+              }
+            } catch {
+              /* keep fallback */
+            }
+            return false;
+          }}
         />
       ) : null}
 
