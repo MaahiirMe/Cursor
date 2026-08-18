@@ -3,7 +3,7 @@ import { resolveAudioProvider } from "./audio/resolver";
 import { signPlayback } from "./audio/mock";
 import { getTrack, playableTracks } from "./catalogue";
 import { COPY, correctCopy, resultHeadline } from "./copy";
-import { claimDaily, getSession, nextSessionNumber, saveSession, addLeaderboard, getProfile } from "./db/store";
+import { claimDaily, getSession, mutateSession, nextSessionNumber, saveSession, addLeaderboard, getProfile } from "./db/store";
 import { NEXT_REVEAL, scoreCorrect } from "./scoring";
 import type {
   GameMode,
@@ -185,89 +185,84 @@ export async function submitGuess(
   selectedTrackId: string,
   selectedArtistId: string,
 ): Promise<{ session: SessionPublic; verdict: GuessVerdict; copy: string }> {
-  const session = await getSession(sessionId);
-  if (!session || session.playerId !== playerId) throw new Error("Session not found");
-  if (session.status !== "playing") throw new Error("Session complete");
-  const round = session.rounds[session.currentIndex];
-  if (round.outcome !== "pending") throw new Error("Round closed");
-  if (round.attemptsUsed >= MAX_ATTEMPTS) throw new Error("No attempts");
+  return mutateSession(sessionId, (session) => {
+    if (session.playerId !== playerId) throw new Error("Session not found");
+    if (session.status !== "playing") throw new Error("Session complete");
+    const round = session.rounds[session.currentIndex];
+    if (round.outcome !== "pending") throw new Error("Round closed");
+    if (round.attemptsUsed >= MAX_ATTEMPTS) throw new Error("No attempts");
 
-  const track = getTrack(round.trackId)!;
-  const credited = new Set(track.artists.map((a) => a.id));
-  const songOk = selectedTrackId === track.id;
-  const artistOk = credited.has(selectedArtistId);
-  let verdict: GuessVerdict = "WRONG";
-  if (songOk && artistOk) verdict = "FULL_CORRECT";
-  else if (!songOk && artistOk) verdict = "ARTIST_ONLY";
+    const track = getTrack(round.trackId)!;
+    const credited = new Set(track.artists.map((a) => a.id));
+    const songOk = selectedTrackId === track.id;
+    const artistOk = credited.has(selectedArtistId);
+    let verdict: GuessVerdict = "WRONG";
+    if (songOk && artistOk) verdict = "FULL_CORRECT";
+    else if (!songOk && artistOk) verdict = "ARTIST_ONLY";
 
-  round.attemptsUsed += 1;
-  round.guesses.push({
-    trackId: selectedTrackId,
-    artistId: selectedArtistId,
-    verdict,
-    at: Date.now(),
+    round.attemptsUsed += 1;
+    round.guesses.push({
+      trackId: selectedTrackId,
+      artistId: selectedArtistId,
+      verdict,
+      at: Date.now(),
+    });
+
+    let copy: string = COPY.wrong;
+    if (verdict === "FULL_CORRECT") {
+      round.outcome = "correct";
+      round.score = scoreCorrect(round.revealSeconds, round.attemptsUsed - 1);
+      copy = correctCopy({ attemptsUsed: round.attemptsUsed, revealSeconds: round.revealSeconds });
+    } else if (verdict === "ARTIST_ONLY") {
+      copy = COPY.artistOnly;
+    }
+
+    if (verdict !== "FULL_CORRECT" && round.attemptsUsed >= MAX_ATTEMPTS) {
+      round.outcome = "failed";
+      round.score = 0;
+      verdict = "LAST_HAI";
+      copy = COPY.skipped;
+    } else if (verdict !== "FULL_CORRECT" && round.attemptsUsed === MAX_ATTEMPTS - 1) {
+      copy = COPY.last;
+    }
+
+    return { session: toPublic(session), verdict, copy };
   });
-
-  let copy: string = COPY.wrong;
-  if (verdict === "FULL_CORRECT") {
-    round.outcome = "correct";
-    round.score = scoreCorrect(round.revealSeconds, round.attemptsUsed - 1);
-    copy = correctCopy({ attemptsUsed: round.attemptsUsed, revealSeconds: round.revealSeconds });
-  } else if (verdict === "ARTIST_ONLY") {
-    copy = COPY.artistOnly;
-  } else {
-    copy = COPY.wrong;
-  }
-
-  if (verdict !== "FULL_CORRECT" && round.attemptsUsed >= MAX_ATTEMPTS) {
-    round.outcome = "failed";
-    round.score = 0;
-    verdict = "LAST_HAI";
-    copy = COPY.skipped;
-  } else if (verdict !== "FULL_CORRECT" && round.attemptsUsed === MAX_ATTEMPTS - 1) {
-    copy = COPY.last;
-  }
-
-  if (verdict === "FULL_CORRECT") {
-    /* stay on round for reveal; client calls next */
-  }
-
-  await saveSession(session);
-  return { session: toPublic(session), verdict, copy };
 }
 
 export async function skipRound(sessionId: string, playerId: string) {
-  const session = await getSession(sessionId);
-  if (!session || session.playerId !== playerId) throw new Error("Session not found");
-  const round = session.rounds[session.currentIndex];
-  if (round.outcome !== "pending") return { session: toPublic(session), copy: COPY.skipped };
-  round.outcome = "skipped";
-  round.score = 0;
-  await saveSession(session);
-  return { session: toPublic(session), copy: COPY.skipped };
+  return mutateSession(sessionId, (session) => {
+    if (session.playerId !== playerId) throw new Error("Session not found");
+    const round = session.rounds[session.currentIndex];
+    if (round.outcome !== "pending") return { session: toPublic(session), copy: COPY.skipped };
+    round.outcome = "skipped";
+    round.score = 0;
+    return { session: toPublic(session), copy: COPY.skipped };
+  });
 }
 
 export async function unlockMore(sessionId: string, playerId: string, target?: number) {
-  const session = await getSession(sessionId);
-  if (!session || session.playerId !== playerId) throw new Error("Session not found");
-  const round = session.rounds[session.currentIndex];
-  if (round.outcome !== "pending") return toPublic(session);
-  const allowed: RevealSeconds[] = [1, 2, 4, 7, 11, 16];
-  if (target && allowed.includes(target as RevealSeconds) && target > round.revealSeconds) {
-    round.revealSeconds = target as RevealSeconds;
-  } else {
-    const next = NEXT_REVEAL[round.revealSeconds];
-    if (next) round.revealSeconds = next;
-  }
-  await saveSession(session);
-  return toPublic(session);
+  return mutateSession(sessionId, (session) => {
+    if (session.playerId !== playerId) throw new Error("Session not found");
+    const round = session.rounds[session.currentIndex];
+    if (round.outcome !== "pending") return toPublic(session);
+    const allowed: RevealSeconds[] = [1, 2, 4, 7, 11, 16];
+    if (target && allowed.includes(target as RevealSeconds) && target > round.revealSeconds) {
+      round.revealSeconds = target as RevealSeconds;
+    } else {
+      const next = NEXT_REVEAL[round.revealSeconds];
+      if (next) round.revealSeconds = next;
+    }
+    return toPublic(session);
+  });
 }
 
 export async function advanceRound(sessionId: string, playerId: string) {
-  const session = await getSession(sessionId);
-  if (!session || session.playerId !== playerId) throw new Error("Session not found");
-  advance(session);
-  await saveSession(session);
+  const session = await mutateSession(sessionId, (s) => {
+    if (s.playerId !== playerId) throw new Error("Session not found");
+    advance(s);
+    return s;
+  });
   if (session.status === "complete" && !session.replay) {
     const profile = await getProfile(playerId);
     const stats = computeStats(session);

@@ -3,15 +3,7 @@ import path from "path";
 import type { StoredSession } from "../types";
 
 const file = path.join(process.cwd(), "data", "sessions.json");
-
-type DB = {
-  sessions: Record<string, StoredSession>;
-  sequence: number;
-  dailyClaims: Record<string, string>;
-  leaderboard: LeaderboardRow[];
-  profiles: Record<string, Profile>;
-  tracksOverride: unknown[];
-};
+const lockFile = file + ".lock";
 
 export type LeaderboardRow = {
   id: string;
@@ -31,102 +23,142 @@ export type Profile = {
   createdAt: number;
 };
 
-let memory: DB | null = null;
-let writeQueue: Promise<void> = Promise.resolve();
+type DB = {
+  sessions: Record<string, StoredSession>;
+  sequence: number;
+  dailyClaims: Record<string, string>;
+  leaderboard: LeaderboardRow[];
+  profiles: Record<string, Profile>;
+  tracksOverride: unknown[];
+};
 
-async function load(): Promise<DB> {
-  if (memory) return memory;
-  try {
-    const raw = await fs.readFile(file, "utf8");
-    memory = JSON.parse(raw) as DB;
-  } catch {
-    memory = {
-      sessions: {},
-      sequence: 240,
-      dailyClaims: {},
-      leaderboard: [],
-      profiles: {},
-      tracksOverride: [],
-    };
-  }
-  return memory;
+function empty(): DB {
+  return {
+    sessions: {},
+    sequence: 240,
+    dailyClaims: {},
+    leaderboard: [],
+    profiles: {},
+    tracksOverride: [],
+  };
 }
 
-function persist(db: DB) {
-  writeQueue = writeQueue.then(async () => {
-    await fs.mkdir(path.dirname(file), { recursive: true });
-    await fs.writeFile(file, JSON.stringify(db), "utf8");
-  });
-  return writeQueue;
+async function readDB(): Promise<DB> {
+  try {
+    return JSON.parse(await fs.readFile(file, "utf8")) as DB;
+  } catch {
+    return empty();
+  }
+}
+
+async function writeDB(db: DB) {
+  await fs.mkdir(path.dirname(file), { recursive: true });
+  const tmp = file + ".tmp";
+  await fs.writeFile(tmp, JSON.stringify(db));
+  await fs.rename(tmp, file);
+}
+
+async function withDB<T>(fn: (db: DB) => Promise<T> | T): Promise<T> {
+  await fs.mkdir(path.dirname(file), { recursive: true });
+  for (let i = 0; i < 80; i++) {
+    try {
+      const handle = await fs.open(lockFile, "wx");
+      try {
+        const db = await readDB();
+        const result = await fn(db);
+        await writeDB(db);
+        return result;
+      } finally {
+        await handle.close();
+        await fs.unlink(lockFile).catch(() => undefined);
+      }
+    } catch {
+      await new Promise((r) => setTimeout(r, 15 + (i % 5) * 10));
+    }
+  }
+  throw new Error("Game store is busy");
 }
 
 export async function nextSessionNumber(): Promise<number> {
-  const db = await load();
-  db.sequence += 1;
-  persist(db);
-  return db.sequence;
+  return withDB((db) => {
+    db.sequence += 1;
+    return db.sequence;
+  });
 }
 
 export async function saveSession(session: StoredSession) {
-  const db = await load();
-  db.sessions[session.id] = session;
-  persist(db);
+  await withDB((db) => {
+    db.sessions[session.id] = session;
+  });
 }
 
 export async function getSession(id: string): Promise<StoredSession | undefined> {
-  const db = await load();
-  return db.sessions[id];
+  return withDB((db) => db.sessions[id] ? structuredClone(db.sessions[id]) : undefined);
+}
+
+export async function mutateSession<T>(
+  id: string,
+  fn: (session: StoredSession) => T,
+): Promise<T> {
+  return withDB((db) => {
+    const session = db.sessions[id];
+    if (!session) throw new Error("Session not found");
+    return fn(session);
+  });
 }
 
 export async function getProfile(id: string): Promise<Profile> {
-  const db = await load();
-  if (!db.profiles[id]) {
-    db.profiles[id] = { id, createdAt: Date.now() };
-    persist(db);
-  }
-  return db.profiles[id];
+  return withDB((db) => {
+    if (!db.profiles[id]) db.profiles[id] = { id, createdAt: Date.now() };
+    return db.profiles[id];
+  });
 }
 
 export async function setUsername(id: string, username: string) {
-  const db = await load();
-  db.profiles[id] = {
-    ...(db.profiles[id] ?? { id, createdAt: Date.now() }),
-    username: username.trim().slice(0, 16).toUpperCase(),
-  };
-  persist(db);
-  return db.profiles[id];
+  return withDB((db) => {
+    db.profiles[id] = {
+      ...(db.profiles[id] ?? { id, createdAt: Date.now() }),
+      username: username.trim().slice(0, 16).toUpperCase(),
+    };
+    return db.profiles[id];
+  });
 }
 
 export async function claimDaily(playerId: string, dailyKey: string, sessionId: string) {
-  const db = await load();
-  const key = `${playerId}:${dailyKey}`;
-  const existing = db.dailyClaims[key];
-  if (existing) return { replay: true, originalSessionId: existing };
-  db.dailyClaims[key] = sessionId;
-  persist(db);
-  return { replay: false, originalSessionId: sessionId };
+  return withDB((db) => {
+    const key = `${playerId}:${dailyKey}`;
+    const existing = db.dailyClaims[key];
+    if (existing) return { replay: true, originalSessionId: existing };
+    db.dailyClaims[key] = sessionId;
+    return { replay: false, originalSessionId: sessionId };
+  });
 }
 
 export async function addLeaderboard(row: LeaderboardRow) {
-  const db = await load();
-  if (!row.verified) return;
-  if (row.dailyKey) {
-    const dup = db.leaderboard.find(
-      (r) => r.playerId === row.playerId && r.dailyKey === row.dailyKey && r.mode === row.mode,
-    );
-    if (dup) return;
-  }
-  db.leaderboard.push(row);
-  persist(db);
+  await withDB((db) => {
+    if (!row.verified) return;
+    if (row.dailyKey) {
+      const dup = db.leaderboard.find(
+        (r) => r.playerId === row.playerId && r.dailyKey === row.dailyKey && r.mode === row.mode,
+      );
+      if (dup) return;
+    }
+    db.leaderboard.push(row);
+  });
 }
 
 export async function listLeaderboard(range: "today" | "week" | "all") {
-  const db = await load();
-  const now = Date.now();
-  const cutoff =
-    range === "today" ? now - 1000 * 60 * 60 * 24 : range === "week" ? now - 1000 * 60 * 60 * 24 * 7 : 0;
-  return db.leaderboard
-    .filter((r) => r.verified && r.createdAt >= cutoff)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 25);
+  return withDB((db) => {
+    const now = Date.now();
+    const cutoff =
+      range === "today"
+        ? now - 1000 * 60 * 60 * 24
+        : range === "week"
+          ? now - 1000 * 60 * 60 * 24 * 7
+          : 0;
+    return db.leaderboard
+      .filter((r) => r.verified && r.createdAt >= cutoff)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 25);
+  });
 }
