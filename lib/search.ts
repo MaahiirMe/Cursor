@@ -10,7 +10,7 @@ function rankBoost(query: string, text: string, aliases: string[]): number {
   const qc = compact(query);
   if (!q) return 0;
   if (n === q || c === qc) return 100;
-  if (aliases.some((a) => normalizeText(a) === q || compact(a) === qc)) return 96;
+  if (aliases.some((a) => normalizeText(a) === q || compact(a) === qc)) return 200;
   if (n.startsWith(q) || c.startsWith(qc)) return 90;
   if (tokens(n).some((t) => t.startsWith(q))) return 80;
   if (aliases.some((a) => normalizeText(a).startsWith(q) || compact(a).startsWith(qc)))
