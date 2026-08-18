@@ -2,6 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import type { Artist, Track } from "../types";
 import { normalizeText } from "../normalize";
+import { defaultArtistTier } from "./tiers";
 import { hintsFor } from "./hints";
 import seed from "../../catalogue/seed.json";
 
@@ -21,6 +22,7 @@ export type CatalogueFile = {
     country?: "IN" | "PK";
     active?: boolean;
     imageUrl?: string;
+    tier?: "mainstream" | "established" | "rising" | "underground" | "new";
   }>;
   tracks: Array<{
     id: string;
@@ -33,6 +35,10 @@ export type CatalogueFile = {
     youtubeVideoId?: string;
     youtubeStartFaithful?: boolean;
     licensedPreviewUrl?: string;
+    detectedStartSeconds?: number;
+    gameStartSeconds?: number;
+    startVerified?: boolean;
+    recognitionScore?: number;
     sourcePlaylists: string[];
     sceneTags: string[];
     difficulty: 1 | 2 | 3 | 4 | 5;
@@ -59,6 +65,7 @@ function hydrate(file: CatalogueFile) {
     country: a.country ?? "IN",
     sceneTags: a.sceneTags,
     active: a.active !== false,
+    tier: a.tier ?? defaultArtistTier(a.id, a.sceneTags),
   }));
   const byId = new Map(artists.map((a) => [a.id, a]));
   const tracks: Track[] = file.tracks.map((t) => {
@@ -84,6 +91,10 @@ function hydrate(file: CatalogueFile) {
       youtubeVideoId: t.youtubeVideoId,
       youtubeStartFaithful: t.youtubeStartFaithful,
       licensedPreviewUrl: t.licensedPreviewUrl,
+      detectedStartSeconds: t.detectedStartSeconds,
+      gameStartSeconds: t.gameStartSeconds,
+      startVerified: Boolean(t.startVerified && t.licensedPreviewUrl),
+      recognitionScore: t.recognitionScore ?? 50,
       sourcePlaylists: t.sourcePlaylists,
       country: "IN",
       genre: "DHH",

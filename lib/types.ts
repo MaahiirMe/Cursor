@@ -1,5 +1,7 @@
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 
+export type ArtistTier = "mainstream" | "established" | "rising" | "underground" | "new";
+
 export type Artist = {
   id: string;
   name: string;
@@ -8,6 +10,7 @@ export type Artist = {
   country: "IN" | "PK";
   sceneTags: string[];
   active: boolean;
+  tier: ArtistTier;
 };
 
 export type ArtistReference = {
@@ -30,6 +33,10 @@ export type Track = {
   youtubeStartFaithful?: boolean;
   licensedPreviewUrl?: string;
   licensedPreviewStart?: number;
+  detectedStartSeconds?: number;
+  gameStartSeconds?: number;
+  startVerified?: boolean;
+  recognitionScore?: number;
   sourcePlaylists: string[];
   country: "IN";
   genre: "DHH";
@@ -52,9 +59,10 @@ export type GuessVerdict =
 
 export type SafePlayback = {
   providerId: string;
-  youtubeVideoId?: string;
   audioUrl?: string;
+  /** Always 0 in the UI clock. Actual source seek is clipStartSeconds. */
   startSeconds: 0;
+  clipStartSeconds?: number;
 };
 
 export type SafeRound = {
@@ -120,9 +128,8 @@ export type StoredRound = {
   guesses: StoredGuess[];
   prepared?: {
     providerId: string;
-    youtubeVideoId?: string;
     audioUrl?: string;
-    startSeconds: 0;
+    startSeconds: number;
   };
 };
 

@@ -1,16 +1,13 @@
-import type { Track } from "../types";
-
 export interface PreparedTrack {
   providerId: string;
   trackId: string;
-  youtubeVideoId?: string;
   audioUrl?: string;
-  startSeconds: 0;
+  startSeconds: number;
 }
 
 export interface AudioProvider {
   id: string;
-  prepare(track: Track): Promise<PreparedTrack | null>;
+  prepare(track: PreparedTrack): Promise<PreparedTrack | null>;
   playFromStart(track: PreparedTrack, durationSeconds: number): Promise<void>;
   pause(): void;
   reset(): void;
@@ -19,8 +16,4 @@ export interface AudioProvider {
 
 export type ProviderPriority = "licensed" | "youtube" | "mock";
 
-export const DEFAULT_PRIORITY: ProviderPriority[] = [
-  "licensed",
-  "youtube",
-  "mock",
-];
+export const DEFAULT_PRIORITY: ProviderPriority[] = ["licensed", "youtube", "mock"];

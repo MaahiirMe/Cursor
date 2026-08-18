@@ -3,7 +3,6 @@ import { parsePlaylistSource } from "@/lib/import/playlist";
 import { allArtists, allTracksAdmin, getTrack } from "@/lib/catalogue";
 import { upsertCatalogue, type CatalogueFile } from "@/lib/catalogue/load";
 import { normalizeText, compact } from "@/lib/normalize";
-import { resolveLivePlayback } from "@/lib/audio/live";
 
 function authorized(request: Request) {
   const key = process.env.ADMIN_KEY;
@@ -48,13 +47,19 @@ export async function POST(request: Request) {
 
   if (body.activate) {
     const toAdd: CatalogueFile["tracks"] = [];
+    const { findItunesPreview } = await import("@/lib/audio/itunes-preview");
+    const { detectMusicStartSeconds } = await import("@/lib/audio/onset");
     for (const row of review) {
       if (row.matchedTrackId) continue;
-      if (!row.youtubeVideoId) continue;
-      const artistId = row.matchedArtistIds[0] ?? "divine";
+      const artistId = row.matchedArtistIds[0];
+      if (!artistId) continue;
+      const artistName = artists.find((a) => a.id === artistId)?.name ?? row.rawArtists[0] ?? "";
+      const preview = await findItunesPreview(row.rawTitle, artistName);
+      if (!preview) continue;
       const id = slug(row.rawTitle, artistId);
       if (getTrack(id)) continue;
-      const draft = {
+      const detected = await detectMusicStartSeconds(preview.previewUrl);
+      toAdd.push({
         id,
         title: row.rawTitle,
         artistIds: row.matchedArtistIds.length ? row.matchedArtistIds : [artistId],
@@ -62,33 +67,21 @@ export async function POST(request: Request) {
         aliases: [],
         sourcePlaylists: [row.sourcePlaylist],
         sceneTags: [],
-        difficulty: 3 as const,
-        active: false,
-        introQuality: "uncertain" as const,
+        difficulty: 3,
+        active: detected != null,
+        introQuality: detected != null ? "faithful" : "uncertain",
         youtubeVideoId: row.youtubeVideoId,
         youtubeStartFaithful: false,
-        country: "IN" as const,
-        genre: "DHH" as const,
-      };
-      const existing = allTracksAdmin().find((t) => t.id === id) ?? {
-        ...draft,
-        normalizedTitle: normalizeText(row.rawTitle),
-        artists: [{ id: artistId, name: artistId }],
-      };
-      const live = await resolveLivePlayback({
-        ...existing,
-        youtubeVideoId: row.youtubeVideoId,
-        youtubeStartFaithful: true,
-        introQuality: "faithful",
-        active: true,
+        licensedPreviewUrl: preview.previewUrl,
+        detectedStartSeconds: detected ?? undefined,
+        gameStartSeconds: detected ?? 0,
+        startVerified: detected != null,
+        recognitionScore: preview.recognitionScore,
+        artworkUrl: preview.artworkUrl,
+        album: preview.album,
+        releaseYear: preview.releaseYear,
         country: "IN",
         genre: "DHH",
-      } as never);
-      toAdd.push({
-        ...draft,
-        active: Boolean(live),
-        introQuality: live ? "faithful" : "uncertain",
-        youtubeStartFaithful: Boolean(live),
       });
     }
     if (toAdd.length) await upsertCatalogue({ tracks: toAdd });

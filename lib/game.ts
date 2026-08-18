@@ -1,7 +1,6 @@
 import crypto from "crypto";
 import { resolveLivePlayback } from "./audio/live";
 import { resolveAudioProvider } from "./audio/resolver";
-import { signPlayback } from "./audio/mock";
 import { hintsFor } from "./catalogue/hints";
 import { getTrack, playableTracks, loadCatalogue } from "./catalogue";
 import { resetSearchIndex } from "./search";
@@ -10,11 +9,12 @@ import { COPY, correctCopy, resultHeadline, wrongCopy } from "./copy";
 import {
   addLeaderboard,
   claimDaily,
-  getProfile,
   getSession,
   getUser,
   mutateSession,
   nextSessionNumber,
+  recentServe,
+  recordServe,
   saveSession,
   updateUserStats,
 } from "./db/store";
@@ -25,6 +25,7 @@ import {
   nextSeconds,
   possibleScore,
 } from "./scoring";
+import { pickSessionTracks } from "./session/pick";
 import type {
   GameMode,
   GuessVerdict,
@@ -48,44 +49,17 @@ function dailyNumber(key: string): number {
   return Math.max(1, Math.floor((t - start) / 86400000) + 1);
 }
 
-function mulberry32(a: number) {
-  return function () {
-    let t = (a += 0x6d2b79f5);
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
 function initialSeconds(mode: GameMode): number {
-  return mode === "hard" ? 1 : 2;
+  return mode === "hard" ? 2 : 4;
 }
 
-async function pickValidatedTracks(mode: GameMode, key?: string, exclude: string[] = []) {
-  const pool = playableTracks().filter((t) => !exclude.includes(t.id));
+async function pickValidatedTracks(mode: GameMode, playerId: string, key?: string) {
+  const history = await recentServe(playerId);
   const seed =
     mode === "daily" && key
       ? Number.parseInt(key.replaceAll("-", ""), 10)
       : crypto.randomInt(1, 1_000_000_000);
-  const rand = mulberry32(seed);
-  const shuffled = [...pool].sort(() => rand() - 0.5);
-  const chosen: Array<{ track: Track; prepared: NonNullable<Awaited<ReturnType<typeof resolveLivePlayback>>> }> = [];
-  for (let i = 0; i < shuffled.length && chosen.length < 5; i += 6) {
-    const batch = shuffled.slice(i, i + 6);
-    const checks = await Promise.all(
-      batch.map(async (t) => {
-        const prepared = await resolveLivePlayback(t);
-        return prepared ? { track: t, prepared } : null;
-      }),
-    );
-    for (const row of checks) {
-      if (row && chosen.length < 5) chosen.push(row);
-    }
-  }
-  if (chosen.length < 5) {
-    throw new Error("Not enough playable tracks from 00:00");
-  }
-  return chosen;
+  return pickSessionTracks(mode, history, seed);
 }
 
 function hydrate(round: StoredRound, mode: GameMode): StoredRound {
@@ -121,18 +95,14 @@ function toPublic(session: StoredSession): SessionPublic {
     const r = hydrate(raw, session.mode);
     const track = getTrack(r.trackId)!;
     const prepared = r.prepared ?? resolveAudioProvider(track);
-    const token = signPlayback(session.id, index);
     const isCurrent =
       session.status === "playing" && index === session.currentIndex && r.outcome === "pending";
     const playback = isCurrent
       ? {
           providerId: prepared.providerId,
-          youtubeVideoId: prepared.youtubeVideoId,
-          audioUrl:
-            prepared.providerId === "licensed"
-              ? prepared.audioUrl
-              : prepared.audioUrl ?? `/api/audio/${token}`,
+          audioUrl: prepared.providerId === "licensed" ? prepared.audioUrl : undefined,
           startSeconds: 0 as const,
+          clipStartSeconds: prepared.startSeconds,
         }
       : { providerId: prepared.providerId, startSeconds: 0 as const };
     const revealed = r.outcome !== "pending" || session.status === "complete";
@@ -156,9 +126,9 @@ function toPublic(session: StoredSession): SessionPublic {
       safe.title = track.title;
       safe.artistNames = track.artists.map((a) => a.name);
       safe.artworkSeed = track.id;
-      safe.artworkUrl = track.youtubeVideoId
-        ? `https://i.ytimg.com/vi/${track.youtubeVideoId}/hqdefault.jpg`
-        : undefined;
+      safe.artworkUrl =
+        track.artworkUrl ??
+        (track.youtubeVideoId ? `https://i.ytimg.com/vi/${track.youtubeVideoId}/hqdefault.jpg` : undefined);
     }
     return safe;
   });
@@ -202,7 +172,7 @@ export async function startSession(playerId: string, mode: GameMode): Promise<Se
   await loadCatalogue();
   resetSearchIndex();
   const key = mode === "daily" ? dailyKey() : undefined;
-  const picked = await pickValidatedTracks(mode, key);
+  const picked = await pickValidatedTracks(mode, playerId, key);
   const number = mode === "daily" && key ? dailyNumber(key) : await nextSessionNumber();
   const id = crypto.randomUUID();
   let replay = false;
@@ -236,6 +206,11 @@ export async function startSession(playerId: string, mode: GameMode): Promise<Se
     replay,
   };
   await saveSession(session);
+  await recordServe(
+    playerId,
+    picked.map((p) => p.track.id),
+    picked.map((p) => p.track.primaryArtistId),
+  );
   return toPublic(session);
 }
 
@@ -315,11 +290,15 @@ export async function replaceUnplayableRound(sessionId: string, playerId: string
       return { session: toPublic(session), replaced: false };
     }
     const used = new Set(session.rounds.map((r) => r.trackId));
+    const usedArtists = new Set(
+      session.rounds.map((r) => getTrack(r.trackId)?.primaryArtistId).filter(Boolean) as string[],
+    );
     const next = await (async () => {
       for (const t of playableTracks()) {
         if (used.has(t.id)) continue;
+        if (usedArtists.has(t.primaryArtistId)) continue;
         const prepared = await resolveLivePlayback(t);
-        if (prepared) return { track: t, prepared };
+        if (prepared?.providerId === "licensed") return { track: t, prepared };
       }
       return null;
     })();
@@ -406,7 +385,7 @@ export async function advanceRound(sessionId: string, playerId: string) {
       for (const r of session.rounds) {
         if (r.outcome === "correct") {
           streak += 1;
-          if (r.revealSeconds <= 2 && r.attemptsUsed === 1) perfect += 1;
+          if (r.revealSeconds <= (r.initialSeconds ?? 4) && r.attemptsUsed === 1) perfect += 1;
         } else {
           streak = 0;
         }

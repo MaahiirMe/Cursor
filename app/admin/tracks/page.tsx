@@ -1,12 +1,16 @@
 "use client";
 
 import { EditorialNav } from "@/components/EditorialNav";
-import { useEffect, useState } from "react";
+import { YouTubeClip, type YouTubeClipHandle } from "@/components/YouTubeClip";
+import { useEffect, useRef, useState } from "react";
 
 type TrackRow = {
   id: string;
   title: string;
   youtubeVideoId?: string;
+  licensedPreviewUrl?: string;
+  gameStartSeconds?: number;
+  startVerified?: boolean;
   introQuality: string;
   active: boolean;
   difficulty: number;
@@ -23,7 +27,14 @@ export default function AdminTracksPage() {
   const [title, setTitle] = useState("");
   const [artistId, setArtistId] = useState("");
   const [youtube, setYoutube] = useState("");
+  const [previewUrl, setPreviewUrl] = useState("");
+  const [startSec, setStartSec] = useState("0");
   const [artistName, setArtistName] = useState("");
+  const [aliases, setAliases] = useState("");
+  const [previewId, setPreviewId] = useState<string | null>(null);
+  const [fromMerge, setFromMerge] = useState("");
+  const [intoMerge, setIntoMerge] = useState("");
+  const clip = useRef<YouTubeClipHandle>(null);
 
   async function reload() {
     const res = await fetch("/api/admin/tracks");
@@ -60,7 +71,9 @@ export default function AdminTracksPage() {
                   title,
                   artistIds: [artistId],
                   youtubeVideoId: youtube || undefined,
-                  active: Boolean(youtube),
+                  licensedPreviewUrl: previewUrl || undefined,
+                  gameStartSeconds: Number(startSec) || 0,
+                  active: Boolean(previewUrl),
                 },
               }),
             });
@@ -84,7 +97,19 @@ export default function AdminTracksPage() {
           </select>
           <input
             className="field"
-            placeholder="YouTube video ID"
+            placeholder="Licensed preview URL (required to go live)"
+            value={previewUrl}
+            onChange={(e) => setPreviewUrl(e.target.value)}
+          />
+          <input
+            className="field"
+            placeholder="gameStartSeconds"
+            value={startSec}
+            onChange={(e) => setStartSec(e.target.value)}
+          />
+          <input
+            className="field"
+            placeholder="YouTube video ID (admin reference only)"
             value={youtube}
             onChange={(e) => setYoutube(e.target.value)}
           />
@@ -100,9 +125,10 @@ export default function AdminTracksPage() {
             await fetch("/api/admin/tracks", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ artist: { name: artistName } }),
+              body: JSON.stringify({ artist: { name: artistName, aliases: aliases.split(",").map((s) => s.trim()).filter(Boolean) } }),
             });
             setArtistName("");
+            setAliases("");
             await reload();
           }}
         >
@@ -112,6 +138,12 @@ export default function AdminTracksPage() {
             placeholder="Canonical name"
             value={artistName}
             onChange={(e) => setArtistName(e.target.value)}
+          />
+          <input
+            className="field mt-2"
+            placeholder="Aliases (comma)"
+            value={aliases}
+            onChange={(e) => setAliases(e.target.value)}
           />
           <button className="lock mt-4" type="submit">
             SAVE ARTIST
@@ -140,10 +172,99 @@ export default function AdminTracksPage() {
               >
                 {t.active ? "ON" : "OFF"}
               </button>
-              <span className="col-span-2 font-mono text-xs">{t.youtubeVideoId ?? "—"}</span>
+              <span className="col-span-2 font-mono text-xs">
+                {t.startVerified ? `START ${t.gameStartSeconds ?? 0}` : "UNVERIFIED"}
+              </span>
+              <button
+                type="button"
+                className="col-span-1 font-mono text-xs text-orange"
+                onClick={() => {
+                  if (!t.licensedPreviewUrl) return;
+                  const audio = new Audio(t.licensedPreviewUrl);
+                  audio.addEventListener("canplay", () => {
+                    audio.currentTime = t.gameStartSeconds ?? 0;
+                    void audio.play();
+                    window.setTimeout(() => audio.pause(), 4000);
+                  }, { once: true });
+                }}
+              >
+                4 SEC
+              </button>
+              <button
+                type="button"
+                className="col-span-1 font-mono text-xs"
+                onClick={async () => {
+                  await fetch("/api/admin/detect-start", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ id: t.id }),
+                  });
+                  await reload();
+                }}
+              >
+                DETECT
+              </button>
+              <button
+                type="button"
+                className="col-span-1 font-mono text-xs"
+                onClick={async () => {
+                  await fetch("/api/admin/tracks", {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      id: t.id,
+                      patch: { active: false, introQuality: "unusable" },
+                    }),
+                  });
+                  await reload();
+                }}
+              >
+                FLAG
+              </button>
             </li>
           ))}
         </ul>
+        <form
+          className="mt-10 max-w-xl"
+          onSubmit={async (e) => {
+            e.preventDefault();
+            await fetch("/api/admin/tracks", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ merge: { fromArtistId: fromMerge, intoArtistId: intoMerge } }),
+            });
+            setFromMerge("");
+            setIntoMerge("");
+            await reload();
+          }}
+        >
+          <p className="mono text-smoke">MERGE DUPLICATE ARTISTS</p>
+          <select className="field mt-2 bg-ink" value={fromMerge} onChange={(e) => setFromMerge(e.target.value)}>
+            <option value="">From (deactivate)</option>
+            {artists.map((a) => (
+              <option key={a.id} value={a.id}>
+                {a.name}
+              </option>
+            ))}
+          </select>
+          <select className="field mt-2 bg-ink" value={intoMerge} onChange={(e) => setIntoMerge(e.target.value)}>
+            <option value="">Into (keep)</option>
+            {artists.map((a) => (
+              <option key={a.id} value={a.id}>
+                {a.name}
+              </option>
+            ))}
+          </select>
+          <button className="lock mt-4" type="submit" disabled={!fromMerge || !intoMerge || fromMerge === intoMerge}>
+            MERGE
+          </button>
+        </form>
+        {previewId ? (
+          <div className="mt-10">
+            <p className="mono text-smoke">YOUTUBE REFERENCE ONLY · NOT USED IN ROUNDS · {previewId}</p>
+            <YouTubeClip ref={clip} videoId={previewId} className="relative mt-3 h-40 w-72 rounded-sm" />
+          </div>
+        ) : null}
         <form
           className="mt-16"
           onSubmit={async (e) => {

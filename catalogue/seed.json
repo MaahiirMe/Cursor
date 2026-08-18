@@ -14,7 +14,8 @@
         "azadi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "mainstream"
     },
     {
       "id": "encore-abj",
@@ -28,7 +29,8 @@
         "seedhe-maut"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "calm",
@@ -41,7 +43,8 @@
         "seedhe-maut"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "krsna",
@@ -50,6 +53,7 @@
         "KRSNA",
         "KrSna",
         "Krsna",
+        "krs",
         "krna",
         "KRNA",
         "Youngest In Charge"
@@ -59,7 +63,8 @@
         "kalamkaar"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "mainstream"
     },
     {
       "id": "mc-stan",
@@ -67,13 +72,14 @@
       "aliases": [
         "Stan",
         "MCSTAN",
-        "MC ST\u2206N"
+        "MC ST∆N"
       ],
       "sceneTags": [
         "pune"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "mainstream"
     },
     {
       "id": "divine",
@@ -87,7 +93,8 @@
         "gully"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "mainstream"
     },
     {
       "id": "naezy",
@@ -101,7 +108,8 @@
         "gully"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "mainstream"
     },
     {
       "id": "raftaar",
@@ -113,7 +121,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "mainstream"
     },
     {
       "id": "emiway",
@@ -126,7 +135,8 @@
         "mumbai"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "mainstream"
     },
     {
       "id": "prabh-deep",
@@ -139,7 +149,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "brodha-v",
@@ -152,7 +163,8 @@
         "bengaluru"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "dino-james",
@@ -164,7 +176,8 @@
         "bhopal"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "ikka",
@@ -176,7 +189,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "fotty-seven",
@@ -189,7 +203,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "yashraj",
@@ -201,7 +216,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "frappe-ash",
@@ -213,7 +229,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "rising"
     },
     {
       "id": "bharg",
@@ -224,7 +241,8 @@
         "kalamkaar"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "rising"
     },
     {
       "id": "rawal",
@@ -234,7 +252,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "rising"
     },
     {
       "id": "bhaskar",
@@ -244,7 +263,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "rising"
     },
     {
       "id": "karma",
@@ -255,7 +275,8 @@
         "kalamkaar"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "king",
@@ -267,7 +288,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "mainstream"
     },
     {
       "id": "hanumankind",
@@ -279,7 +301,8 @@
         "kochi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "mainstream"
     },
     {
       "id": "panther",
@@ -291,7 +314,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "raga",
@@ -301,7 +325,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "muhfaad",
@@ -311,7 +336,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "underground"
     },
     {
       "id": "paradox",
@@ -321,7 +347,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "rising"
     },
     {
       "id": "bella",
@@ -331,7 +358,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "rising"
     },
     {
       "id": "qaab",
@@ -341,7 +369,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "rising"
     },
     {
       "id": "loka",
@@ -351,7 +380,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "rising"
     },
     {
       "id": "khayek",
@@ -361,7 +391,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "underground"
     },
     {
       "id": "nazz",
@@ -371,7 +402,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "underground"
     },
     {
       "id": "bandzo3rd",
@@ -383,7 +415,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "underground"
     },
     {
       "id": "spectra",
@@ -393,7 +426,8 @@
         "mumbai"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "underground"
     },
     {
       "id": "udbhav",
@@ -403,7 +437,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "underground"
     },
     {
       "id": "chaar-diwaari",
@@ -415,7 +450,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "rising"
     },
     {
       "id": "tienas",
@@ -425,7 +461,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "underground"
     },
     {
       "id": "sikander-kahlon",
@@ -438,7 +475,8 @@
         "chandigarh"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "underground"
     },
     {
       "id": "seven-bantai",
@@ -452,7 +490,8 @@
         "mumbai"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "shah-rule",
@@ -465,7 +504,8 @@
         "gully"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "sez",
@@ -479,7 +519,8 @@
         "azadi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "deep-kalsi",
@@ -492,7 +533,8 @@
         "kalamkaar"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "j-trix",
@@ -504,7 +546,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "underground"
     },
     {
       "id": "mc-altaf",
@@ -516,7 +559,8 @@
         "mumbai"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "established"
     },
     {
       "id": "gravity",
@@ -526,7 +570,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "rising"
     },
     {
       "id": "ace",
@@ -538,7 +583,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "rising"
     },
     {
       "id": "dee-mc",
@@ -550,7 +596,8 @@
         "mumbai"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "rising"
     },
     {
       "id": "mojojojo",
@@ -562,7 +609,8 @@
         "delhi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "underground"
     },
     {
       "id": "smokey",
@@ -574,7 +622,8 @@
         "bengaluru"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "rising"
     },
     {
       "id": "karan-kanchan",
@@ -586,7 +635,8 @@
         "mumbai"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "new"
     },
     {
       "id": "stunnah",
@@ -598,7 +648,8 @@
         "mumbai"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "new"
     },
     {
       "id": "phenom",
@@ -608,7 +659,8 @@
         "mumbai"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "underground"
     },
     {
       "id": "byg-byrd",
@@ -621,7 +673,8 @@
         "gully"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "underground"
     },
     {
       "id": "kalmi",
@@ -631,7 +684,1164 @@
         "kochi"
       ],
       "country": "IN",
-      "active": true
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "yungsta",
+      "name": "Yungsta",
+      "aliases": [
+        "Youngsta"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "rising"
+    },
+    {
+      "id": "100rbh",
+      "name": "100RBH",
+      "aliases": [
+        "100 RBH",
+        "sau rbh"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "kaam-bhaari",
+      "name": "Kaam Bhaari",
+      "aliases": [
+        "KaamBhaari"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "spitfire",
+      "name": "Spitfire",
+      "aliases": [
+        "Spitfire Mumbai"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "slowcheetah",
+      "name": "SlowCheetah",
+      "aliases": [
+        "Slow Cheetah"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "gaush",
+      "name": "Gaush",
+      "aliases": [
+        "Gaush Singh"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "rising"
+    },
+    {
+      "id": "badshah",
+      "name": "Badshah",
+      "aliases": [
+        "Aditya Prateek Singh Sisodia"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "mainstream"
+    },
+    {
+      "id": "yo-yo-honey-singh",
+      "name": "Yo Yo Honey Singh",
+      "aliases": [
+        "Honey Singh",
+        "yoyo",
+        "Yo Yo"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "mainstream"
+    },
+    {
+      "id": "bohemia",
+      "name": "Bohemia",
+      "aliases": [
+        "Raja Kumari no",
+        "Punjabi Rap Star"
+      ],
+      "sceneTags": [
+        "punjab"
+      ],
+      "country": "PK",
+      "active": true,
+      "tier": "established"
+    },
+    {
+      "id": "hiphop-tamizha",
+      "name": "Hiphop Tamizha",
+      "aliases": [
+        "Hip Hop Tamizha",
+        "Aadhi"
+      ],
+      "sceneTags": [
+        "chennai",
+        "tamil"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "established"
+    },
+    {
+      "id": "arivu",
+      "name": "Arivu",
+      "aliases": [
+        "Arivarasu Kalainesan"
+      ],
+      "sceneTags": [
+        "chennai",
+        "tamil"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "rising"
+    },
+    {
+      "id": "ofro",
+      "name": "ofRO",
+      "aliases": [
+        "ofro"
+      ],
+      "sceneTags": [
+        "chennai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "vedan",
+      "name": "Vedan",
+      "aliases": [],
+      "sceneTags": [
+        "kochi",
+        "malayalam"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "rising"
+    },
+    {
+      "id": "dabzee",
+      "name": "Dabzee",
+      "aliases": [
+        "Dabzee Mappila"
+      ],
+      "sceneTags": [
+        "kochi",
+        "malayalam"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "rising"
+    },
+    {
+      "id": "fejo",
+      "name": "Fejo",
+      "aliases": [],
+      "sceneTags": [
+        "kochi",
+        "malayalam"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "rising"
+    },
+    {
+      "id": "thirumali",
+      "name": "ThirumaLi",
+      "aliases": [
+        "Thirumali"
+      ],
+      "sceneTags": [
+        "kochi",
+        "malayalam"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "rising"
+    },
+    {
+      "id": "street-academics",
+      "name": "Street Academics",
+      "aliases": [
+        "SA"
+      ],
+      "sceneTags": [
+        "kochi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "mhr",
+      "name": "M.H.R",
+      "aliases": [
+        "MHR",
+        "M H R"
+      ],
+      "sceneTags": [
+        "kochi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "mc-heam",
+      "name": "MC Heam",
+      "aliases": [
+        "Heam"
+      ],
+      "sceneTags": [
+        "chennai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "dopeadelicz",
+      "name": "Dopeadelicz",
+      "aliases": [
+        "Dopeadelics"
+      ],
+      "sceneTags": [
+        "chennai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "big-deal",
+      "name": "Big Deal",
+      "aliases": [
+        "BigDeal"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "khasi-bloodz",
+      "name": "Khasi Bloodz",
+      "aliases": [
+        "KhasiBloodz"
+      ],
+      "sceneTags": [
+        "shillong",
+        "northeast"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "moko-koza",
+      "name": "Moko Koza",
+      "aliases": [
+        "Moko"
+      ],
+      "sceneTags": [
+        "nagaland",
+        "northeast"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "taj",
+      "name": "TAJ",
+      "aliases": [
+        "Taj"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "rising"
+    },
+    {
+      "id": "2facebleed",
+      "name": "2facebleed",
+      "aliases": [
+        "2 Face Bleed",
+        "twofacebleed"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "bassick",
+      "name": "Bassick",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "mc-kode",
+      "name": "MC Kode",
+      "aliases": [
+        "Kode"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "young-stunners",
+      "name": "Young Stunners",
+      "aliases": [
+        "YS"
+      ],
+      "sceneTags": [
+        "karachi"
+      ],
+      "country": "PK",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "talha-anjum",
+      "name": "Talha Anjum",
+      "aliases": [
+        "Anjum"
+      ],
+      "sceneTags": [
+        "karachi"
+      ],
+      "country": "PK",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "talhah-yunus",
+      "name": "Talhah Yunus",
+      "aliases": [
+        "Yunus"
+      ],
+      "sceneTags": [
+        "karachi"
+      ],
+      "country": "PK",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "jokhay",
+      "name": "Jokhay",
+      "aliases": [],
+      "sceneTags": [
+        "karachi"
+      ],
+      "country": "PK",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "umair",
+      "name": "Umair",
+      "aliases": [],
+      "sceneTags": [
+        "karachi"
+      ],
+      "country": "PK",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "jj47",
+      "name": "JJ47",
+      "aliases": [
+        "JJ 47"
+      ],
+      "sceneTags": [
+        "karachi"
+      ],
+      "country": "PK",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "shareh",
+      "name": "Shareh",
+      "aliases": [],
+      "sceneTags": [
+        "karachi"
+      ],
+      "country": "PK",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "rap-demon",
+      "name": "Rap Demon",
+      "aliases": [
+        "RapDemon"
+      ],
+      "sceneTags": [
+        "lahore"
+      ],
+      "country": "PK",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "faris-shafi",
+      "name": "Faris Shafi",
+      "aliases": [
+        "Faris"
+      ],
+      "sceneTags": [
+        "islamabad"
+      ],
+      "country": "PK",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "hard-kaur",
+      "name": "Hard Kaur",
+      "aliases": [
+        "HardKaur"
+      ],
+      "sceneTags": [
+        "uk-punjab"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "established"
+    },
+    {
+      "id": "raja-kumari",
+      "name": "Raja Kumari",
+      "aliases": [
+        "RajaKumari"
+      ],
+      "sceneTags": [
+        "chennai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "ahmer",
+      "name": "Ahmer",
+      "aliases": [
+        "Ahmer Javed"
+      ],
+      "sceneTags": [
+        "srinagar",
+        "kashmir"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "nanku",
+      "name": "Nanku",
+      "aliases": [],
+      "sceneTags": [
+        "lucknow"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "baghira",
+      "name": "BAGHIRA",
+      "aliases": [
+        "Baghira"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "crook",
+      "name": "Crook",
+      "aliases": [
+        "KR$NA Crook no"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "edge",
+      "name": "Edge",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "superzero",
+      "name": "Superzero",
+      "aliases": [
+        "Super Zero"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "mellow-d",
+      "name": "Mellow D",
+      "aliases": [
+        "MellowD"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "vanjre",
+      "name": "Vanjre",
+      "aliases": [],
+      "sceneTags": [
+        "pune"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "shauharty",
+      "name": "Shauharty",
+      "aliases": [
+        "Shauharty Beats"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "ricky-nimje",
+      "name": "Ricky Nimje",
+      "aliases": [
+        "RickyNimje"
+      ],
+      "sceneTags": [
+        "nagpur"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "gurbax",
+      "name": "Gurbax",
+      "aliases": [],
+      "sceneTags": [
+        "punjab"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "epr",
+      "name": "EPR",
+      "aliases": [
+        "Eyeless Production"
+      ],
+      "sceneTags": [
+        "bengaluru"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "underground"
+    },
+    {
+      "id": "mahan",
+      "name": "Mahan",
+      "aliases": [
+        "Mahan Rahja"
+      ],
+      "sceneTags": [
+        "bengaluru"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "slia",
+      "name": "SLIA",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "wolf",
+      "name": "WOLF",
+      "aliases": [
+        "Wolf"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "dakait",
+      "name": "Dakait",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "aniket-rana",
+      "name": "Aniket Rana",
+      "aliases": [
+        "Aniket"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "yung-blaze",
+      "name": "Yung Blaze",
+      "aliases": [
+        "Young Blaze"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "mc-laltain",
+      "name": "MC Laltain",
+      "aliases": [
+        "Laltain"
+      ],
+      "sceneTags": [
+        "kolkata"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "mc-headshot",
+      "name": "MC Headshot",
+      "aliases": [
+        "Headshot"
+      ],
+      "sceneTags": [
+        "kolkata"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "enlive",
+      "name": "Enlive",
+      "aliases": [],
+      "sceneTags": [
+        "kolkata"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "dhanji",
+      "name": "Dhanji",
+      "aliases": [],
+      "sceneTags": [
+        "ahmedabad"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "rising"
+    },
+    {
+      "id": "mc-insane",
+      "name": "MC Insane",
+      "aliases": [
+        "Insane"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "gully-gang",
+      "name": "Gully Gang",
+      "aliases": [
+        "GullyGang"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "established"
+    },
+    {
+      "id": "azadi-records",
+      "name": "Azadi Records",
+      "aliases": [
+        "Azadi"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "established"
+    },
+    {
+      "id": "masss",
+      "name": "Masss",
+      "aliases": [
+        "MASS"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "blckk",
+      "name": "BLCKK",
+      "aliases": [
+        "Blackk"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "zahir",
+      "name": "Zahir",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "aflo",
+      "name": "AFLO",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "yashraj-mukhate",
+      "name": "Yashraj Mukhate",
+      "aliases": [
+        "Mukhate"
+      ],
+      "sceneTags": [
+        "indore"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "karan-aujla",
+      "name": "Karan Aujla",
+      "aliases": [
+        "Aujla"
+      ],
+      "sceneTags": [
+        "punjab"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "mainstream"
+    },
+    {
+      "id": "sidhu-moose-wala",
+      "name": "Sidhu Moose Wala",
+      "aliases": [
+        "Moose Wala",
+        "SMW"
+      ],
+      "sceneTags": [
+        "punjab"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "mainstream"
+    },
+    {
+      "id": "shubh",
+      "name": "Shubh",
+      "aliases": [],
+      "sceneTags": [
+        "punjab"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "mainstream"
+    },
+    {
+      "id": "ap-dhillon",
+      "name": "AP Dhillon",
+      "aliases": [
+        "APDhillon"
+      ],
+      "sceneTags": [
+        "punjab"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "mainstream"
+    },
+    {
+      "id": "gurinder-gill",
+      "name": "Gurinder Gill",
+      "aliases": [
+        "GMINDR"
+      ],
+      "sceneTags": [
+        "punjab"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "intense",
+      "name": "Intense",
+      "aliases": [],
+      "sceneTags": [
+        "punjab"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "sanjay-c",
+      "name": "Sanjay C",
+      "aliases": [
+        "SanjayC"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "deep-money",
+      "name": "Deep Money",
+      "aliases": [
+        "DeepMoney"
+      ],
+      "sceneTags": [
+        "punjab"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "imran-khan",
+      "name": "Imran Khan",
+      "aliases": [
+        "Amplifier"
+      ],
+      "sceneTags": [
+        "punjab"
+      ],
+      "country": "PK",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "gully-boy-cast",
+      "name": "Gully Boy Cast",
+      "aliases": [],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "mc-lophole",
+      "name": "MC Lophole",
+      "aliases": [
+        "Lophole"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "d-major",
+      "name": "D'Evil",
+      "aliases": [
+        "D Evil",
+        "Devil Mumbai"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "eka",
+      "name": "EKA",
+      "aliases": [
+        "Eka"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "mafatlal",
+      "name": "Mafatlal",
+      "aliases": [],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "bombay-bantai",
+      "name": "Bombay Bantai",
+      "aliases": [],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "ghaits",
+      "name": "GHAITS",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "khullar-gan",
+      "name": "Khullar G",
+      "aliases": [
+        "KhullarG"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "mc-wale",
+      "name": "MC Wale",
+      "aliases": [],
+      "sceneTags": [
+        "hyderabad"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "rebel-kid",
+      "name": "Rebel Kid",
+      "aliases": [
+        "RebelKid"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "dgimmick",
+      "name": "DGimmick",
+      "aliases": [
+        "D Gimmick"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "flow-art",
+      "name": "FlowArt",
+      "aliases": [
+        "Flow Art"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
+    },
+    {
+      "id": "mc-square",
+      "name": "MC Square",
+      "aliases": [
+        "MCSquare"
+      ],
+      "sceneTags": [
+        "haryana"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "rising"
+    },
+    {
+      "id": "thorns",
+      "name": "Thorns",
+      "aliases": [],
+      "sceneTags": [
+        "delhi"
+      ],
+      "country": "IN",
+      "active": true,
+      "tier": "new"
     }
   ],
   "tracks": [
@@ -659,7 +1869,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6d/bc/98/6dbc98f6-5e58-f151-4973-12d3ffc2e11e/mzaf_17796761435550491057.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8c/3c/10/8c3c1016-be7e-666c-225d-00b671fb38e0/199066150108.jpg/600x600bb.jpg",
+      "album": "Namastute - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 12,
+      "gameStartSeconds": 12,
+      "startVerified": true
     },
     {
       "id": "101",
@@ -685,7 +1902,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8f/cd/c5/8fcdc50b-7cb3-bd38-efc2-6a31657b9342/mzaf_18214053655404885766.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7f/7b/80/7f7b809a-d11c-9ce8-d11b-0d6e065f0afe/199066647707.jpg/600x600bb.jpg",
+      "album": "Dum Pishaach - Single",
+      "recognitionScore": 82,
+      "detectedStartSeconds": 3.3,
+      "gameStartSeconds": 3.3,
+      "startVerified": true
     },
     {
       "id": "nanchaku",
@@ -712,7 +1936,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/08/ff/51/08ff51ea-9d41-2f16-8c9d-0c910ebdddea/mzaf_7506550567402504630.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/08/d9/3e/08d93e16-fe19-db92-b432-5d9824399bc9/196872019032.jpg/600x600bb.jpg",
+      "album": "ROCKSTAR WITHOUT A GUITAR",
+      "recognitionScore": 60,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "khatta-flow",
@@ -740,7 +1971,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ea/de/0f/eade0fc6-3ae9-574a-0939-46d89e43f348/mzaf_8660100046174678290.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ca/17/f6/ca17f6be-b117-17c5-5a75-c46f1f46f046/885288155235.jpg/600x600bb.jpg",
+      "album": "Dilli Jale Roz - Single",
+      "recognitionScore": 82,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "kohra",
@@ -767,7 +2005,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ec/72/f6/ec72f6ad-4e48-c7b2-f642-76b640e06f38/mzaf_12063807557952439389.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/94/80/be/9480bec1-6ca2-5bae-a7da-d0e7c45633ce/859779847831_cover.jpg/600x600bb.jpg",
+      "album": "Ghost",
+      "recognitionScore": 60,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "shaktimaan",
@@ -794,7 +2039,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e9/ad/84/e9ad8485-be1f-f33e-bdf4-4cbd91a6667e/mzaf_6011909933798808073.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/6e/a2/1b/6ea21b60-3155-9aac-fdd8-0579af266a1c/199066651063.jpg/600x600bb.jpg",
+      "album": "Bayaan",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 14.2,
+      "gameStartSeconds": 14.2,
+      "startVerified": true
     },
     {
       "id": "11k",
@@ -821,7 +2073,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e7/37/24/e73724af-35c2-505c-5caa-9bb1b3b7c37c/mzaf_15804261838668939498.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/02/e7/77/02e77709-a5f6-5470-9e5b-70a0d6ff45ed/25UM1IM13936.rgb.jpg/600x600bb.jpg",
+      "album": "Arz Kiya Hai - Coke Studio Bharat - Single",
+      "recognitionScore": 60,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "nayaab",
@@ -848,7 +2107,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/5a/5e/39/5a5e3937-9972-0709-3c59-03557819f8b2/mzaf_18445912392429717087.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b8/41/71/b84171ff-de77-3505-af3d-41a5b8d37fc4/199066166178.jpg/600x600bb.jpg",
+      "album": "Nayaab",
+      "recognitionScore": 82,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "no-cap",
@@ -874,7 +2140,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/46/5e/e9/465ee941-b06d-1eb3-1a93-fb7208e6388f/mzaf_17531890652095915983.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/de/aa/40/deaa40b0-085f-6018-e2ed-ff478b656fc6/cover.jpg/600x600bb.jpg",
+      "album": "Untitled - Single",
+      "recognitionScore": 82,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "hola-amigo",
@@ -902,7 +2175,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/13/fe/bb/13febb80-1e2d-dc87-903f-23fe28c3752d/mzaf_17276564836809556267.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music111/v4/05/3c/d5/053cd593-b4b2-25d5-7be5-903a62f47102/886446315300.jpg/600x600bb.jpg",
+      "album": "Manthri Gari Bangla (Original Motion Picture Soundtrack) - EP",
+      "recognitionScore": 79,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "saza-e-maut",
@@ -930,7 +2210,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/8b/ad/2d/8bad2dc0-f562-a9d8-1300-ccc707d6d046/mzaf_12175291129793964559.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/94/b3/5b/94b35bdd-d7c8-de56-3156-997778174440/196292062960.jpg/600x600bb.jpg",
+      "album": "Sachnaak (feat. Satan) - Single",
+      "recognitionScore": 60,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "joota-japani",
@@ -956,7 +2243,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/6d/69/99/6d699923-1067-2c29-9e5e-6e0979276a86/mzaf_15649771530962531936.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/53/6e/3d/536e3d41-fe71-9b51-d242-239d3050d66a/197190909999.jpg/600x600bb.jpg",
+      "album": "Joota Japani - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "prarthana",
@@ -983,7 +2277,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/Music/08/6b/fe/mzm.myjbtrkd.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music/ce/49/0f/mzi.agqicdag.tif/600x600bb.jpg",
+      "album": "Liquid Gold - KRSNA VISION Volume 6",
+      "recognitionScore": 87,
+      "detectedStartSeconds": 6.2,
+      "gameStartSeconds": 6.2,
+      "startVerified": true
     },
     {
       "id": "vyanjan",
@@ -1009,7 +2310,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/6b/05/eb/6b05eb8f-84ae-9bc1-6a7d-c4c4b3866a10/mzaf_10296982439585671467.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/14/5b/5f/145b5fbb-e540-d9f7-0ae3-900571ef3384/be3fa0c9-8df9-4a2b-882b-0c052458db27.jpg/600x600bb.jpg",
+      "album": "Vyanjan - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "blowing-up",
@@ -1035,7 +2343,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c7/5c/68/c75c68ce-1eea-c2c9-ed81-505afe695ea0/mzaf_690900378708172363.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d2/5e/7e/d25e7e4c-f25d-3770-54ae-d89821b7b26c/3617052451949.jpg/600x600bb.jpg",
+      "album": "I Guess - Single",
+      "recognitionScore": 82,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "sellout",
@@ -1061,7 +2376,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/8a/52/b0/8a52b0b2-3063-3053-e43a-3437fef529d7/mzaf_11788994965712587316.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/17/fa/23/17fa23e4-cfa0-98d0-1531-ae218edfb812/00602537853083.rgb.jpg/600x600bb.jpg",
+      "album": "Sellout",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "seedha-makeover",
@@ -1087,7 +2409,8 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "recognitionScore": 55
     },
     {
       "id": "mere-gully-mein",
@@ -1115,7 +2438,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/da/67/69/da67692c-8e6f-7ef1-ba30-7fb48fdae7b9/mzaf_5639533648778078727.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/3a/5e/60/3a5e6034-8755-f0bf-d4f0-c7f96d3b45bb/8718857674948.png/600x600bb.jpg",
+      "album": "Gully Boy (Original Motion Picture Soundtrack)",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "farak",
@@ -1142,7 +2472,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/8d/d2/f8/8dd2f840-a9fa-0ff1-bb33-2a3521ad71a3/mzaf_3212425898192458562.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f8/81/da/f881dad1-ba69-9d86-df85-1acf6aa84f81/886446380506.jpg/600x600bb.jpg",
+      "album": "Farak - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "359-am",
@@ -1170,7 +2507,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/72/cb/f6/72cbf6f1-f42f-83e3-f16b-8c396e5bc40e/mzaf_10236295888113702894.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/1f/82/52/1f8252d9-d3f1-3deb-2989-58155494ede4/067003148856.png/600x600bb.jpg",
+      "album": "All The Little Lights (Anniversary Edition)",
+      "recognitionScore": 60,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "jungli-sher",
@@ -1196,7 +2540,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/8c/4f/5f/8c4f5f4e-0a5e-0c1c-f970-4248d10d1f68/mzaf_16262337638378109675.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/04/53/43/0453431a-5f7e-d484-039e-6b8f7a5823cc/886445765328.jpg/600x600bb.jpg",
+      "album": "Jungli Sher - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "kaam-25",
@@ -1222,7 +2573,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/55/f3/92/55f39239-e26b-2729-6278-adb909194e33/mzaf_14420597180208597975.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/54/34/4c/54344c00-417f-484a-0006-fc792abf3e21/cover.jpg/600x600bb.jpg",
+      "album": "Kaam 25 (Sacred Games) - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "mera-bhai",
@@ -1249,7 +2607,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c9/97/27/c9972719-6060-06fe-99e6-bb249035cb76/mzaf_14206418210475107031.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8f/f3/59/8ff35927-c3d8-b5af-a4e0-5a0864014187/20UMGIM97026.rgb.jpg/600x600bb.jpg",
+      "album": "Mera Bhai - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 3,
+      "gameStartSeconds": 3,
+      "startVerified": true
     },
     {
       "id": "teesri-manzil",
@@ -1275,7 +2640,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/21/51/69/21516952-82ed-5960-962c-b11a819b7ba8/mzaf_13493324121302424113.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/7e/d4/fc/7ed4fc0b-0f52-928e-f092-619c43c1797c/cover.jpg/600x600bb.jpg",
+      "album": "Teesri Manzil - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "one-side",
@@ -1302,7 +2674,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/74/44/8d/74448d2b-a709-0df9-cf7d-bf52f3356298/mzaf_16786338086118100458.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/57/0f/12/570f127d-62cf-f767-d4e7-3bc849e107b2/cover.jpg/600x600bb.jpg",
+      "album": "One Side - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "punya-paap",
@@ -1328,7 +2707,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/39/30/83/3930831a-1421-fa91-14dd-d99dab3c2f45/mzaf_17832675707550672033.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/14/8d/39/148d39c0-62bc-a764-d674-5527600885c2/20UM1IM09596.rgb.jpg/600x600bb.jpg",
+      "album": "Punya Paap",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "mirchi",
@@ -1355,7 +2741,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/21/88/cd/2188cd88-bde4-5958-5d8c-1d366eb5930e/mzaf_4740066004162575331.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ae/a1/1b/aea11bad-10ae-96d4-5212-e3b0db53bedd/20UMGIM89461.rgb.jpg/600x600bb.jpg",
+      "album": "Mirchi (feat. MC Altaf, Stylo G & Phenom) - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 2.4,
+      "gameStartSeconds": 2.4,
+      "startVerified": true
     },
     {
       "id": "four-ten",
@@ -1382,7 +2775,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cc/72/53/cc725344-9eec-6c8b-fdbe-ce990f358ef8/mzaf_10604706415254459138.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a8/ef/fc/a8effcc9-a894-639b-71b4-4a5dc22429cb/197190685916.jpg/600x600bb.jpg",
+      "album": "4.10 - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "chal-bombay",
@@ -1408,7 +2808,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b2/8f/1e/b28f1e90-069c-d7f6-e99e-74617467846e/mzaf_9259939424364887266.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b4/1e/0e/b41e0e6b-4808-171c-52fd-62282e366a5b/19UMGIM88313.rgb.jpg/600x600bb.jpg",
+      "album": "Kohinoor",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "machayenge",
@@ -1433,7 +2840,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/d8/16/80/d8168087-dcaa-a6cd-a52a-3fffdeacdf99/mzaf_17428241463130554613.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/5b/db/e9/5bdbe939-92c8-df00-f942-2534813d0d06/cover.jpg/600x600bb.jpg",
+      "album": "Machayenge - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0.5,
+      "gameStartSeconds": 0.5,
+      "startVerified": true
     },
     {
       "id": "company",
@@ -1458,7 +2872,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview113/v4/40/1e/1e/401e1e87-cae1-045f-7788-3fd16f23c9e6/mzaf_11541469363528521671.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/1b/a0/4f/1ba04fa8-01ba-fff3-4ac2-0c4fda33f345/cover.jpg/600x600bb.jpg",
+      "album": "Company - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "machayenge-4",
@@ -1483,7 +2904,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/d8/16/80/d8168087-dcaa-a6cd-a52a-3fffdeacdf99/mzaf_17428241463130554613.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/5b/db/e9/5bdbe939-92c8-df00-f942-2534813d0d06/cover.jpg/600x600bb.jpg",
+      "album": "Machayenge - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0.5,
+      "gameStartSeconds": 0.5,
+      "startVerified": true
     },
     {
       "id": "khatam",
@@ -1508,7 +2936,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/5e/ca/d2/5ecad2ec-7305-ea80-cd08-2f2eb7b756a1/mzaf_13516100279765085064.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/cc/c8/36/ccc8362b-c1ec-a54c-fcb2-fe410618cd45/cover.jpg/600x600bb.jpg",
+      "album": "Khatam - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0.1,
+      "gameStartSeconds": 0.1,
+      "startVerified": true
     },
     {
       "id": "round-one",
@@ -1533,7 +2968,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/64/d1/19/64d11960-ffb5-9242-bd8c-eb17ed56c220/mzaf_1312205460086586922.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/61/5c/e5/615ce586-81e2-ec90-7373-77382754260f/3502356666871.png/600x600bb.jpg",
+      "album": "Round One - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "basti-ka-hasti",
@@ -1558,7 +3000,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ea/e3/48/eae348a9-1009-f2df-3533-9a768c42c15b/mzaf_15046927494290108082.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/97/d3/b1/97d3b19f-1114-5041-240d-8c0dbc17f29d/cover.jpg/600x600bb.jpg",
+      "album": "Basti Ka Hasti - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "insaan",
@@ -1583,7 +3032,8 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "recognitionScore": 55
     },
     {
       "id": "tadipaar",
@@ -1608,7 +3058,8 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "recognitionScore": 55
     },
     {
       "id": "aathma-rama",
@@ -1634,7 +3085,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/fc/57/36/fc5736eb-4f3b-20fe-2845-361173bc041a/mzaf_7107060198098527052.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/5a/d7/6d/5ad76df5-f441-a4c9-4f6d-b55842793346/cover.jpg/600x600bb.jpg",
+      "album": "Aathma Raama - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "indian-flava",
@@ -1659,7 +3117,8 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "recognitionScore": 55
     },
     {
       "id": "sheikh-chilli",
@@ -1684,7 +3143,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/45/08/04/450804b3-8259-4831-0d3f-efef7276da1d/mzaf_14520732809974718147.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/5c/32/9d/5c329d14-5df6-5a3f-2855-ef67e57028d6/cover.jpg/600x600bb.jpg",
+      "album": "Sheikh Chilli - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "damn",
@@ -1710,7 +3176,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/15/ac/58/15ac5878-eee6-122a-9007-c193dd0b195a/mzaf_16499706895444741817.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d5/a3/d6/d5a3d681-6e77-6960-3177-1d0f23b5d78a/840780170094.png/600x600bb.jpg",
+      "album": "Mr. Nair",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 14.6,
+      "gameStartSeconds": 14.6,
+      "startVerified": true
     },
     {
       "id": "woh-raat",
@@ -1736,7 +3209,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/49/00/6c/49006c90-0bbb-88bd-da5f-4672ee267a22/mzaf_11606462742118885720.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/e9/7c/7a/e97c7abd-72e2-2826-16e1-8a16952a73e9/8902633281295.jpg/600x600bb.jpg",
+      "album": "Lamberghini (feat. Ragini) - Single",
+      "recognitionScore": 60,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "big-dawgs",
@@ -1763,7 +3243,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/57/24/64/5724646c-b589-7ee5-a6ef-c129df60f330/mzaf_12661476749087016303.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/42/d2/6c/42d26c01-619f-fa0a-2e83-7f4a28b5d3b2/24UMGIM70977.rgb.jpg/600x600bb.jpg",
+      "album": "Big Dawgs - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "class-sikh",
@@ -1790,7 +3277,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ab/77/a5/ab77a5cb-3606-e2ee-6e01-f3da4e8704e4/mzaf_16692197672497763878.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bd/ff/8b/bdff8b3f-6e48-ec54-5c8e-35afecb12bae/199066601273.jpg/600x600bb.jpg",
+      "album": "Sound of resistance, Vol. 1",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 5.5,
+      "gameStartSeconds": 5.5,
+      "startVerified": true
     },
     {
       "id": "amar",
@@ -1815,7 +3309,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/38/aa/7b/38aa7b1c-8a8c-8c30-ce6c-0510d2cf6cfa/mzaf_6614045311379159373.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/13/f2/f8/13f2f807-0a63-c536-5d99-b2621059f9bc/8445162301923.jpg/600x600bb.jpg",
+      "album": "K I N G - EP",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "kala",
@@ -1840,7 +3341,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/cf/0d/62/cf0d6279-4ab1-aa08-12d3-d2d9cee12ade/mzaf_408001503827063438.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/13/f2/f8/13f2f807-0a63-c536-5d99-b2621059f9bc/8445162301923.jpg/600x600bb.jpg",
+      "album": "K I N G - EP",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "asal-hustle",
@@ -1867,7 +3375,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/66/4a/bc/664abcac-6bd9-211e-2268-d248dcbd25df/mzaf_18274373908996729017.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music62/v4/0b/ad/65/0bad650c-d87e-febd-2495-8f0bc87fb81a/cover.jpg/600x600bb.jpg",
+      "album": "Asal Hustle - Single",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "aafat",
@@ -1893,7 +3408,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/61/07/e4/6107e443-4b9a-2f90-ed5d-71e254b2420c/mzaf_15932185804106315495.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/7b/7c/23/7b7c2381-a4c0-7dcb-9b45-e09bd79bd122/197189891762.jpg/600x600bb.jpg",
+      "album": "Aafat Waapas - Single",
+      "recognitionScore": 90,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "tu-aake-dekhle",
@@ -1918,7 +3440,14 @@
       "active": true,
       "introQuality": "faithful",
       "country": "IN",
-      "genre": "DHH"
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/f4/50/bb/f450bb7a-babf-f7ac-ffb3-a711e81974c0/mzaf_10693888753009385254.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/f1/3b/99/f13b99e6-84f7-a5d8-1be7-e82ebcc6354f/3616408758275.jpg/600x600bb.jpg",
+      "album": "The Carnival",
+      "recognitionScore": 96,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
     },
     {
       "id": "bhai-hai",
@@ -1938,6 +3467,2385 @@
       ],
       "sceneTags": [
         "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH",
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/93/e5/9c/93e59c22-cc9e-350d-af6f-d5fa87c78948/mzaf_12366352632160750203.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/fc/18/6f/fc186fc9-852f-9103-7883-7c93c41176f8/artwork.jpg/600x600bb.jpg",
+      "album": "Gooda - Single",
+      "recognitionScore": 82,
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true
+    },
+    {
+      "id": "chaandtujodekhle-encore-abj",
+      "title": "Chaand (Tu Jo Dekh Le)",
+      "artistIds": [
+        "encore-abj"
+      ],
+      "primaryArtistId": "encore-abj",
+      "aliases": [],
+      "album": "Parvana - EP",
+      "releaseYear": 2026,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f1/a1/6a/f1a16ab7-e9ae-6cd0-4e6c-4a10c7947815/mzaf_12570193681759492547.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7a/0d/a3/7a0da341-8769-4b81-b3d5-a85a5f630929/26UMGIM21264.rgb.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 86,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi",
+        "seedhe-maut"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "neelamaurneeli-encore-abj",
+      "title": "Neelam Aur Neeli",
+      "artistIds": [
+        "encore-abj"
+      ],
+      "primaryArtistId": "encore-abj",
+      "aliases": [],
+      "album": "Neelam Aur Neeli - Single",
+      "releaseYear": 2025,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/59/73/b5/5973b589-5be4-363b-097b-3bd3b161da85/mzaf_14192072550717624601.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/84/40/36/844036d2-0b1e-c325-ca2f-34facafaf7bd/199538687613.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 15,
+      "gameStartSeconds": 15,
+      "startVerified": true,
+      "recognitionScore": 79,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi",
+        "seedhe-maut"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "dooriyanfeatkaprila-dino-james",
+      "title": "Dooriyan (feat. Kaprila)",
+      "artistIds": [
+        "dino-james"
+      ],
+      "primaryArtistId": "dino-james",
+      "aliases": [],
+      "album": "Dooriyan (feat. Kaprila) - Single",
+      "releaseYear": 2019,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ea/78/c3/ea78c39b-8761-1f32-4e0c-5be1ed14975f/mzaf_16312355982266746060.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/96/fc/e7/96fce7ed-c565-8b0e-fe0e-4c527c9a3a01/886448240211.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 86,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "bhopal"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "wishlistfeatkaprila-dino-james",
+      "title": "Wishlist (feat. Kaprila)",
+      "artistIds": [
+        "dino-james"
+      ],
+      "primaryArtistId": "dino-james",
+      "aliases": [],
+      "album": "Wishlist (feat. Kaprila) - Single",
+      "releaseYear": 2020,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/28/5c/32/285c326a-d487-93f3-0f57-a65920a9804a/mzaf_7797163191293188958.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/e3/5c/38/e35c38b7-9383-9b78-28df-ff9b67329b69/886448365334.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 79,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "bhopal"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "bohttej-fotty-seven",
+      "title": "Boht Tej",
+      "artistIds": [
+        "fotty-seven"
+      ],
+      "primaryArtistId": "fotty-seven",
+      "aliases": [],
+      "album": "Boht Tej - Single",
+      "releaseYear": 2020,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/20/d6/f8/20d6f868-4f84-75f6-7872-b800a527bcd9/mzaf_14683552002046452794.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d7/b9/5e/d7b95ec2-ccab-3fe6-6f1b-6e7d0cfc3608/886448361466.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 86,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "sharmeeli-frappe-ash",
+      "title": "SHARMEELI",
+      "artistIds": [
+        "frappe-ash"
+      ],
+      "primaryArtistId": "frappe-ash",
+      "aliases": [],
+      "album": "SHARMEELI - Single",
+      "releaseYear": 2025,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/bb/5a/2a/bb5a2a58-5e8b-8e6a-444e-4dd5a490ed84/mzaf_1802053397712704355.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b9/3d/13/b93d1382-f8c2-2f19-adb3-764d3f21ff0e/199538332056.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 86,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "wishyouwereherefeatraeencoreabj-frappe-ash",
+      "title": "Wish You Were Here (feat. Rae & Encore ABJ)",
+      "artistIds": [
+        "frappe-ash"
+      ],
+      "primaryArtistId": "frappe-ash",
+      "aliases": [],
+      "album": "Bet You Know",
+      "releaseYear": 2019,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a8/ca/a2/a8caa23b-cf14-fcaa-db56-3624ac5e8beb/mzaf_13626523263475859669.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/46/b6/f8/46b6f891-3782-0394-dce7-18bc75927963/193436173889.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 3,
+      "gameStartSeconds": 3,
+      "startVerified": true,
+      "recognitionScore": 79,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "hawale-bharg",
+      "title": "Hawale",
+      "artistIds": [
+        "bharg"
+      ],
+      "primaryArtistId": "bharg",
+      "aliases": [],
+      "album": "Hawale - Single",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/f5/96/43/f59643af-be0c-ad7c-40ac-5d72d24c7e70/mzaf_13200041435080008873.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/a2/33/4b/a2334b50-502c-f573-8ef1-858357a80796/artwork.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 86,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "pinkblue-bharg",
+      "title": "Pink Blue",
+      "artistIds": [
+        "bharg"
+      ],
+      "primaryArtistId": "bharg",
+      "aliases": [],
+      "album": "Pink Blue - Single",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/4f/a2/d2/4fa2d239-111e-39e9-c058-c526ddd821c9/mzaf_71023986065838813.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/36/fe/84/36fe8461-61ae-3a7a-406d-1835aae5d14e/196626711625.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 79,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "thelastdance-hanumankind",
+      "title": "The Last Dance",
+      "artistIds": [
+        "hanumankind"
+      ],
+      "primaryArtistId": "hanumankind",
+      "aliases": [],
+      "album": "Aavesham (Original Motion Picture Soundtrack)",
+      "releaseYear": 2024,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/46/4a/37/464a37f3-9b19-ca09-b3e9-d6e82ac84aa4/mzaf_2737827290220365159.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/3e/ab/82/3eab8268-4a1d-a04b-7336-a3e583cf8b4c/cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 13.9,
+      "gameStartSeconds": 13.9,
+      "startVerified": true,
+      "recognitionScore": 86,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "kochi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "yehbaatein-panther",
+      "title": "Yeh Baatein",
+      "artistIds": [
+        "panther"
+      ],
+      "primaryArtistId": "panther",
+      "aliases": [],
+      "album": "Yeh Baatein - Single",
+      "releaseYear": 2026,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/33/f6/d8/33f6d889-9d46-6895-9edb-1d60e91e4f99/mzaf_13157106022849165669.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/44/e8/1b/44e81b05-f2f7-3919-6eda-5806105c3f92/196874075234.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 86,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "parinda-panther",
+      "title": "Parinda",
+      "artistIds": [
+        "panther"
+      ],
+      "primaryArtistId": "panther",
+      "aliases": [],
+      "album": "Flying Towards the City",
+      "releaseYear": 2024,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/55/2f/99/552f9903-d5ed-3393-f1ec-0365826b846c/mzaf_1391324777429815137.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d6/c8/92/d6c892f3-2e6c-9e90-b444-2e0eed1a5448/197999868138_cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 79,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "bandanalude-qaab",
+      "title": "Bandanalude",
+      "artistIds": [
+        "qaab"
+      ],
+      "primaryArtistId": "qaab",
+      "aliases": [],
+      "album": "Violette",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/b0/9f/d1/b09fd145-5e0b-233e-4cbe-9bea6f8ad9c9/mzaf_9593323762717305170.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/84/e5/a5/84e5a5a0-8be5-5409-6c3e-3b046a7c4438/195729303423_cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 86,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "primetime-qaab",
+      "title": "Prime Time",
+      "artistIds": [
+        "qaab"
+      ],
+      "primaryArtistId": "qaab",
+      "aliases": [],
+      "album": "Violette",
+      "releaseYear": 2021,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/1d/73/ec/1d73ec31-03a7-1c30-cd6b-b955992248a4/mzaf_10358709962782380583.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/84/e5/a5/84e5a5a0-8be5-5409-6c3e-3b046a7c4438/195729303423_cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 79,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "staycalm-calm",
+      "title": "Stay Calm",
+      "artistIds": [
+        "calm"
+      ],
+      "primaryArtistId": "calm",
+      "aliases": [],
+      "album": "2 Ka Pahada - EP",
+      "releaseYear": 2017,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ec/9d/5e/ec9d5e32-4ee8-ff7d-1be8-182f8a814d5e/mzaf_824763170878865999.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4f/89/54/4f895409-a288-e473-0e14-1aafa783d65b/199066202494.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 17.3,
+      "gameStartSeconds": 17.3,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi",
+        "seedhe-maut"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "nishu-ikka",
+      "title": "Nishu",
+      "artistIds": [
+        "ikka"
+      ],
+      "primaryArtistId": "ikka",
+      "aliases": [],
+      "album": "Nishu",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/83/21/f8/8321f8b2-3f9b-51a3-305d-73a392810c99/mzaf_1802619360144525858.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/09/7c/b1/097cb1b5-7965-4cda-ffcf-77413340a1aa/cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "demon-ikka",
+      "title": "Demon",
+      "artistIds": [
+        "ikka"
+      ],
+      "primaryArtistId": "ikka",
+      "aliases": [],
+      "album": "I",
+      "releaseYear": 2020,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/89/65/29/896529e5-5213-fbb0-8887-d781c0f0124f/mzaf_16101874150928872750.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/4c/ba/ef/4cbaef4b-50df-b92a-3b3e-f142a1c4fd65/20UM1IM01426.rgb.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "dll-yashraj",
+      "title": "DLL",
+      "artistIds": [
+        "yashraj"
+      ],
+      "primaryArtistId": "yashraj",
+      "aliases": [],
+      "album": "DLL - Single",
+      "releaseYear": 2021,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/e4/33/b4/e433b4fe-d472-897f-fc60-94ab14505cd5/mzaf_15752472912953633084.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f7/0a/19/f70a19d9-1488-25bf-f400-a4ebcc13c560/23UM1IM21017.rgb.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "dhundhala-yashraj",
+      "title": "Dhundhala",
+      "artistIds": [
+        "yashraj"
+      ],
+      "primaryArtistId": "yashraj",
+      "aliases": [],
+      "album": "Dhundhala - Single",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/39/f8/b2/39f8b213-59bb-3566-7e0f-537867e99100/mzaf_15965353655773648533.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/30/63/c3/3063c36c-8537-ce66-4451-e9de6c2a13dc/23UM1IM04836.rgb.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 72,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "lachak-bhaskar",
+      "title": "Lachak",
+      "artistIds": [
+        "bhaskar"
+      ],
+      "primaryArtistId": "bhaskar",
+      "aliases": [],
+      "album": "DALLI",
+      "releaseYear": 2025,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/de/49/5c/de495cae-a966-4356-0874-1f25f2b7c216/mzaf_11987735780147308492.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cd/b3/2b/cdb32b64-1dbc-3f93-e9b0-9b22d5454fda/199538881028.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "kyakiyatunesaathmere-bhaskar",
+      "title": "Kya Kiya Tune Saath Mere",
+      "artistIds": [
+        "bhaskar"
+      ],
+      "primaryArtistId": "bhaskar",
+      "aliases": [],
+      "album": "DALLI",
+      "releaseYear": 2025,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/95/25/8d/95258d1a-6273-0a2b-a703-a4fb6acb684d/mzaf_5427362775019366691.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cd/b3/2b/cdb32b64-1dbc-3f93-e9b0-9b22d5454fda/199538881028.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 72,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "1se23-karma",
+      "title": "1 Se 23",
+      "artistIds": [
+        "karma"
+      ],
+      "primaryArtistId": "karma",
+      "aliases": [],
+      "album": "Mic Check",
+      "releaseYear": 2021,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/fc/a3/c3/fca3c336-50aa-978b-067b-9c177fd37d3d/mzaf_11539244820136270544.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/13/e1/8c/13e18c12-2e14-f3d7-b14f-ca0420c32dc5/cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 32,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "prithvi-muhfaad",
+      "title": "Prithvi",
+      "artistIds": [
+        "muhfaad"
+      ],
+      "primaryArtistId": "muhfaad",
+      "aliases": [],
+      "album": "Prithvi - Single",
+      "releaseYear": 2023,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/4a/f8/93/4af89330-b455-227c-053a-814542ef35d3/mzaf_9440351183993935348.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/50/72/af/5072af60-b461-67bc-f4ef-fb34dd56beab/cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "sarekarodab-muhfaad",
+      "title": "Sare Karo Dab",
+      "artistIds": [
+        "muhfaad"
+      ],
+      "primaryArtistId": "muhfaad",
+      "aliases": [],
+      "album": "Zero to Infinity",
+      "releaseYear": 2018,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/31/bb/e5/31bbe5f1-3999-12f0-c037-5e8e10a1e4c1/mzaf_16515773766055034623.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/cf/72/32/cf723203-314e-ea58-bb3f-fe851e5f34ae/8718857670506.png/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "hastirahetu-paradox",
+      "title": "Hasti Rahe Tu",
+      "artistIds": [
+        "paradox"
+      ],
+      "primaryArtistId": "paradox",
+      "aliases": [],
+      "album": "Hasti Rahe Tu - Single",
+      "releaseYear": 2023,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ba/2b/70/ba2b70aa-9372-eb11-bac2-3ce8f38c782a/mzaf_14051341631756201963.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/f7/bc/05/f7bc0589-0be3-9be0-3861-921588cb0e01/23UMGIM40483.rgb.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "sirhaana-paradox",
+      "title": "Sirhaana",
+      "artistIds": [
+        "paradox"
+      ],
+      "primaryArtistId": "paradox",
+      "aliases": [],
+      "album": "The Unknown Letter - Single",
+      "releaseYear": 2023,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/76/2f/40/762f4070-6d99-a87d-875c-7427e12c2e7c/mzaf_11862166719869487569.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/c7/98/df/c798dfa8-2204-ede4-8b4b-32ffa60936d3/23UMGIM57553.rgb.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 72,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "humblepoet-bella",
+      "title": "Humble Poet",
+      "artistIds": [
+        "bella"
+      ],
+      "primaryArtistId": "bella",
+      "aliases": [],
+      "album": "Humble Poet - Single",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/99/c4/13/99c4132f-dbb8-b22f-38b8-9cb488c6d1e0/mzaf_14298932466165566207.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/f1/40/6a/f1406ae1-f1de-d26d-f903-b2aba41f5954/4d457946-737b-4494-9173-f93cb218ea8f.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "meinbaskehnachahtahoon-bella",
+      "title": "Mein Bas Kehna Chahta Hoon",
+      "artistIds": [
+        "bella"
+      ],
+      "primaryArtistId": "bella",
+      "aliases": [],
+      "album": "Mein Bas Kehna Chahta Hoon - Single",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/86/0d/22/860d22d7-83d8-902d-1a1f-1302091c2407/mzaf_13237688853624748931.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/1a/b2/d2/1ab2d21e-a15d-5638-151a-e8d9dfe15969/949e0c2d-2340-4df1-8ca6-e17db26dc231.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "shotdekegayab-loka",
+      "title": "Shot Deke Gayab",
+      "artistIds": [
+        "loka"
+      ],
+      "primaryArtistId": "loka",
+      "aliases": [],
+      "album": "Shot Deke Gayab - Single",
+      "releaseYear": 2019,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/c5/1e/f2/c51ef207-342c-fc01-19b4-d19f4545de6b/mzaf_6170757220939312898.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/48/3e/33/483e335c-ca42-2eb0-74d4-a2ecd0cd57a1/cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "yahanpe-khayek",
+      "title": "Yahan Pe",
+      "artistIds": [
+        "khayek"
+      ],
+      "primaryArtistId": "khayek",
+      "aliases": [],
+      "album": "Narak - EP",
+      "releaseYear": 2021,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/c7/8e/ca/c78ecaf8-f53a-add7-a6b5-7fa140134d2c/mzaf_10585678767966010567.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/99/f8/1e/99f81eee-f800-a6a9-822e-b20d49c9f876/artwork.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "maardenge-khayek",
+      "title": "Maar Denge",
+      "artistIds": [
+        "khayek"
+      ],
+      "primaryArtistId": "khayek",
+      "aliases": [],
+      "album": "Maar Denge - Single",
+      "releaseYear": 2021,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a9/66/63/a96663ab-57fe-f335-9677-ba8a98937f3e/mzaf_16600546084706317703.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/83/c7/2f/83c72f9b-3e6b-27b9-e127-d2aee58094b1/artwork.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "heavydriver-nazz",
+      "title": "Heavy Driver",
+      "artistIds": [
+        "nazz"
+      ],
+      "primaryArtistId": "nazz",
+      "aliases": [],
+      "album": "Heavy Driver - Single",
+      "releaseYear": 2021,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c4/a8/e6/c4a8e69e-f4a0-e375-425f-ccbb1ea56ceb/mzaf_1563790498277216282.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/52/ed/30/52ed300f-f06a-1fb3-1e0e-47b1a89203bb/3616557933554_cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "phasnanahi-bandzo3rd",
+      "title": "Phasna Nahi",
+      "artistIds": [
+        "bandzo3rd"
+      ],
+      "primaryArtistId": "bandzo3rd",
+      "aliases": [],
+      "album": "Phasna Nahi - Single",
+      "releaseYear": 2024,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d3/08/bb/d308bb9d-0b61-8d9d-f38f-6d94743276d8/mzaf_18384181943922251166.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/89/1f/ac/891facee-9016-d83d-6bc6-70fe72325724/artwork.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "interviewroom-bandzo3rd",
+      "title": "Interview Room",
+      "artistIds": [
+        "bandzo3rd"
+      ],
+      "primaryArtistId": "bandzo3rd",
+      "aliases": [],
+      "album": "Interview Room - Single",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/81/c0/c9/81c0c9c7-23f4-e224-79ac-3db669b9ab20/mzaf_13234519005188031375.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/ee/62/75/ee62753a-5851-0fbb-da79-462ba7ef7ae8/artwork.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "funroast-spectra",
+      "title": "Fun Roast",
+      "artistIds": [
+        "spectra"
+      ],
+      "primaryArtistId": "spectra",
+      "aliases": [],
+      "album": "Mtv Hustle 2.0",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/93/34/e7/9334e7fe-d6d2-6cda-1505-7292223b0bad/mzaf_4396595116424141481.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/04/b2/79/04b279ee-8fd8-0dd8-a50e-0e4cc54b187d/8903246794578_cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 72,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "nagpadakarider-spectra",
+      "title": "Nagpada Ka Rider",
+      "artistIds": [
+        "spectra"
+      ],
+      "primaryArtistId": "spectra",
+      "aliases": [],
+      "album": "Nagpada Ka Rider - Single",
+      "releaseYear": 2020,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b0/dc/8b/b0dc8bbf-6303-d4e1-64ec-4ca38306c9ef/mzaf_11640584289905804297.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/e3/fa/85/e3fa8572-a626-1046-5fdf-bd55f5378f0a/artwork.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 32,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "jhaag-chaar-diwaari",
+      "title": "Jhaag",
+      "artistIds": [
+        "chaar-diwaari"
+      ],
+      "primaryArtistId": "chaar-diwaari",
+      "aliases": [],
+      "album": "Jhaag - Single",
+      "releaseYear": 2023,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/84/f9/84/84f9848e-522d-145f-cc4d-d02916542da6/mzaf_13620081257682305898.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/5d/22/8d/5d228d80-2ab2-0a6b-e397-13df70e5de7a/23UM1IM62027.rgb.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 2.6,
+      "gameStartSeconds": 2.6,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "thehra-chaar-diwaari",
+      "title": "Thehra",
+      "artistIds": [
+        "chaar-diwaari"
+      ],
+      "primaryArtistId": "chaar-diwaari",
+      "aliases": [],
+      "album": "Thehra - Single",
+      "releaseYear": 2024,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/21/6f/32/216f3235-93f0-c6de-28da-3af01ac650dd/mzaf_747055647394740559.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/3f/d3/e3/3fd3e360-7bee-f595-2d2b-5a0fb42f9020/24UMGIM28142.rgb.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0.7,
+      "gameStartSeconds": 0.7,
+      "startVerified": true,
+      "recognitionScore": 72,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "cyclone-tienas",
+      "title": "Cyclone",
+      "artistIds": [
+        "tienas"
+      ],
+      "primaryArtistId": "tienas",
+      "aliases": [],
+      "album": "O",
+      "releaseYear": 2019,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b9/12/80/b91280a7-ec0c-86e0-b6ea-55d3c36d76c5/mzaf_5570605633932805369.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/b7/19/00b71940-97f9-b9b0-b9ed-1cc4df5ee556/193436163804.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "rajafeatmangalsuvarnan-tienas",
+      "title": "RAJA (feat. Mangal Suvarnan)",
+      "artistIds": [
+        "tienas"
+      ],
+      "primaryArtistId": "tienas",
+      "aliases": [],
+      "album": "RAJA (feat. Mangal Suvarnan) - Single",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/44/e9/d8/44e9d89d-c1d9-f594-7cd7-55efceb2a837/mzaf_11050119379692027674.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f8/33/4f/f8334f1f-61a3-218a-f20d-338bda31c527/00198704642258_Cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 16.4,
+      "gameStartSeconds": 16.4,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "eveteaser-sikander-kahlon",
+      "title": "Eve Teaser",
+      "artistIds": [
+        "sikander-kahlon"
+      ],
+      "primaryArtistId": "sikander-kahlon",
+      "aliases": [],
+      "album": "Street Knowledge",
+      "releaseYear": 2023,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/c9/f7/b2/c9f7b20e-8e21-be7e-c911-ce605bc0c0b2/mzaf_16161160477820357175.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b7/c9/cc/b7c9cc3d-e274-78d5-832c-d0c75e66128b/840336443863_1500x1500.png/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "chandigarh"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "theythem-sikander-kahlon",
+      "title": "They Them",
+      "artistIds": [
+        "sikander-kahlon"
+      ],
+      "primaryArtistId": "sikander-kahlon",
+      "aliases": [],
+      "album": "Untitled 01 - Single",
+      "releaseYear": 2024,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/14/73/2f/14732f90-ee24-310f-bbfc-9290c35c4b2f/mzaf_1046701421323340352.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/63/15/9b/63159b68-10a5-5228-a33d-b2bc1422f634/5021732577436.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 66,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "chandigarh"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "meterdownfeatkaambhaari-seven-bantai",
+      "title": "Meter Down (feat. Kaam Bhaari)",
+      "artistIds": [
+        "seven-bantai"
+      ],
+      "primaryArtistId": "seven-bantai",
+      "aliases": [],
+      "album": "Meter Down (feat. Kaam Bhaari) - Single",
+      "releaseYear": 2020,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e3/08/11/e30811ba-3eee-c06a-9fcf-bc1bc35dca80/mzaf_12419723247893773658.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/25/02/4e/25024e75-489e-3546-c06d-050a349c98d2/Metere_Down.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "baskyabafeatdivine-seven-bantai",
+      "title": "Bas Kya Ba (feat. DIVINE)",
+      "artistIds": [
+        "seven-bantai"
+      ],
+      "primaryArtistId": "seven-bantai",
+      "aliases": [],
+      "album": "Bas Kya Ba (feat. DIVINE) - Single",
+      "releaseYear": 2020,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/0f/99/e9/0f99e9f0-f44b-661a-6f41-366a1e35ec5a/mzaf_11926516134605437193.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/ad/ed/79/aded7994-6f29-7c4b-6800-c496659017a6/20UMGIM38185.rgb.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "lakhs-shah-rule",
+      "title": "Lakhs",
+      "artistIds": [
+        "shah-rule"
+      ],
+      "primaryArtistId": "shah-rule",
+      "aliases": [],
+      "album": "Lakhs - Single",
+      "releaseYear": 2018,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/19/f1/0a/19f10ae9-b9a2-8c29-02ce-9fd5054685e1/mzaf_508918840907946634.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cb/78/87/cb78870c-cb1d-8781-5534-911ad1755dc0/5054526457287_1.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 72,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "meandmypen-shah-rule",
+      "title": "Me and My Pen",
+      "artistIds": [
+        "shah-rule"
+      ],
+      "primaryArtistId": "shah-rule",
+      "aliases": [],
+      "album": "Mr. Nair",
+      "releaseYear": 2020,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f2/fe/8e/f2fe8e57-0e12-b036-4dd8-811e3973a3ea/mzaf_6396194828451438563.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d5/a3/d6/d5a3d681-6e77-6960-3177-1d0f23b5d78a/840780170094.png/600x600bb.jpg",
+      "detectedStartSeconds": 15.2,
+      "gameStartSeconds": 15.2,
+      "startVerified": true,
+      "recognitionScore": 66,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "merejaisanai-sez",
+      "title": "Mere Jaisa Nai",
+      "artistIds": [
+        "sez"
+      ],
+      "primaryArtistId": "sez",
+      "aliases": [],
+      "album": "Untitled 01 - Single",
+      "releaseYear": 2024,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/0c/2f/ab/0c2fab18-7086-7b0f-be84-439262305ff7/mzaf_2170188617517260202.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/63/15/9b/63159b68-10a5-5228-a33d-b2bc1422f634/5021732577436.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi",
+        "azadi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "kal-sez",
+      "title": "Kal",
+      "artistIds": [
+        "sez"
+      ],
+      "primaryArtistId": "sez",
+      "aliases": [],
+      "album": "Class - Sikh",
+      "releaseYear": 2017,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/49/25/9c/49259c50-b096-f5e2-7f81-664377bb75d7/mzaf_17085750171546501546.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cc/d1/b4/ccd1b4ab-6594-2902-6ea0-b856f4d226d1/8445162756013.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 8.8,
+      "gameStartSeconds": 8.8,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi",
+        "azadi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "gaddi-deep-kalsi",
+      "title": "Gaddi",
+      "artistIds": [
+        "deep-kalsi"
+      ],
+      "primaryArtistId": "deep-kalsi",
+      "aliases": [],
+      "album": "Zero to Infinity",
+      "releaseYear": 2018,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/a5/9d/34/a59d347d-fbb8-3d3b-7378-ad05e2a06812/mzaf_7515027381480846907.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/cf/72/32/cf723203-314e-ea58-bb3f-fe851e5f34ae/8718857670506.png/600x600bb.jpg",
+      "detectedStartSeconds": 14.3,
+      "gameStartSeconds": 14.3,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "warmup-deep-kalsi",
+      "title": "Warm Up",
+      "artistIds": [
+        "deep-kalsi"
+      ],
+      "primaryArtistId": "deep-kalsi",
+      "aliases": [],
+      "album": "Mic Check",
+      "releaseYear": 2020,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b4/a4/ec/b4a4ec83-cf81-190b-2b38-1be7387bf876/mzaf_14377017889573797133.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/13/e1/8c/13e18c12-2e14-f3d7-b14f-ca0420c32dc5/cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi",
+        "kalamkaar"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "khayaal-j-trix",
+      "title": "Khayaal",
+      "artistIds": [
+        "j-trix"
+      ],
+      "primaryArtistId": "j-trix",
+      "aliases": [],
+      "album": "Khayaal - Single",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/ea/8b/bd/ea8bbd7b-9147-d0b0-29e6-906be5b88b88/mzaf_9654605037613541488.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/54/1d/93/541d9342-052b-c86c-3b44-949645ed64ed/196925843393.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 9.1,
+      "gameStartSeconds": 9.1,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "tehelka-j-trix",
+      "title": "Tehelka",
+      "artistIds": [
+        "j-trix"
+      ],
+      "primaryArtistId": "j-trix",
+      "aliases": [],
+      "album": "Tehelka - Single",
+      "releaseYear": 2021,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/7e/6d/41/7e6d4134-9884-9b40-6ffb-08cfe9a178b7/mzaf_17633475396855658668.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/aa/ec/39/aaec397d-61f0-b7f2-7b94-d166dc1e826d/artwork.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "ghostrider-mc-altaf",
+      "title": "Ghost Rider",
+      "artistIds": [
+        "mc-altaf"
+      ],
+      "primaryArtistId": "mc-altaf",
+      "aliases": [],
+      "album": "Ghost Rider - Single",
+      "releaseYear": 2020,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/0c/9c/0a/0c9c0a85-217d-e298-df7b-c74b3316a915/mzaf_1616096973094566475.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/fe/52/5f/fe525f10-2a9e-bbae-76fd-51cf5a9a458c/cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "discorap-mc-altaf",
+      "title": "Disco Rap",
+      "artistIds": [
+        "mc-altaf"
+      ],
+      "primaryArtistId": "mc-altaf",
+      "aliases": [],
+      "album": "Punya Paap",
+      "releaseYear": 2020,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1f/6b/39/1f6b391e-bb65-1a32-1e8b-6a593d3cad54/mzaf_4735422162746592953.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/14/8d/39/148d39c0-62bc-a764-d674-5527600885c2/20UM1IM09596.rgb.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 1.1,
+      "gameStartSeconds": 1.1,
+      "startVerified": true,
+      "recognitionScore": 60,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "humnasheen-gravity",
+      "title": "Humnasheen",
+      "artistIds": [
+        "gravity"
+      ],
+      "primaryArtistId": "gravity",
+      "aliases": [],
+      "album": "Humnasheen - Single",
+      "releaseYear": 2023,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/17/11/23/171123fe-2345-3c10-a9b8-778976e5a103/mzaf_3724042605863073323.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/e7/ac/ab/e7acab08-8fb6-d14f-a8b1-35bfafea6cba/197190637045.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 32,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "vadhaiyaan-dee-mc",
+      "title": "Vadhaiyaan",
+      "artistIds": [
+        "dee-mc"
+      ],
+      "primaryArtistId": "dee-mc",
+      "aliases": [],
+      "album": "Dee=MC²",
+      "releaseYear": 2019,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b0/8c/c1/b08cc1a1-fa92-1aac-0d71-a3c4a7e59d22/mzaf_14665133725031130330.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/32/56/62/32566285-8d57-fc7a-e637-f15ef9089920/194491498702.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "khoyisifeatpratika-dee-mc",
+      "title": "Khoyi Si (feat. Pratika)",
+      "artistIds": [
+        "dee-mc"
+      ],
+      "primaryArtistId": "dee-mc",
+      "aliases": [],
+      "album": "Khoyi Si (feat. Pratika) - Single",
+      "releaseYear": 2023,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/be/9a/15/be9a15d2-8109-711d-1f57-5a22eda33ce0/mzaf_2706219094487828269.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/ca/71/9e/ca719e61-ba43-0fb8-b59d-c90f089b81bb/197189348334.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 1.1,
+      "gameStartSeconds": 1.1,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "shankar-mojojojo",
+      "title": "Shankar",
+      "artistIds": [
+        "mojojojo"
+      ],
+      "primaryArtistId": "mojojojo",
+      "aliases": [],
+      "album": "Shankar - Single",
+      "releaseYear": 2017,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/9f/8f/6c/9f8f6ce7-4fc9-b2d4-7266-182a338f6912/mzaf_13143222849748944221.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music117/v4/71/00/5c/71005c30-6a60-e745-8e61-7c5aef1deb82/cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "chakbassfeatsikanderkahlon-mojojojo",
+      "title": "Chak Bass (feat. Sikander Kahlon)",
+      "artistIds": [
+        "mojojojo"
+      ],
+      "primaryArtistId": "mojojojo",
+      "aliases": [],
+      "album": "Chak Bass (feat. Sikander Kahlon) - Single",
+      "releaseYear": 2018,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e7/8f/8d/e78f8dd0-b10b-d03c-284d-954cde462066/mzaf_12399732937328393835.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/be/9a/e9/be9ae95c-f6b0-c167-de0f-64a4d7f6fc1d/cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 72,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "sankatmochanhanuman-smokey",
+      "title": "Sankatmochan Hanuman",
+      "artistIds": [
+        "smokey"
+      ],
+      "primaryArtistId": "smokey",
+      "aliases": [],
+      "album": "Sankatmochan Hanuman - Single",
+      "releaseYear": 2026,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ee/88/53/ee885393-adfc-f053-797f-373eb878eaba/mzaf_13304575109151482420.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1a/00/77/1a00775f-513a-68a7-0829-0b196ba44bdf/1200214222611.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "bengaluru"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "thehumanerror-smokey",
+      "title": "The Human Error",
+      "artistIds": [
+        "smokey"
+      ],
+      "primaryArtistId": "smokey",
+      "aliases": [],
+      "album": "The Indian Hip-Hop Compilation Volume 1",
+      "releaseYear": 2018,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/82/a3/71/82a37158-cfca-dbb2-5482-22e70f50cc07/mzaf_10173968875009883955.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2a/bc/70/2abc7067-f2fe-cd1f-6fb4-7d8939b60d11/193436075336_01_img001.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "bengaluru"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "hoodlife-karan-kanchan",
+      "title": "Hood Life",
+      "artistIds": [
+        "karan-kanchan"
+      ],
+      "primaryArtistId": "karan-kanchan",
+      "aliases": [],
+      "album": "Hood Life - Single",
+      "releaseYear": 2024,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0d/1c/15/0d1c155d-a3a4-0e77-a7c2-32f9360ab280/mzaf_3095523531175800982.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/81/c6/76/81c676c9-d5ff-7d81-0e4f-3811c5d60a3f/cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "sookhi-karan-kanchan",
+      "title": "Sookhi",
+      "artistIds": [
+        "karan-kanchan"
+      ],
+      "primaryArtistId": "karan-kanchan",
+      "aliases": [],
+      "album": "Parat - EP",
+      "releaseYear": 2023,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/3b/47/92/3b4792d7-8a4e-02d6-6725-10e683ad7897/mzaf_15591009073521801714.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/50/ba/ab/50baab1b-9a7f-e8bd-1071-af55e025ceae/cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "midnight-stunnah",
+      "title": "Midnight",
+      "artistIds": [
+        "stunnah"
+      ],
+      "primaryArtistId": "stunnah",
+      "aliases": [],
+      "album": "How I Love - EP",
+      "releaseYear": 2023,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/f9/5b/de/f95bdeb1-8df4-7169-63aa-21ca9a28d069/mzaf_17100987405602360427.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/5c/d6/b5/5cd6b584-174b-d084-2a21-a26b87266716/197190316131.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0.6,
+      "gameStartSeconds": 0.6,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "buzzcut-stunnah",
+      "title": "Buzzcut",
+      "artistIds": [
+        "stunnah"
+      ],
+      "primaryArtistId": "stunnah",
+      "aliases": [],
+      "album": "6 pe 6 - EP",
+      "releaseYear": 2025,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/07/88/85/07888583-e48f-01c0-d6dc-be4f6d7b0216/mzaf_5242669856950351678.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/cb/60/f8/cb60f800-9e9b-065a-3607-3eec369fb136/5026854300603.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 66,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "allaces-byg-byrd",
+      "title": "All Aces",
+      "artistIds": [
+        "byg-byrd"
+      ],
+      "primaryArtistId": "byg-byrd",
+      "aliases": [],
+      "album": "All Aces - Single",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/cb/f6/ce/cbf6cef7-7376-7113-49b7-47662a652c6b/mzaf_5309923630795763335.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/92/9d/81/929d8164-c1bb-3e67-083d-0c1359bab6f8/5059552371491_cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "whowantit-byg-byrd",
+      "title": "Who Want It?",
+      "artistIds": [
+        "byg-byrd"
+      ],
+      "primaryArtistId": "byg-byrd",
+      "aliases": [],
+      "album": "Who Want It? - Single",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/df/97/73/df97739e-eec9-f77c-183a-6cf109bac467/mzaf_1920519136909494288.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/7f/ae/cf7faede-f289-1250-e65a-d53ff09ed634/859753606362_cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 3,
+      "gameStartSeconds": 3,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "bigdawgs-kalmi",
+      "title": "Big Dawgs",
+      "artistIds": [
+        "kalmi"
+      ],
+      "primaryArtistId": "kalmi",
+      "aliases": [],
+      "album": "Big Dawgs - Single",
+      "releaseYear": 2024,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/57/24/64/5724646c-b589-7ee5-a6ef-c129df60f330/mzaf_12661476749087016303.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/42/d2/6c/42d26c01-619f-fa0a-2e83-7f4a28b5d3b2/24UMGIM70977.rgb.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "kochi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "thegamedontstopsquidgame2-kalmi",
+      "title": "The Game Don't Stop - Squid Game 2",
+      "artistIds": [
+        "kalmi"
+      ],
+      "primaryArtistId": "kalmi",
+      "aliases": [],
+      "album": "The Game Don't Stop - Squid Game 2 - Single",
+      "releaseYear": 2024,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b5/fd/6f/b5fd6f0b-fc4b-30b9-c8e1-4dc00e3c5c50/mzaf_4343155832272003373.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c9/2d/b7/c92db7b8-386c-14e4-2945-a2a009c001f3/24UM1IM37172.rgb.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 72,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "kochi"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "bolbeta-yungsta",
+      "title": "Bol Beta",
+      "artistIds": [
+        "yungsta"
+      ],
+      "primaryArtistId": "yungsta",
+      "aliases": [],
+      "album": "Bol Beta - Single",
+      "releaseYear": 2018,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/39/7a/0d/397a0d49-3671-c111-d8ce-c3a5b6785f10/mzaf_17175820267701804320.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/e0/08/c0/e008c045-df13-092b-8598-ac1a7fa77d31/193436055987.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "bedapaar-100rbh",
+      "title": "Beda Paar",
+      "artistIds": [
+        "100rbh"
+      ],
+      "primaryArtistId": "100rbh",
+      "aliases": [],
+      "album": "Beda Paar - Single",
+      "releaseYear": 2020,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/2f/f9/aa/2ff9aae1-eb36-8817-713c-2bc8c4c2d7b7/mzaf_420533604791259358.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/99/37/5d/99375d9e-7eb7-98e1-087f-2b81c726e351/193436245944_01_img001.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 36,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "india91-100rbh",
+      "title": "India 91",
+      "artistIds": [
+        "100rbh"
+      ],
+      "primaryArtistId": "100rbh",
+      "aliases": [],
+      "album": "Gully Boy (Original Motion Picture Soundtrack)",
+      "releaseYear": 2019,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c8/cf/fd/c8cffdc3-7eab-bc55-76d8-882ebef8e1a1/mzaf_15450080589674073727.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/3a/5e/60/3a5e6034-8755-f0bf-d4f0-c7f96d3b45bb/8718857674948.png/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 32,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "mohabbat-kaam-bhaari",
+      "title": "Mohabbat",
+      "artistIds": [
+        "kaam-bhaari"
+      ],
+      "primaryArtistId": "kaam-bhaari",
+      "aliases": [],
+      "album": "Mohabbat - Single",
+      "releaseYear": 2019,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/21/e0/0b/21e00ba7-00f4-d6ac-8f0a-0bbcb1c3cd5b/mzaf_11109456769755732966.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ee/05/0c/ee050c00-9009-10ea-0b9f-02c35eba4a0c/5056274082278.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "samay-kaam-bhaari",
+      "title": "Samay",
+      "artistIds": [
+        "kaam-bhaari"
+      ],
+      "primaryArtistId": "kaam-bhaari",
+      "aliases": [],
+      "album": "Samay - Single",
+      "releaseYear": 2025,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1e/82/43/1e82434b-12d4-90cc-3a5a-06192bd592a5/mzaf_3088219022947539693.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/69/dc/91/69dc9142-b2b8-9b8d-697b-64798c151f9d/199350162008.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "mumbai",
+        "gully"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "ohmygaush-gaush",
+      "title": "Oh My Gaush",
+      "artistIds": [
+        "gaush"
+      ],
+      "primaryArtistId": "gaush",
+      "aliases": [],
+      "album": "Oh My Gaush - Single",
+      "releaseYear": 2022,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/bb/89/ae/bb89ae71-a777-5691-fada-be208e0b23db/mzaf_13256052251430583077.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/df/38/f3/df38f3c9-6539-e36c-576d-542374df1e05/cac1ef97-8606-4350-aefd-cdce047e9d54.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "21freestyle-gaush",
+      "title": "21 Freestyle",
+      "artistIds": [
+        "gaush"
+      ],
+      "primaryArtistId": "gaush",
+      "aliases": [],
+      "album": "21 Freestyle - Single",
+      "releaseYear": 2021,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/6f/03/56/6f035628-3c68-2349-1aa1-dae2453d2a5f/mzaf_3025698200232930035.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/10/97/18/10971842-491b-2bab-8abc-5fe1cc1be6cf/f0f85c4a-8ef2-42ad-9a2d-2e823fc48a18.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "mercy-badshah",
+      "title": "Mercy",
+      "artistIds": [
+        "badshah"
+      ],
+      "primaryArtistId": "badshah",
+      "aliases": [],
+      "album": "ONE (Original Never Ends)",
+      "releaseYear": 2017,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cb/b0/7d/cbb07da8-6028-45a4-3800-fd1a60a7b50a/mzaf_10078036430799471031.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/22/d2/a0/22d2a059-7a78-baaf-9f8b-5c515aebe086/886447271155.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "drivingslow-badshah",
+      "title": "Driving Slow",
+      "artistIds": [
+        "badshah"
+      ],
+      "primaryArtistId": "badshah",
+      "aliases": [],
+      "album": "Driving Slow - Single",
+      "releaseYear": 2016,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/8d/3f/c4/8d3fc459-4ba4-029f-6ab7-abe81d3883ff/mzaf_15468364848206906943.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/66/f7/29/66f72951-a0bb-40ef-b96b-3b2f5d72b937/481.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "onebottledown-yo-yo-honey-singh",
+      "title": "One Bottle Down",
+      "artistIds": [
+        "yo-yo-honey-singh"
+      ],
+      "primaryArtistId": "yo-yo-honey-singh",
+      "aliases": [],
+      "album": "One Bottle Down - Single",
+      "releaseYear": 2015,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/38/ff/f2/38fff2ad-85ac-5a70-8ed7-1837d4006233/mzaf_2957445922900360092.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/94/2f/d9/942fd9f8-cc37-d90c-530e-3b6367005db6/8903431606457_cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "urvashi-yo-yo-honey-singh",
+      "title": "Urvashi",
+      "artistIds": [
+        "yo-yo-honey-singh"
+      ],
+      "primaryArtistId": "yo-yo-honey-singh",
+      "aliases": [],
+      "album": "Urvashi - Single",
+      "releaseYear": 2018,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/bb/54/95/bb549508-a3ce-b7f6-9531-848d238ebbdf/mzaf_13680910005347982583.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/4a/2d/d0/4a2dd09d-c457-db3c-8cff-78b10d310c3e/8903431694850_cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "delhi"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "vaadipullavaadi-hiphop-tamizha",
+      "title": "Vaadi Pulla Vaadi",
+      "artistIds": [
+        "hiphop-tamizha"
+      ],
+      "primaryArtistId": "hiphop-tamizha",
+      "aliases": [],
+      "album": "Vaadi Pulla Vaadi - Single",
+      "releaseYear": 2014,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/fc/07/29/fc0729ea-e7e9-e9d6-d2db-3cf66691bc62/mzaf_17569540165923197110.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music5/v4/f5/f7/c5/f5f7c55d-d0f7-ee8a-bbf9-a528e6cad892/artwork.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "chennai",
+        "tamil"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "clubbulamabbula-hiphop-tamizha",
+      "title": "Clubbula Mabbula",
+      "artistIds": [
+        "hiphop-tamizha"
+      ],
+      "primaryArtistId": "hiphop-tamizha",
+      "aliases": [],
+      "album": "Hiphop Tamizhan",
+      "releaseYear": 2012,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/42/a5/82/42a58250-f4da-ee00-13ba-29763b4a3423/mzaf_14262293120600859614.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/66/bc/e9/66bce93e-484e-c34d-1ebe-1a94e6c85cc6/artwork.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "chennai",
+        "tamil"
+      ],
+      "difficulty": 3,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "thamizhachi-ofro",
+      "title": "Thamizhachi.",
+      "artistIds": [
+        "ofro"
+      ],
+      "primaryArtistId": "ofro",
+      "aliases": [],
+      "album": "Therukural",
+      "releaseYear": 2019,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/1d/f1/d8/1df1d8ce-ad1d-7d12-21c9-1bead4d497bc/mzaf_1963447759364287175.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/14/31/96/143196c2-4b44-155b-a73b-899b39f1a1c9/5059033645882_cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 84,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "chennai"
+      ],
+      "difficulty": 4,
+      "active": true,
+      "introQuality": "faithful",
+      "country": "IN",
+      "genre": "DHH"
+    },
+    {
+      "id": "kaathumelafromthinkindie-ofro",
+      "title": "Kaathu Mela (From \"Think Indie\")",
+      "artistIds": [
+        "ofro"
+      ],
+      "primaryArtistId": "ofro",
+      "aliases": [],
+      "album": "Kaathu Mela (From \"Think Indie\") - Single",
+      "releaseYear": 2024,
+      "licensedPreviewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/be/75/d6/be75d6b8-6cb5-2046-7a57-182733b2c507/mzaf_4123708164384099555.plus.aac.p.m4a",
+      "artworkUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/48/6f/52/486f52a8-05cf-9cfb-3791-12b7976f918d/cover.jpg/600x600bb.jpg",
+      "detectedStartSeconds": 0,
+      "gameStartSeconds": 0,
+      "startVerified": true,
+      "recognitionScore": 78,
+      "sourcePlaylists": [
+        "itunes-ingest"
+      ],
+      "sceneTags": [
+        "chennai"
       ],
       "difficulty": 4,
       "active": true,

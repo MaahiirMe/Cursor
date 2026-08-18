@@ -35,6 +35,7 @@ export function GameSession({ mode }: { mode: GameMode }) {
   const [busy, setBusy] = useState(false);
   const [intro, setIntro] = useState(true);
   const [playing, setPlaying] = useState(false);
+  const [audioReady, setAudioReady] = useState(false);
   const [hoverPlay, setHoverPlay] = useState(false);
   const [elapsed, setElapsed] = useState(0);
   const [trackQ, setTrackQ] = useState("");
@@ -134,6 +135,13 @@ export function GameSession({ mode }: { mode: GameMode }) {
   const round = session?.rounds[session.currentIndex];
 
   useEffect(() => {
+    audioRef.current?.pause();
+    setPlaying(false);
+    setElapsed(0);
+    setAudioReady(false);
+  }, [session?.currentIndex, round?.playback.audioUrl, round?.playback.clipStartSeconds]);
+
+  useEffect(() => {
     if (!playing || !round) return;
     const t0 = performance.now();
     const loop = (now: number) => {
@@ -221,7 +229,6 @@ export function GameSession({ mode }: { mode: GameMode }) {
     setPlaying(true);
     try {
       await audioRef.current?.play(seconds);
-      window.setTimeout(() => setPlaying(false), seconds * 1000 + 80);
     } catch {
       setPlaying(false);
       setFlash("Track nahi chala. Naya try.");
@@ -285,7 +292,7 @@ export function GameSession({ mode }: { mode: GameMode }) {
   }
 
   const waveState = playing ? "play" : hoverPlay ? "hover" : "idle";
-  const unlocked = (round?.revealSeconds ?? 2) / 16;
+  const unlocked = (round?.revealSeconds ?? 4) / 16;
   const progressOutcomes = session?.rounds.map((r) => r.outcome) ?? [
     "pending",
     "pending",
@@ -294,7 +301,7 @@ export function GameSession({ mode }: { mode: GameMode }) {
     "pending",
   ];
   const clock = useMemo(() => format(elapsed), [elapsed]);
-  const endClock = format(round?.revealSeconds ?? 2);
+  const endClock = format(round?.revealSeconds ?? 4);
 
   async function logout() {
     await fetch("/api/auth/logout", { method: "POST" });
@@ -395,6 +402,7 @@ export function GameSession({ mode }: { mode: GameMode }) {
           <div className="col-span-12 md:col-span-4">
             <PlayControl
               playing={playing}
+              ready={audioReady}
               seconds={round.revealSeconds}
               onPlay={() => {
                 void sun(round.revealSeconds);
@@ -543,8 +551,11 @@ export function GameSession({ mode }: { mode: GameMode }) {
 
       {round.playback ? (
         <AudioExperience
+          key={`${round.playback.providerId}-${round.playback.audioUrl ?? "x"}-${round.playback.clipStartSeconds ?? 0}`}
           ref={audioRef}
           playback={round.playback}
+          onReady={() => setAudioReady(true)}
+          onEnded={() => setPlaying(false)}
           onUnplayable={async () => {
             try {
               const res = await fetch("/api/game/replace", { method: "POST" });

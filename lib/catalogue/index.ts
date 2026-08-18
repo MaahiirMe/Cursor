@@ -1,4 +1,4 @@
-import { canUseLicensed, canUseYouTube } from "../audio/resolver";
+import { canUseLicensed } from "../audio/resolver";
 import { catalogueSync, loadCatalogue, PLAYLIST_SOURCES } from "./load";
 import type { Artist, Track } from "../types";
 
@@ -18,7 +18,7 @@ export function getTrack(id: string): Track | undefined {
 }
 
 export function canPlayFromStart(track: Track): boolean {
-  return canUseLicensed(track) || canUseYouTube(track);
+  return canUseLicensed(track);
 }
 
 export function playableTracks(): Track[] {

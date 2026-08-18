@@ -8,6 +8,7 @@ create table if not exists artists (
   aliases text[] not null default '{}',
   country text not null default 'IN',
   scene_tags text[] not null default '{}',
+  tier text not null default 'new',
   active boolean not null default true
 );
 
@@ -22,6 +23,10 @@ create table if not exists tracks (
   artwork_url text,
   youtube_video_id text,
   licensed_preview_url text,
+  detected_start_seconds numeric,
+  game_start_seconds numeric,
+  start_verified boolean not null default false,
+  recognition_score int not null default 50,
   source_playlists text[] not null default '{}',
   country text not null default 'IN',
   genre text not null default 'DHH',

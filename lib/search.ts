@@ -119,8 +119,9 @@ export function searchArtists(query: string, limit = 8): SearchHit[] {
 
   const hits: SearchHit[] = [];
   for (const { a } of scored) {
-    if (seen.has(a.id)) continue;
+    if (seen.has(a.id) || seen.has(a.normalizedName)) continue;
     seen.add(a.id);
+    seen.add(a.normalizedName);
     hits.push({
       id: a.id,
       title: a.name,

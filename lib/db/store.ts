@@ -70,6 +70,7 @@ type DB = {
   tracksOverride: unknown[];
   users: Record<string, UserRecord>;
   usersByNorm: Record<string, string>;
+  serveLog: Record<string, Array<{ trackIds: string[]; artistIds: string[]; at: number }>>;
 };
 
 function empty(): DB {
@@ -82,6 +83,7 @@ function empty(): DB {
     tracksOverride: [],
     users: {},
     usersByNorm: {},
+    serveLog: {},
   };
 }
 
@@ -93,6 +95,7 @@ async function readDB(): Promise<DB> {
       ...raw,
       users: raw.users ?? {},
       usersByNorm: raw.usersByNorm ?? {},
+      serveLog: raw.serveLog ?? {},
     };
   } catch {
     return empty();
@@ -252,5 +255,23 @@ export async function updateUserStats(id: string, next: PlayerStats) {
     if (!user) return null;
     user.stats = next;
     return structuredClone(user);
+  });
+}
+
+export async function recordServe(playerId: string, trackIds: string[], artistIds: string[]) {
+  return withDB((db) => {
+    const list = db.serveLog[playerId] ?? [];
+    list.push({ trackIds, artistIds, at: Date.now() });
+    db.serveLog[playerId] = list.slice(-16);
+  });
+}
+
+export async function recentServe(playerId: string) {
+  return withDB((db) => {
+    const list = db.serveLog[playerId] ?? [];
+    return {
+      trackIds: list.flatMap((row) => row.trackIds),
+      artistIds: list.flatMap((row) => row.artistIds),
+    };
   });
 }

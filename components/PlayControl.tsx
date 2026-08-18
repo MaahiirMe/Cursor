@@ -2,6 +2,7 @@
 
 export function PlayControl({
   playing,
+  ready,
   seconds,
   onPlay,
   onPause,
@@ -9,6 +10,7 @@ export function PlayControl({
   onHover,
 }: {
   playing: boolean;
+  ready?: boolean;
   seconds: number;
   onPlay: () => void;
   onPause: () => void;
@@ -28,7 +30,7 @@ export function PlayControl({
         <span className="orbit" aria-hidden />
         <span className="text-orange">▶</span> SUN.
         <span className="ml-2 font-mono text-[0.32em] tracking-[0.14em] text-smoke">
-          · {seconds} SEC
+          · {seconds} SEC{ready === false ? " · LOAD" : ""}
         </span>
       </button>
       <button

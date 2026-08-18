@@ -47,7 +47,7 @@ export function correctCopy(opts: {
   attemptsUsed: number;
   revealSeconds: number;
 }): string {
-  if (opts.revealSeconds <= 2 && opts.attemptsUsed <= 1) return COPY.introEnough;
+  if (opts.revealSeconds <= 4 && opts.attemptsUsed <= 1) return COPY.introEnough;
   if (opts.attemptsUsed >= 3) return COPY.correctLate;
   return COPY.correct;
 }
