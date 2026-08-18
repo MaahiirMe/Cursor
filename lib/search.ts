@@ -1,5 +1,5 @@
 import Fuse from "fuse.js";
-import { allArtists, playableTracks, artistLine } from "./catalogue";
+import { allArtists, searchableTracks, artistLine } from "./catalogue";
 import { compact, normalizeText, tokens } from "./normalize";
 import type { Artist, SearchHit, Track } from "./types";
 
@@ -12,9 +12,10 @@ function rankBoost(query: string, text: string, aliases: string[]): number {
   if (n === q || c === qc) return 100;
   if (n.startsWith(q) || c.startsWith(qc)) return 90;
   if (tokens(n).some((t) => t.startsWith(q))) return 80;
-  if (aliases.some((a) => normalizeText(a) === q || compact(a) === qc)) return 75;
+  if (aliases.some((a) => normalizeText(a) === q || compact(a) === qc)) return 85;
   if (aliases.some((a) => normalizeText(a).startsWith(q) || compact(a).startsWith(qc)))
-    return 70;
+    return 78;
+  if (n.includes(q) || c.includes(qc)) return 40;
   return 0;
 }
 
@@ -30,14 +31,15 @@ let trackFuse: Fuse<Track> | null = null;
 let artistFuse: Fuse<Artist> | null = null;
 
 function getTrackFuse() {
-  trackFuse ??= new Fuse(playableTracks(), {
+  trackFuse ??= new Fuse(searchableTracks(), {
     includeScore: true,
-    threshold: 0.38,
+    threshold: 0.42,
     ignoreLocation: true,
+    minMatchCharLength: 1,
     keys: [
       { name: "title", weight: 0.6 },
       { name: "normalizedTitle", weight: 0.5 },
-      { name: "aliases", weight: 0.4 },
+      { name: "aliases", weight: 0.45 },
       { name: "artists.name", weight: 0.2 },
     ],
   });
@@ -47,12 +49,13 @@ function getTrackFuse() {
 function getArtistFuse() {
   artistFuse ??= new Fuse(allArtists(), {
     includeScore: true,
-    threshold: 0.38,
+    threshold: 0.42,
     ignoreLocation: true,
+    minMatchCharLength: 1,
     keys: [
       { name: "name", weight: 0.6 },
       { name: "normalizedName", weight: 0.5 },
-      { name: "aliases", weight: 0.5 },
+      { name: "aliases", weight: 0.55 },
     ],
   });
   return artistFuse;
@@ -62,23 +65,26 @@ export function searchTracks(query: string, limit = 8): SearchHit[] {
   const q = query.trim();
   if (!q) return [];
   const fused = getTrackFuse().search(q);
-  const scored = playableTracks()
+  const scored = searchableTracks()
     .map((t) => {
       const fuse = fused.find((f) => f.item.id === t.id);
-      const fuzzy = fuse ? Math.round((1 - (fuse.score ?? 1)) * 50) : 0;
-      const boost = rankBoost(q, t.title, t.aliases);
+      const fuzzy = fuse ? Math.round((1 - (fuse.score ?? 1)) * 55) : 0;
+      const boost = rankBoost(q, t.title, [
+        ...t.aliases,
+        ...t.artists.map((a) => a.name),
+      ]);
       const popularity = 6 - t.difficulty;
-      return { t, score: boost + fuzzy + popularity };
+      return { t, score: boost + fuzzy + popularity, boost, fuzzy };
     })
-    .filter((x) => x.score > 8)
+    .filter((x) => x.boost >= 70 || (x.boost >= 40 && x.fuzzy >= 18) || (q.length >= 4 && x.fuzzy >= 42))
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
 
-  return scored.map(({ t }, i) => ({
+  return scored.map(({ t }) => ({
     id: t.id,
-    title: t.title.toUpperCase(),
-    subtitle: artistLine(t).toUpperCase(),
-    highlight: i === 0 ? highlightRange(q, t.title.toUpperCase()) : highlightRange(q, t.title.toUpperCase()),
+    title: t.title,
+    subtitle: artistLine(t),
+    highlight: highlightRange(q, t.title),
   }));
 }
 
@@ -90,11 +96,11 @@ export function searchArtists(query: string, limit = 8): SearchHit[] {
   const scored = allArtists()
     .map((a) => {
       const fuse = fused.find((f) => f.item.id === a.id);
-      const fuzzy = fuse ? Math.round((1 - (fuse.score ?? 1)) * 50) : 0;
+      const fuzzy = fuse ? Math.round((1 - (fuse.score ?? 1)) * 55) : 0;
       const boost = rankBoost(q, a.name, a.aliases);
-      return { a, score: boost + fuzzy };
+      return { a, score: boost + fuzzy, boost, fuzzy };
     })
-    .filter((x) => x.score > 8)
+    .filter((x) => x.boost >= 70 || (x.boost >= 40 && x.fuzzy >= 18) || (q.length >= 4 && x.fuzzy >= 42))
     .sort((a, b) => b.score - a.score);
 
   const hits: SearchHit[] = [];
@@ -103,9 +109,9 @@ export function searchArtists(query: string, limit = 8): SearchHit[] {
     seen.add(a.id);
     hits.push({
       id: a.id,
-      title: a.name.toUpperCase(),
-      subtitle: a.aliases[0]?.toUpperCase() ?? a.sceneTags.join(" · ").toUpperCase(),
-      highlight: highlightRange(q, a.name.toUpperCase()),
+      title: a.name,
+      subtitle: a.aliases[0] ?? a.sceneTags.join(" · "),
+      highlight: highlightRange(q, a.name),
     });
     if (hits.length >= limit) break;
   }

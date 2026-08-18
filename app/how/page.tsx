@@ -8,16 +8,17 @@ export default function HowPage() {
         <h1 className="font-serif text-[clamp(4.5rem,18vw,14rem)] leading-[0.78] tracking-[-0.07em]">
           SUN.
           <br />
-          SOCH.
+          PEHCHAAN.
           <br />
-          BATA.
+          LOCK KAR.
         </h1>
         <div className="mt-16 max-w-xl space-y-3 text-xl leading-snug">
-          <p>5 gaane.</p>
-          <p>Har gaane ke 5 chances.</p>
-          <p>Jitni jaldi pehchaanoge, utne zyada points.</p>
+          <p>5 gaane. Har gaane ke 5 chances.</p>
+          <p>▶ PLAY the intro from 00:00.</p>
+          <p>+2 SEC if you need more. HINT if you’re stuck. Both cost points.</p>
+          <p>Search the song and artist, then LOCK KAR.</p>
           <p className="pt-6 text-smoke">
-            Aur haan — gaana 00:00 se hi chalega. No famous part cheating.
+            Gaana hamesha 00:00 se. No hook cheating.
           </p>
         </div>
       </main>

@@ -37,11 +37,10 @@ export type Track = {
   difficulty: Difficulty;
   active: boolean;
   introQuality: "faithful" | "uncertain" | "unusable";
+  hints?: [string, string, string];
 };
 
 export type GameMode = "standard" | "daily" | "hard";
-
-export type RevealSeconds = 1 | 2 | 4 | 7 | 11 | 16;
 
 export type RoundOutcome = "pending" | "correct" | "failed" | "skipped";
 
@@ -63,16 +62,28 @@ export type SafeRound = {
   attemptsLeft: number;
   attemptsUsed: number;
   maxAttempts: 5;
-  revealSeconds: RevealSeconds;
+  revealSeconds: number;
+  initialSeconds: number;
+  possibleScore: number;
   outcome: RoundOutcome;
   playback: SafePlayback;
   score?: number;
   copy?: string;
+  purchasedHints: PurchasedHint[];
+  nextHintCost: number | null;
+  canAddTime: boolean;
+};
+
+export type PurchasedHint = {
+  index: number;
+  text: string;
+  cost: number;
 };
 
 export type RevealedRound = SafeRound & {
   title?: string;
   artistNames?: string[];
+  artworkUrl?: string;
   artworkSeed?: string;
 };
 
@@ -100,7 +111,9 @@ export type SessionStats = {
 export type StoredRound = {
   trackId: string;
   attemptsUsed: number;
-  revealSeconds: RevealSeconds;
+  revealSeconds: number;
+  initialSeconds: number;
+  hintsPurchased: number;
   outcome: RoundOutcome;
   score: number;
   guesses: StoredGuess[];

@@ -2,10 +2,12 @@
 
 export function PlayControl({
   playing,
+  seconds,
   onToggle,
   onHover,
 }: {
   playing: boolean;
+  seconds: number;
   onToggle: () => void;
   onHover: (v: boolean) => void;
 }) {
@@ -18,11 +20,14 @@ export function PlayControl({
       onClick={onToggle}
       onMouseEnter={() => onHover(true)}
       onMouseLeave={() => onHover(false)}
-      aria-label={playing ? "Pause" : "Play from the beginning"}
+      aria-label={playing ? "Pause" : `Play ${seconds} seconds from the beginning`}
     >
       <span className="orbit" aria-hidden />
-      {playing ? "RUK." : "SUN."}
-      <span className="ml-2 align-middle text-[0.45em] text-orange">{playing ? "■" : "▶"}</span>
+      <span className="text-orange">{playing ? "■" : "▶"}</span>{" "}
+      {playing ? "PAUSE" : "PLAY"}
+      <span className="ml-2 font-mono text-[0.32em] tracking-[0.14em] text-smoke">
+        · {seconds} SEC
+      </span>
     </button>
   );
 }

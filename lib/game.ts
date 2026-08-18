@@ -1,14 +1,29 @@
 import crypto from "crypto";
 import { resolveAudioProvider } from "./audio/resolver";
 import { signPlayback } from "./audio/mock";
+import { hintsFor } from "./catalogue/hints";
 import { getTrack, playableTracks } from "./catalogue";
-import { COPY, correctCopy, resultHeadline } from "./copy";
-import { claimDaily, getSession, mutateSession, nextSessionNumber, saveSession, addLeaderboard, getProfile } from "./db/store";
-import { NEXT_REVEAL, scoreCorrect } from "./scoring";
+import { COPY, correctCopy, resultHeadline, wrongCopy } from "./copy";
+import {
+  addLeaderboard,
+  claimDaily,
+  getProfile,
+  getSession,
+  mutateSession,
+  nextSessionNumber,
+  saveSession,
+} from "./db/store";
+import {
+  HINT_COSTS,
+  MAX_ATTEMPTS,
+  MAX_HINTS,
+  nextSeconds,
+  possibleScore,
+} from "./scoring";
 import type {
   GameMode,
   GuessVerdict,
-  RevealSeconds,
+  PurchasedHint,
   RevealedRound,
   SessionPublic,
   SessionStats,
@@ -16,8 +31,6 @@ import type {
   StoredSession,
   Track,
 } from "./types";
-
-const MAX_ATTEMPTS = 5;
 
 function dailyKey(date = new Date()): string {
   const ist = new Date(date.getTime() + 5.5 * 60 * 60 * 1000);
@@ -39,8 +52,12 @@ function mulberry32(a: number) {
   };
 }
 
-function pickTracks(mode: GameMode, key?: string): Track[] {
-  const pool = playableTracks();
+function initialSeconds(mode: GameMode): number {
+  return mode === "hard" ? 1 : 2;
+}
+
+function pickTracks(mode: GameMode, key?: string, exclude: string[] = []): Track[] {
+  const pool = playableTracks().filter((t) => !exclude.includes(t.id));
   const seed =
     mode === "daily" && key
       ? Number.parseInt(key.replaceAll("-", ""), 10)
@@ -56,17 +73,41 @@ function pickTracks(mode: GameMode, key?: string): Track[] {
     if (chosen.length === 5) break;
   }
   if (chosen.length < 5) {
-    throw new Error("Not enough playable tracks");
+    throw new Error("Not enough playable tracks from 00:00");
   }
   return chosen;
 }
 
-function initialReveal(mode: GameMode): RevealSeconds {
-  return mode === "hard" ? 1 : 2;
+function hydrate(round: StoredRound, mode: GameMode): StoredRound {
+  return {
+    ...round,
+    initialSeconds: round.initialSeconds ?? initialSeconds(mode),
+    hintsPurchased: round.hintsPurchased ?? 0,
+  };
+}
+
+function liveScore(round: StoredRound, mode: GameMode): number {
+  const r = hydrate(round, mode);
+  return possibleScore({
+    initialSeconds: r.initialSeconds,
+    revealSeconds: r.revealSeconds,
+    wrongGuesses: r.attemptsUsed,
+    hintsPurchased: r.hintsPurchased,
+  });
+}
+
+function purchasedHintViews(track: Track, count: number): PurchasedHint[] {
+  const hints = hintsFor(track);
+  return hints.slice(0, count).map((text, index) => ({
+    index: index + 1,
+    text,
+    cost: HINT_COSTS[index],
+  }));
 }
 
 function toPublic(session: StoredSession): SessionPublic {
-  const rounds: RevealedRound[] = session.rounds.map((r, index) => {
+  const rounds: RevealedRound[] = session.rounds.map((raw, index) => {
+    const r = hydrate(raw, session.mode);
     const track = getTrack(r.trackId)!;
     const prepared = resolveAudioProvider(track);
     const token = signPlayback(session.id, index);
@@ -81,20 +122,30 @@ function toPublic(session: StoredSession): SessionPublic {
           startSeconds: 0 as const,
         }
       : { providerId: prepared.providerId, startSeconds: 0 as const };
+    const revealed = r.outcome !== "pending" || session.status === "complete";
     const safe: RevealedRound = {
       index,
       attemptsLeft: MAX_ATTEMPTS - r.attemptsUsed,
       attemptsUsed: r.attemptsUsed,
       maxAttempts: MAX_ATTEMPTS,
       revealSeconds: r.revealSeconds,
+      initialSeconds: r.initialSeconds,
+      possibleScore: r.outcome === "pending" ? liveScore(r, session.mode) : r.score,
       outcome: r.outcome,
       playback,
       score: r.outcome === "pending" ? undefined : r.score,
+      purchasedHints: isCurrent || revealed ? purchasedHintViews(track, r.hintsPurchased) : [],
+      nextHintCost:
+        isCurrent && r.hintsPurchased < MAX_HINTS ? HINT_COSTS[r.hintsPurchased] : null,
+      canAddTime: isCurrent && nextSeconds(r.revealSeconds) != null,
     };
-    if (r.outcome !== "pending" || session.status === "complete") {
+    if (revealed) {
       safe.title = track.title;
       safe.artistNames = track.artists.map((a) => a.name);
       safe.artworkSeed = track.id;
+      safe.artworkUrl = track.youtubeVideoId
+        ? `https://i.ytimg.com/vi/${track.youtubeVideoId}/hqdefault.jpg`
+        : undefined;
     }
     return safe;
   });
@@ -120,7 +171,9 @@ function computeStats(session: StoredSession): SessionStats {
   const solved = session.rounds.filter((r) => r.outcome === "correct").length;
   const firstTry = session.rounds.filter((r) => r.outcome === "correct" && r.attemptsUsed === 1).length;
   const reveals = session.rounds.filter((r) => r.outcome === "correct").map((r) => r.revealSeconds);
-  const averageReveal = reveals.length ? Math.round(reveals.reduce((a, b) => a + b, 0) / reveals.length) : null;
+  const averageReveal = reveals.length
+    ? Math.round(reveals.reduce((a, b) => a + b, 0) / reveals.length)
+    : null;
   let bestTrackIndex: number | null = null;
   let best = -1;
   session.rounds.forEach((r, i) => {
@@ -142,10 +195,13 @@ export async function startSession(playerId: string, mode: GameMode): Promise<Se
     const claim = await claimDaily(playerId, key, id);
     replay = claim.replay;
   }
+  const startAt = initialSeconds(mode);
   const rounds: StoredRound[] = tracks.map((t) => ({
     trackId: t.id,
     attemptsUsed: 0,
-    revealSeconds: initialReveal(mode),
+    revealSeconds: startAt,
+    initialSeconds: startAt,
+    hintsPurchased: 0,
     outcome: "pending",
     score: 0,
     guesses: [],
@@ -172,13 +228,6 @@ export async function loadPublic(id: string): Promise<SessionPublic | null> {
   return toPublic(session);
 }
 
-export function getRoundTrack(session: StoredSession, index: number): Track {
-  const round = session.rounds[index];
-  const track = getTrack(round.trackId);
-  if (!track) throw new Error("Missing track");
-  return track;
-}
-
 export async function submitGuess(
   sessionId: string,
   playerId: string,
@@ -188,7 +237,8 @@ export async function submitGuess(
   return mutateSession(sessionId, (session) => {
     if (session.playerId !== playerId) throw new Error("Session not found");
     if (session.status !== "playing") throw new Error("Session complete");
-    const round = session.rounds[session.currentIndex];
+    const round = hydrate(session.rounds[session.currentIndex], session.mode);
+    session.rounds[session.currentIndex] = round;
     if (round.outcome !== "pending") throw new Error("Round closed");
     if (round.attemptsUsed >= MAX_ATTEMPTS) throw new Error("No attempts");
 
@@ -208,10 +258,16 @@ export async function submitGuess(
       at: Date.now(),
     });
 
-    let copy: string = COPY.wrong;
+    const left = MAX_ATTEMPTS - round.attemptsUsed;
+    let copy = wrongCopy(left);
     if (verdict === "FULL_CORRECT") {
       round.outcome = "correct";
-      round.score = scoreCorrect(round.revealSeconds, round.attemptsUsed - 1);
+      round.score = possibleScore({
+        initialSeconds: round.initialSeconds,
+        revealSeconds: round.revealSeconds,
+        wrongGuesses: round.attemptsUsed - 1,
+        hintsPurchased: round.hintsPurchased,
+      });
       copy = correctCopy({ attemptsUsed: round.attemptsUsed, revealSeconds: round.revealSeconds });
     } else if (verdict === "ARTIST_ONLY") {
       copy = COPY.artistOnly;
@@ -222,8 +278,6 @@ export async function submitGuess(
       round.score = 0;
       verdict = "LAST_HAI";
       copy = COPY.skipped;
-    } else if (verdict !== "FULL_CORRECT" && round.attemptsUsed === MAX_ATTEMPTS - 1) {
-      copy = COPY.last;
     }
 
     return { session: toPublic(session), verdict, copy };
@@ -241,18 +295,26 @@ export async function skipRound(sessionId: string, playerId: string) {
   });
 }
 
-export async function unlockMore(sessionId: string, playerId: string, target?: number) {
+export async function unlockMore(sessionId: string, playerId: string) {
   return mutateSession(sessionId, (session) => {
     if (session.playerId !== playerId) throw new Error("Session not found");
-    const round = session.rounds[session.currentIndex];
+    const round = hydrate(session.rounds[session.currentIndex], session.mode);
+    session.rounds[session.currentIndex] = round;
     if (round.outcome !== "pending") return toPublic(session);
-    const allowed: RevealSeconds[] = [1, 2, 4, 7, 11, 16];
-    if (target && allowed.includes(target as RevealSeconds) && target > round.revealSeconds) {
-      round.revealSeconds = target as RevealSeconds;
-    } else {
-      const next = NEXT_REVEAL[round.revealSeconds];
-      if (next) round.revealSeconds = next;
-    }
+    const next = nextSeconds(round.revealSeconds);
+    if (next) round.revealSeconds = next;
+    return toPublic(session);
+  });
+}
+
+export async function buyHint(sessionId: string, playerId: string) {
+  return mutateSession(sessionId, (session) => {
+    if (session.playerId !== playerId) throw new Error("Session not found");
+    const round = hydrate(session.rounds[session.currentIndex], session.mode);
+    session.rounds[session.currentIndex] = round;
+    if (round.outcome !== "pending") return toPublic(session);
+    if (round.hintsPurchased >= MAX_HINTS) return toPublic(session);
+    round.hintsPurchased += 1;
     return toPublic(session);
   });
 }
@@ -299,7 +361,10 @@ export function shareText(session: SessionPublic): string {
   });
   const solved = session.stats?.solved ?? 0;
   const avg = session.stats?.averageReveal ? `${session.stats.averageReveal} SEC` : "—";
-  const label = session.mode === "daily" ? `DAILY #${String(session.number).padStart(3, "0")}` : `#${String(session.number).padStart(4, "0")}`;
+  const label =
+    session.mode === "daily"
+      ? `DAILY #${String(session.number).padStart(3, "0")}`
+      : `#${String(session.number).padStart(4, "0")}`;
   return [
     `DHHUH?  ${label}`,
     "",

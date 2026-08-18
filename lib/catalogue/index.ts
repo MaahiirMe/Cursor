@@ -1,3 +1,4 @@
+import { canUseLicensed, canUseYouTube } from "../audio/resolver";
 import { ARTISTS, TRACKS } from "./data";
 import type { Artist, Track } from "../types";
 
@@ -12,7 +13,17 @@ export function getTrack(id: string): Track | undefined {
   return trackById.get(id);
 }
 
+export function canPlayFromStart(track: Track): boolean {
+  return canUseLicensed(track) || canUseYouTube(track);
+}
+
 export function playableTracks(): Track[] {
+  return TRACKS.filter(
+    (t) => t.active && t.genre === "DHH" && t.country === "IN" && canPlayFromStart(t),
+  );
+}
+
+export function searchableTracks(): Track[] {
   return TRACKS.filter((t) => t.active && t.genre === "DHH" && t.country === "IN");
 }
 

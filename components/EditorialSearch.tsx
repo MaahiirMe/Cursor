@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import type { SearchHit } from "@/lib/types";
 
 export function EditorialSearch({
   label,
+  placeholder,
   cursor,
   value,
   onChange,
@@ -12,6 +13,7 @@ export function EditorialSearch({
   kind,
 }: {
   label: string;
+  placeholder: string;
   cursor: string;
   value: string;
   onChange: (v: string) => void;
@@ -21,50 +23,78 @@ export function EditorialSearch({
   const [hits, setHits] = useState<SearchHit[]>([]);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
+  const [picked, setPicked] = useState(false);
   const box = useRef<HTMLDivElement>(null);
+  const listId = useId();
 
   useEffect(() => {
     const q = value.trim();
-    if (q.length < 1) {
+    if (q.length < 1 || picked) {
       setHits([]);
+      setOpen(false);
       return;
     }
     const ctrl = new AbortController();
     const t = setTimeout(async () => {
-      const res = await fetch(`/api/search?kind=${kind}&q=${encodeURIComponent(q)}`, {
-        signal: ctrl.signal,
-      });
-      const json = (await res.json()) as { hits: SearchHit[] };
-      setHits(json.hits);
-      setOpen(true);
-      setActive(0);
-    }, 40);
+      try {
+        const res = await fetch(`/api/search?kind=${kind}&q=${encodeURIComponent(q)}`, {
+          signal: ctrl.signal,
+        });
+        const json = (await res.json()) as { hits: SearchHit[] };
+        setHits(json.hits);
+        setOpen(json.hits.length > 0);
+        setActive(0);
+      } catch {
+        /* aborted */
+      }
+    }, 20);
     return () => {
       clearTimeout(t);
       ctrl.abort();
     };
-  }, [value, kind]);
+  }, [value, kind, picked]);
 
-  const marked = useMemo(() => hits, [hits]);
+  useEffect(() => {
+    const close = (e: MouseEvent) => {
+      if (!box.current?.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", close);
+    return () => document.removeEventListener("mousedown", close);
+  }, []);
 
   function pick(hit: SearchHit) {
+    setPicked(true);
     onPick(hit);
     setOpen(false);
   }
 
   return (
     <div ref={box} className="relative">
-      <div className="mono text-smoke">{label}</div>
+      <label className="mono text-smoke" htmlFor={listId + "-input"}>
+        {label}
+      </label>
       <input
+        id={listId + "-input"}
         className="field"
         data-cursor={cursor}
         value={value}
+        placeholder={placeholder}
         autoComplete="off"
         autoCorrect="off"
         spellCheck={false}
-        onChange={(e) => onChange(e.target.value)}
+        inputMode="search"
+        enterKeyHint="search"
+        onChange={(e) => {
+          setPicked(false);
+          onChange(e.target.value);
+        }}
         onFocus={() => hits.length && setOpen(true)}
         onKeyDown={(e) => {
+          if (e.key === "Enter" && open && hits[active]) {
+            e.preventDefault();
+            pick(hits[active]);
+            return;
+          }
           if (!open || !hits.length) return;
           if (e.key === "ArrowDown") {
             e.preventDefault();
@@ -74,20 +104,16 @@ export function EditorialSearch({
             e.preventDefault();
             setActive((a) => Math.max(0, a - 1));
           }
-          if (e.key === "Enter" && hits[active]) {
-            e.preventDefault();
-            pick(hits[active]);
-          }
           if (e.key === "Escape") setOpen(false);
         }}
         aria-autocomplete="list"
         aria-expanded={open}
-        aria-controls="dhhuh-hits"
+        aria-controls={listId}
         role="combobox"
       />
-      {open && marked.length > 0 ? (
-        <div className="hits" role="listbox" id="dhhuh-hits">
-          {marked.map((hit, i) => (
+      {open && hits.length > 0 ? (
+        <div className="hits" role="listbox" id={listId}>
+          {hits.map((hit, i) => (
             <button
               key={hit.id}
               type="button"
@@ -99,9 +125,7 @@ export function EditorialSearch({
             >
               <span className="n">{String(i + 1).padStart(2, "0")}</span>
               <span>
-                <span className="t">
-                  {renderHighlight(hit.title, hit.highlight)}
-                </span>
+                <span className="t">{renderHighlight(hit.title, hit.highlight)}</span>
                 <span className="s block">{hit.subtitle}</span>
               </span>
             </button>

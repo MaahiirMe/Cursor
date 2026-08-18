@@ -1,31 +1,31 @@
-import type { RevealSeconds } from "./types";
+export const START_SCORE = 1000;
+export const MIN_CORRECT = 100;
+export const WRONG_PENALTY = 50;
+export const LISTEN_STEP = 2;
+export const LISTEN_PENALTY = 75;
+export const MAX_SECONDS = 16;
+export const HINT_COSTS = [75, 125, 200] as const;
+export const MAX_HINTS = 3;
+export const MAX_ATTEMPTS = 5;
 
-export const REVEAL_BASE: Record<RevealSeconds, number> = {
-  1: 1000,
-  2: 1000,
-  4: 850,
-  7: 700,
-  11: 500,
-  16: 300,
-};
-
-export const NEXT_REVEAL: Record<RevealSeconds, RevealSeconds | null> = {
-  1: 2,
-  2: 4,
-  4: 7,
-  7: 11,
-  11: 16,
-  16: null,
-};
-
-export const REVEAL_LADDER: RevealSeconds[] = [2, 4, 7, 11, 16];
-export const HARD_LADDER: RevealSeconds[] = [1, 2, 4, 7, 11];
-
-export function scoreCorrect(revealSeconds: RevealSeconds, wrongGuesses: number): number {
-  const base = REVEAL_BASE[revealSeconds];
-  return Math.max(100, base - wrongGuesses * 50);
+export function extraListenSteps(revealSeconds: number, initialSeconds: number): number {
+  return Math.max(0, Math.round((revealSeconds - initialSeconds) / LISTEN_STEP));
 }
 
-export function previewScore(revealSeconds: RevealSeconds, wrongGuesses: number): number {
-  return scoreCorrect(revealSeconds, wrongGuesses);
+export function possibleScore(opts: {
+  initialSeconds: number;
+  revealSeconds: number;
+  wrongGuesses: number;
+  hintsPurchased: number;
+}): number {
+  let score = START_SCORE;
+  score -= extraListenSteps(opts.revealSeconds, opts.initialSeconds) * LISTEN_PENALTY;
+  score -= opts.wrongGuesses * WRONG_PENALTY;
+  for (let i = 0; i < opts.hintsPurchased; i++) score -= HINT_COSTS[i] ?? 0;
+  return Math.max(MIN_CORRECT, score);
+}
+
+export function nextSeconds(current: number): number | null {
+  const next = current + LISTEN_STEP;
+  return next <= MAX_SECONDS ? next : null;
 }

@@ -181,8 +181,12 @@ input {
   border-bottom: 1px solid color-mix(in srgb, var(--paper) 28%, transparent);
   padding: 0.85rem 0 0.55rem;
   width: 100%;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.field::placeholder {
+  color: var(--smoke);
+  opacity: 0.75;
 }
 
 .field:focus {
